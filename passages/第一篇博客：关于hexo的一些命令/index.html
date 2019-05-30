@@ -8,18 +8,20 @@
   
   
   
-  <title>第一篇博客：关于hexo的一些命令  | Hexo</title>
+  <title>第一篇博客：关于hexo的一些命令  | Moya&#39;s Garden</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="杂七杂八 hexo,">
+    <meta name="keywords" content="杂七杂八,hexo,">
   
 
   <script>
     console.log('\n%c Hexo-theme-bmw v4.0 ' + '%c 🎉 https://github.com/dongyuanxin/theme-bmw 🎉\n' + '\n%c View demo online ' + '%c 🔍 https://godbmw.com/ 🔍  \n' , 'color: #fadfa3; background: #030307; padding:3px 0;', '', 'color: #fadfa3; background: #030307; padding:3px 0;', '');
   </script>
 
+  
+    <meta name="description" content="记录莫莫哒的成长之路">
   
 
   
@@ -67,7 +69,7 @@
   <header>
     <div class="site-brand">
       <div class="site-title">
-        <a href="/">GODBMW.com</a>
+        <a href="/">MOYAHUANG.com</a>
       </div>
     </div>
     <nav class="site-navigation">
@@ -127,14 +129,8 @@
             <ul class="nav-menu--dropdown">
               
                 <li>
-                  <a href="https://github.com/dongyuanxin" target="_blank">
+                  <a href="https://github.com/moyahuang" target="_blank">
                     Github
-                  </a>
-                </li>
-              
-                <li>
-                  <a href="https://www.zhihu.com/people/godbmw/activities" target="_blank">
-                    知乎
                   </a>
                 </li>
               
@@ -213,6 +209,26 @@
   </div>
 
   
+    <div id="第一篇博客：关于hexo的一些命令" style="margin: 4rem 2px"></div>
+<script async>
+  (function(){
+    let playerTimer = setInterval(function(){
+      if(!window.APlayer){
+        return
+      }
+
+      new APlayer({
+        container: document.getElementById('第一篇博客：关于hexo的一些命令'),
+        theme: '#e96900',
+        listFolded: false,
+        audio: [null]
+      });
+      
+      clearInterval(playerTimer)
+    }, 10);
+  })()
+</script>
+  
 
   <div class="article-content">
     <div class="markdown-body">
@@ -223,7 +239,7 @@
 <h3 id="二、在本地部署网页"><a href="#二、在本地部署网页" class="headerlink" title="二、在本地部署网页"></a>二、在本地部署网页</h3><p>在Git Bash中输入下面的命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g(enerate) #生成</span><br><span class="line">hexo s(erver) #本地发布</span><br></pre></td></tr></table></figure>
 
-<p>若无错误，此时可以在浏览器<a href="http://localhost:4000访问生成的网页。也可将上面两条命令合并为一条命令" target="_blank" rel="noopener">http://localhost:4000访问生成的网页。也可将上面两条命令合并为一条命令</a></p>
+<p>若无错误，此时可以在浏览器<code>http://localhost:4000</code>访问生成的网页。也可将上面两条命令合并为一条命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -s</span><br></pre></td></tr></table></figure>
 
 <h3 id="三、将本地的文件同步到GitHub上"><a href="#三、将本地的文件同步到GitHub上" class="headerlink" title="三、将本地的文件同步到GitHub上"></a>三、将本地的文件同步到GitHub上</h3><p>Git Bash中输入下面的命令</p>
@@ -231,8 +247,6 @@
 
 <p>也可将上面两条命令合并为一条</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-
-
     </div>
   </div>
   
@@ -241,9 +255,9 @@
         <blockquote>
         
         
-          本文作者 : GODBMW <br>
+          本文作者 : MOYA <br>
         
-        原文链接 : <a href>http://yoursite.com/2019/05/30/第一篇博客：关于hexo的一些命令/</a><br>
+        原文链接 : <a href>http://moyahuang.github.io/passages/第一篇博客：关于hexo的一些命令/</a><br>
         版权声明 : 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
         </blockquote>
       </div>
@@ -303,8 +317,14 @@
           <i class="iconfont icon-06tags"></i>标签: 
           
           <span class="span--tag">
-            <a href="/tags/杂七杂八-hexo/">
-              #杂七杂八 hexo
+            <a href="/tags/杂七杂八/">
+              #杂七杂八
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/tags/hexo/">
+              #hexo
             </a>
           </span>
           
@@ -329,7 +349,7 @@
       <div class="nav-pre">
         <i class="iconfont icon-prev"></i>
         上一篇:
-        <a href="/2019/05/30/hello-world/" target="_self">Hello World</a>
+        <a href="/passages/hello-world/" target="_self">Hello World</a>
       </div>
     
     
@@ -345,8 +365,8 @@
     let path = getRealPath()
     new Valine({
       el: "#vcomments",
-      appId: "Hyq9wkH495DgNHWhDQCOfQSp-gzGzoHsz",
-      appKey: "WaR7nrzhliHj9aVwdQzkdlGd",
+      appId: "u9Y31GHpeuRSMHBrL2Smhaqu-gzGzoHsz",
+      appKey: "o1IcY1StFMumRptFXIj8tEdW",
       notify: false,
       verify: false,
       avatar: "robohash",
@@ -361,7 +381,7 @@
     <script defer>
 const valineAPI = (() => {
   try {
-    AV.init("Hyq9wkH495DgNHWhDQCOfQSp-gzGzoHsz", "WaR7nrzhliHj9aVwdQzkdlGd");
+    AV.init("u9Y31GHpeuRSMHBrL2Smhaqu-gzGzoHsz", "o1IcY1StFMumRptFXIj8tEdW");
   } catch(error) {}
   const isExist = (identity) => {
     identity = identity || getRealPath();
@@ -496,6 +516,8 @@ if(true){
     Theme - <a href="https://github.com/dongyuanxin/theme-bmw">BMW</a> | Made With 💗 | Powered by <a href="https://godbmw.com/">GodBMW</a>
     <br>
     
+      <a href="https://www.google.com/analytics/" target="_blank">Google Analytics</a>提供统计服务
+    
   </p>
 </footer>
 
@@ -503,7 +525,7 @@ if(true){
 
 <script>
 const timeToNowDOM = document.querySelector("#time-to-now");
-const startTimestamp = new Date(2018, 1, 10).getTime();
+const startTimestamp = new Date(2019, 4, 30).getTime();
 
 const updateTimeStr = () => {
   let offset = parseInt(

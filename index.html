@@ -8,7 +8,7 @@
   
   
   
-  <title>Hexo</title>
+  <title>Moya&#39;s Garden</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -20,6 +20,8 @@
     console.log('\n%c Hexo-theme-bmw v4.0 ' + '%c 🎉 https://github.com/dongyuanxin/theme-bmw 🎉\n' + '\n%c View demo online ' + '%c 🔍 https://godbmw.com/ 🔍  \n' , 'color: #fadfa3; background: #030307; padding:3px 0;', '', 'color: #fadfa3; background: #030307; padding:3px 0;', '');
   </script>
 
+  
+    <meta name="description" content="记录莫莫哒的成长之路">
   
 
   
@@ -67,7 +69,7 @@
   <header>
     <div class="site-brand">
       <div class="site-title">
-        <a href="/">GODBMW.com</a>
+        <a href="/">MOYAHUANG.com</a>
       </div>
     </div>
     <nav class="site-navigation">
@@ -127,14 +129,8 @@
             <ul class="nav-menu--dropdown">
               
                 <li>
-                  <a href="https://github.com/dongyuanxin" target="_blank">
+                  <a href="https://github.com/moyahuang" target="_blank">
                     Github
-                  </a>
-                </li>
-              
-                <li>
-                  <a href="https://www.zhihu.com/people/godbmw/activities" target="_blank">
-                    知乎
                   </a>
                 </li>
               
@@ -187,7 +183,7 @@
   
   <div class="post">
     <h1 class="article-title">
-      <a href="/2019/05/30/第一篇博客：关于hexo的一些命令/">
+      <a href="/passages/第一篇博客：关于hexo的一些命令/">
         <span>第一篇博客：关于hexo的一些命令 </span>
       </a>
     </h1>
@@ -210,10 +206,30 @@
       
     </div>
     
+      <div id="第一篇博客：关于hexo的一些命令" style="margin: 4rem 2px -1rem"></div>
+<script async>
+  (function(){
+    let playerTimer = setInterval(function(){
+      if(!window.APlayer){
+        return
+      }
+
+      new APlayer({
+        container: document.getElementById('第一篇博客：关于hexo的一些命令'),
+        theme: '#e96900',
+        listFolded: false,
+        audio: [null]
+      });
+      
+      clearInterval(playerTimer)
+    }, 10);
+  })()
+</script>
+    
     <!-- 文章简介 -->
     <div class="article-content">
       <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
-        
+        <p>今天终于创建了我个人的博客网站，很有成就感。博客选用的主题是hexo主题官网上的BMW（别摸我），本人非常喜欢。这个主题的文档链接在这里👉<a href="https://godbmw.com/passages/2018-11-15-theme-bmw-docs-zh/" target="_blank" rel="noopener">BMW文档</a>此外，本片文章也将尝试使用主题提供的各种功能，花哨警告哦。下面是关于博客引擎的一些常用的命令，供自己参考。</p>
       </div>
     </div>
     <div class="article-footer">
@@ -226,8 +242,14 @@
             <i class="iconfont icon-06tags"></i>标签:
             
               <span class="span--tag">
-                <a href="/tags/杂七杂八-hexo/">
-                  #杂七杂八 hexo
+                <a href="/tags/杂七杂八/">
+                  #杂七杂八
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/tags/hexo/">
+                  #hexo
                 </a>
               </span>
             
@@ -246,7 +268,7 @@
   
   <div class="post">
     <h1 class="article-title">
-      <a href="/2019/05/30/hello-world/">
+      <a href="/passages/hello-world/">
         <span>Hello World</span>
       </a>
     </h1>
@@ -304,7 +326,7 @@
     <script defer>
 const valineAPI = (() => {
   try {
-    AV.init("Hyq9wkH495DgNHWhDQCOfQSp-gzGzoHsz", "WaR7nrzhliHj9aVwdQzkdlGd");
+    AV.init("u9Y31GHpeuRSMHBrL2Smhaqu-gzGzoHsz", "o1IcY1StFMumRptFXIj8tEdW");
   } catch(error) {}
   const isExist = (identity) => {
     identity = identity || getRealPath();
@@ -438,6 +460,8 @@ if(true){
     Theme - <a href="https://github.com/dongyuanxin/theme-bmw">BMW</a> | Made With 💗 | Powered by <a href="https://godbmw.com/">GodBMW</a>
     <br>
     
+      <a href="https://www.google.com/analytics/" target="_blank">Google Analytics</a>提供统计服务
+    
   </p>
 </footer>
 
@@ -445,7 +469,7 @@ if(true){
 
 <script>
 const timeToNowDOM = document.querySelector("#time-to-now");
-const startTimestamp = new Date(2018, 1, 10).getTime();
+const startTimestamp = new Date(2019, 4, 30).getTime();
 
 const updateTimeStr = () => {
   let offset = parseInt(
