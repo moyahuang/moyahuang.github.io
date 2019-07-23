@@ -8,12 +8,12 @@
   
   
   
-  <title>第一篇博客：关于hexo的一些命令  | Moya&#39;s Garden</title>
+  <title>创建对象的设计模式 | Moya&#39;s Garden</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="杂七杂八,hexo,">
+    <meta name="keywords" content="JS,设计模式,">
   
 
   <script>
@@ -193,63 +193,76 @@
 
 <div class="post">
   <h1 class="article-title">
-    <span>第一篇博客：关于hexo的一些命令 </span>
+    <span>创建对象的设计模式</span>
   </h1>
   <div class="article-top-meta">
     <span>
       发布 : 
-      2019-05-30
+      2019-06-09
     </span>
     
     
       <span>
-        浏览 : <span class="article-timer" data-identity="第一篇博客：关于hexo的一些命令"></span>
+        浏览 : <span class="article-timer" data-identity="创建对象的设计模式"></span>
       </span>
     
   </div>
 
   
-    <div id="第一篇博客：关于hexo的一些命令" style="margin: 4rem 2px"></div>
-<script async>
-  (function(){
-    let playerTimer = setInterval(function(){
-      if(!window.APlayer){
-        return
-      }
-
-      new APlayer({
-        container: document.getElementById('第一篇博客：关于hexo的一些命令'),
-        theme: '#e96900',
-        listFolded: false,
-        audio: [null]
-      });
-      
-      clearInterval(playerTimer)
-    }, 10);
-  })()
-</script>
-  
 
   <div class="article-content">
     <div class="markdown-body">
-      <h3 id="一、用hexo发布新文章"><a href="#一、用hexo发布新文章" class="headerlink" title="一、用hexo发布新文章"></a>一、用hexo发布新文章</h3><p>进入本地的Hexo文件夹，右键Git Bash，输入以下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;文章标题&quot;</span><br></pre></td></tr></table></figure>
+      <h2 id="1-工厂模式"><a href="#1-工厂模式" class="headerlink" title="1. 工厂模式"></a>1. 工厂模式</h2><p>就是通过一个方法创建拥有相同属性和方法的实例（instance）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> o=<span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    o.name=name;</span><br><span class="line">    o.age=age;</span><br><span class="line">    o.sayName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(o.name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>在项目的\source\_posts新建<code>文章标题.md</code>文件，本人的完整文件目录在G:\Blog\Hexo\source_posts下。</p>
-<h3 id="二、在本地部署网页"><a href="#二、在本地部署网页" class="headerlink" title="二、在本地部署网页"></a>二、在本地部署网页</h3><p>在Git Bash中输入下面的命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g(enerate) #生成</span><br><span class="line">hexo s(erver) #本地发布</span><br></pre></td></tr></table></figure>
+<p>这种方式的缺陷是，无法判定创建出来的对象的类型（这在面向对象的程序设计中很重要）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mary=createPerson(<span class="string">"Mary"</span>, <span class="number">18</span>);</span><br><span class="line"><span class="built_in">console</span>.log(mary <span class="keyword">instanceof</span> createPerson);<span class="comment">//此种方法无法检测类型 总是返回false</span></span><br></pre></td></tr></table></figure>
 
-<p>若无错误，此时可以在浏览器<code>http://localhost:4000</code>访问生成的网页。也可将上面两条命令合并为一条命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -s</span><br></pre></td></tr></table></figure>
+<h2 id="2-构造函数模式"><a href="#2-构造函数模式" class="headerlink" title="2. 构造函数模式"></a>2. 构造函数模式</h2><p>为了解决上面的问题，于是有了构造函数模型。因为构造函数必须属于某个对象，但在对象创建出来之前是不存在的。因此有以下特点：</p>
+<ol>
+<li><p>不需要在构造函数中声明新的对象并返回，而是使用this指针指向其作用域</p>
+</li>
+<li><p>使用关键词new创建新实例</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name=name;</span><br><span class="line">    <span class="keyword">this</span>.age=age;</span><br><span class="line">    <span class="keyword">this</span>.sayName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(o.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="三、将本地的文件同步到GitHub上"><a href="#三、将本地的文件同步到GitHub上" class="headerlink" title="三、将本地的文件同步到GitHub上"></a>三、将本地的文件同步到GitHub上</h3><p>Git Bash中输入下面的命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean #若更换了主题 需要输入此条命令清空缓存</span><br><span class="line">hexo g(enerate) #生成</span><br><span class="line">hexo d(eploay) #部署到GitHub上</span><br></pre></td></tr></table></figure>
+<p>   此时可以通过两种方式判定实例的类型</p>
+<ol>
+<li>实例的constructor属性</li>
+<li>关键词instanceof</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hello=<span class="keyword">new</span> Person(<span class="string">"Hello"</span>,<span class="number">1</span>);</span><br><span class="line"><span class="comment">//1.通过constructor属性</span></span><br><span class="line"><span class="built_in">console</span>.log(hello.constructor == <span class="built_in">Object</span>);<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(hello.constructor == Person);<span class="comment">//true</span></span><br><span class="line"><span class="comment">//2. 通过关键词instanceof</span></span><br><span class="line"><span class="built_in">console</span>.log(hello <span class="keyword">instanceof</span> <span class="built_in">Object</span>);<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(hello <span class="keyword">instanceof</span> Person);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 
-<p>也可将上面两条命令合并为一条</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+<p>但是因为所有对象都继承自Object，所以使用instanceof判断类型更加靠谱。</p>
+<p>但是构造函数模式也有一个问题，每个实例的方法虽然逻辑相似，却和属性一样创建多份。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> henry=<span class="keyword">new</span> Person(<span class="string">"Henry"</span>,<span class="number">18</span>);</span><br><span class="line"><span class="keyword">var</span> jackson=<span class="keyword">new</span> Person(<span class="string">"Jackson"</span>,<span class="number">18</span>);</span><br><span class="line"><span class="built_in">console</span>.log(henry.sayName==jackson.sayName);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
 
-<p><em>友情链接🔗</em></p>
-<p>Hexo文档👉<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a></p>
+<p>可以通过定义全局函数，解决这个问题</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name=name;</span><br><span class="line">    <span class="keyword">this</span>.age=age;</span><br><span class="line">    <span class="keyword">this</span>.sayName=sayName;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayName</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这些全局函数可以被任何对象调用，因此失去面向对象编程的封装性。</p>
+<p>原型模式应运而生！！！</p>
+<h2 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h2><p>每个函数都有一个prototype属性，这个属性是一个指针，指向一个原型对象。这个对象包含所有实例共享的属性和方法。如同其他对象，这个对象也有一个constructor属性，指向其构造函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;<span class="comment">//构造函数</span></span><br><span class="line"></span><br><span class="line">Person.prototype=&#123;<span class="comment">//对象字面量简写</span></span><br><span class="line">    name:<span class="string">"undefined"</span>,</span><br><span class="line">    age:<span class="string">"undefined"</span>,</span><br><span class="line">    sayName:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用原型模式，往往总是会给原型对象属性赋初始值（？）。</p>
+<p>虽然原型对象[[Prototype]]无法访问，两种方法可以确定对象的原型关系</p>
+<ol>
+<li>使用属性prototype的isPrototypeOf()方法</li>
+<li>使用Object.getPrototypeOf()获取对象原型</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person=<span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype.isPrototypeOf(hello));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getPrototypeOf(hello)==Person.prototype);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>注：使用Object.getPrototypeOf()获取对象原型可以实现继承。</p>
+<h3 id="属性在哪里呀"><a href="#属性在哪里呀" class="headerlink" title="属性在哪里呀"></a>属性在哪里呀</h3><p><code>对象.hasOwnProperty(&quot;属性名&quot;)</code>判断某个属性是否在对象中。</p>
+<p><code>in</code>操作符:判断对象是否有某个属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(person.hasOwnProperty(<span class="string">"name"</span>));<span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"name"</span> <span class="keyword">in</span> person);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>？疑问？</p>
+<p>书上的原话是结合in操作符和hasOwnProperty(“属性名”)可以判断属性在对象中还是在原型中，可是还有其他情况吗？属性不是在对象中就是在原型对象中呀？！</p>
+<h3 id="有哪些属性"><a href="#有哪些属性" class="headerlink" title="有哪些属性"></a>有哪些属性</h3><p><code>Object.keys(对象)</code>如果传入的是原型对象，则返回所有原型对象的属性。若是实例对象，则只返回实例属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(Person.prototype));<span class="comment">//[name,age,sayName]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(person))<span class="comment">//返回空数组</span></span><br></pre></td></tr></table></figure>
     </div>
   </div>
   
@@ -260,7 +273,7 @@
         
           本文作者 : MOYA <br>
         
-        原文链接 : <a href>http://moyahuang.github.io/passages/第一篇博客：关于hexo的一些命令/</a><br>
+        原文链接 : <a href>http://moyahuang.github.io/passages/创建对象的设计模式/</a><br>
         版权声明 : 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
         </blockquote>
       </div>
@@ -320,14 +333,14 @@
           <i class="iconfont icon-06tags"></i>标签: 
           
           <span class="span--tag">
-            <a href="/tags/杂七杂八/">
-              #杂七杂八
+            <a href="/tags/JS/">
+              #JS
             </a>
           </span>
           
           <span class="span--tag">
-            <a href="/tags/hexo/">
-              #hexo
+            <a href="/tags/设计模式/">
+              #设计模式
             </a>
           </span>
           
@@ -349,10 +362,16 @@
 
   <nav class="post-navigation">
     
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/passages/第一篇博客：关于hexo的一些命令/" target="_self">第一篇博客：关于hexo的一些命令 </a>
+      </div>
+    
     
       <div class="nav-next">
         下一篇:
-        <a href="/passages/创建对象的设计模式/" target="_self">创建对象的设计模式</a>
+        <a href="/passages/碎碎念念/" target="_self">碎碎念念</a>
         <i class="iconfont icon-next"></i>
       </div>
     
