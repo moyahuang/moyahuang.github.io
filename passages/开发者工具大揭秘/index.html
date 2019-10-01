@@ -8,12 +8,12 @@
   
   
   
-  <title>第一篇博客：关于hexo的一些命令  | Moya&#39;s Secret Garden</title>
+  <title>开发者工具大揭秘 | Moya&#39;s Secret Garden</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="杂七杂八,hexo,">
+    <meta name="keywords" content="工具,">
   
 
   <script>
@@ -193,67 +193,36 @@
 
 <div class="post">
   <h1 class="article-title">
-    <span>第一篇博客：关于hexo的一些命令 </span>
+    <span>开发者工具大揭秘</span>
   </h1>
   <div class="article-top-meta">
     <span>
       发布 : 
-      2019-05-30
+      2019-08-28
     </span>
     
     
       <span>
-        浏览 : <span class="article-timer" data-identity="第一篇博客：关于hexo的一些命令"></span>
+        浏览 : <span class="article-timer" data-identity="开发者工具大揭秘"></span>
       </span>
     
   </div>
 
   
-    <div id="第一篇博客：关于hexo的一些命令" style="margin: 4rem 2px"></div>
-<script async>
-  (function(){
-    let playerTimer = setInterval(function(){
-      if(!window.APlayer){
-        return
-      }
-
-      new APlayer({
-        container: document.getElementById('第一篇博客：关于hexo的一些命令'),
-        theme: '#e96900',
-        listFolded: false,
-        audio: [null]
-      });
-      
-      clearInterval(playerTimer)
-    }, 10);
-  })()
-</script>
-  
 
   <div class="article-content">
     <div class="markdown-body">
-      <h3 id="一、用hexo发布新文章"><a href="#一、用hexo发布新文章" class="headerlink" title="一、用hexo发布新文章"></a>一、用hexo发布新文章</h3><p>进入本地的Hexo文件夹，右键Git Bash，输入以下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;文章标题&quot;</span><br></pre></td></tr></table></figure>
-
-<p>在项目的\source\_posts新建<code>文章标题.md</code>文件，本人的完整文件目录在G:\Blog\Hexo\source_posts下。</p>
-<h3 id="二、在本地部署网页"><a href="#二、在本地部署网页" class="headerlink" title="二、在本地部署网页"></a>二、在本地部署网页</h3><p>在Git Bash中输入下面的命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g(enerate) #生成</span><br><span class="line">hexo s(erver) #本地发布</span><br></pre></td></tr></table></figure>
-
-<p>若无错误，此时可以在浏览器<code>http://localhost:4000</code>访问生成的网页。也可将上面两条命令合并为一条命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -s</span><br></pre></td></tr></table></figure>
-
-<h3 id="三、将本地的文件同步到GitHub上"><a href="#三、将本地的文件同步到GitHub上" class="headerlink" title="三、将本地的文件同步到GitHub上"></a>三、将本地的文件同步到GitHub上</h3><p>Git Bash中输入下面的命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean #若更换了主题 需要输入此条命令清空缓存</span><br><span class="line">hexo g(enerate) #生成</span><br><span class="line">hexo d(eploay) #部署到GitHub上</span><br></pre></td></tr></table></figure>
-
-<p>也可将上面两条命令合并为一条</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-
-<p><strong>日常操作指南</strong></p>
-<ol>
-<li>hexo </li>
-</ol>
-<p><em>友情链接🔗</em></p>
-<p>Hexo文档👉<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a></p>
+      <h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><p><strong>Ctrl + Shift + I(ast)</strong>   打开最近关闭的面板</p>
+<p><strong>Ctrl + Shift + C(康康)</strong>  查看元素</p>
+<p><strong>Ctrl + Shift + (控)J(台)</strong>   打开console</p>
+<h3 id="Console使用"><a href="#Console使用" class="headerlink" title="Console使用"></a>Console使用</h3><p>console.log</p>
+<p>console.warn</p>
+<p>console.table</p>
+<p>console.group console.groupEnd</p>
+<p>console.log(“%c”, “样式”)</p>
+<p>网络请求错误展示 404</p>
+<p>console.time() … console.timeEnd()    花费时间</p>
+<p>console.assert(false, “info”)</p>
     </div>
   </div>
   
@@ -264,7 +233,7 @@
         
           本文作者 : MOYA <br>
         
-        原文链接 : <a href>http://moyahuang.github.io/passages/第一篇博客：关于hexo的一些命令/</a><br>
+        原文链接 : <a href>http://moyahuang.github.io/passages/开发者工具大揭秘/</a><br>
         版权声明 : 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
         </blockquote>
       </div>
@@ -324,14 +293,8 @@
           <i class="iconfont icon-06tags"></i>标签: 
           
           <span class="span--tag">
-            <a href="/tags/杂七杂八/">
-              #杂七杂八
-            </a>
-          </span>
-          
-          <span class="span--tag">
-            <a href="/tags/hexo/">
-              #hexo
+            <a href="/tags/工具/">
+              #工具
             </a>
           </span>
           
@@ -353,12 +316,12 @@
 
   <nav class="post-navigation">
     
-    
-      <div class="nav-next">
-        下一篇:
-        <a href="/passages/创建对象的设计模式/" target="_self">创建对象的设计模式</a>
-        <i class="iconfont icon-next"></i>
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/passages/HTML+CSS定位的七七八八/" target="_self">HTML+CSS定位的七七八八</a>
       </div>
+    
     
   </nav>
 

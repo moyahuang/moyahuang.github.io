@@ -8,12 +8,12 @@
   
   
   
-  <title>第一篇博客：关于hexo的一些命令  | Moya&#39;s Secret Garden</title>
+  <title>继承那些事 | Moya&#39;s Secret Garden</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="杂七杂八,hexo,">
+    <meta name="keywords" content="JS,">
   
 
   <script>
@@ -193,67 +193,47 @@
 
 <div class="post">
   <h1 class="article-title">
-    <span>第一篇博客：关于hexo的一些命令 </span>
+    <span>继承那些事</span>
   </h1>
   <div class="article-top-meta">
     <span>
       发布 : 
-      2019-05-30
+      2019-07-26
     </span>
     
     
       <span>
-        浏览 : <span class="article-timer" data-identity="第一篇博客：关于hexo的一些命令"></span>
+        浏览 : <span class="article-timer" data-identity="继承那些事"></span>
       </span>
     
   </div>
 
   
-    <div id="第一篇博客：关于hexo的一些命令" style="margin: 4rem 2px"></div>
-<script async>
-  (function(){
-    let playerTimer = setInterval(function(){
-      if(!window.APlayer){
-        return
-      }
-
-      new APlayer({
-        container: document.getElementById('第一篇博客：关于hexo的一些命令'),
-        theme: '#e96900',
-        listFolded: false,
-        audio: [null]
-      });
-      
-      clearInterval(playerTimer)
-    }, 10);
-  })()
-</script>
-  
 
   <div class="article-content">
     <div class="markdown-body">
-      <h3 id="一、用hexo发布新文章"><a href="#一、用hexo发布新文章" class="headerlink" title="一、用hexo发布新文章"></a>一、用hexo发布新文章</h3><p>进入本地的Hexo文件夹，右键Git Bash，输入以下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;文章标题&quot;</span><br></pre></td></tr></table></figure>
+      <h2 id="1-原型链"><a href="#1-原型链" class="headerlink" title="1. 原型链"></a>1. 原型链</h2><p>原型链的基本思想就是将子类的原型对象重写为父类的实例。</p>
+<p>下面是原型链的基本模式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;<span class="comment">//1. 定义基类（超类型）属性和方法</span></span><br><span class="line">    <span class="keyword">this</span>.property=<span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line">SuperType.prototype.getSuperTypeProperty=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.property;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;<span class="comment">//2. 定义子类属性</span></span><br><span class="line">    <span class="keyword">this</span>.subproperty=<span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//3. 将子类的原型对象重写为父类实例（父类实例中包含了父类所有属性和方法）</span></span><br><span class="line">SubType.prototype=<span class="keyword">new</span> SuperType();</span><br><span class="line"><span class="comment">//4. 定义子类的原型方法</span></span><br><span class="line">SubType.prototype.getSubTypeProperty=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.subproperty;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> instance=<span class="keyword">new</span> SubType();</span><br><span class="line"><span class="built_in">console</span>.log(instance.getSubTypeProperty());</span><br></pre></td></tr></table></figure>
 
-<p>在项目的\source\_posts新建<code>文章标题.md</code>文件，本人的完整文件目录在G:\Blog\Hexo\source_posts下。</p>
-<h3 id="二、在本地部署网页"><a href="#二、在本地部署网页" class="headerlink" title="二、在本地部署网页"></a>二、在本地部署网页</h3><p>在Git Bash中输入下面的命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g(enerate) #生成</span><br><span class="line">hexo s(erver) #本地发布</span><br></pre></td></tr></table></figure>
-
-<p>若无错误，此时可以在浏览器<code>http://localhost:4000</code>访问生成的网页。也可将上面两条命令合并为一条命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -s</span><br></pre></td></tr></table></figure>
-
-<h3 id="三、将本地的文件同步到GitHub上"><a href="#三、将本地的文件同步到GitHub上" class="headerlink" title="三、将本地的文件同步到GitHub上"></a>三、将本地的文件同步到GitHub上</h3><p>Git Bash中输入下面的命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean #若更换了主题 需要输入此条命令清空缓存</span><br><span class="line">hexo g(enerate) #生成</span><br><span class="line">hexo d(eploay) #部署到GitHub上</span><br></pre></td></tr></table></figure>
-
-<p>也可将上面两条命令合并为一条</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-
-<p><strong>日常操作指南</strong></p>
+<p>注意:</p>
 <ol>
-<li>hexo </li>
+<li><p><strong>此时instance.constructer指向的是SuperType</strong>。因为SubType.prototype被重写了。</p>
+</li>
+<li><p>使用原型链继承时<strong>不能用对象字面量</strong>创建原型方法！</p>
+</li>
 </ol>
-<p><em>友情链接🔗</em></p>
-<p>Hexo文档👉<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a></p>
+<p>原型链的问题(也是原型模式的问题)</p>
+<p><strong>原型属性</strong>会被所有<strong>所有实例</strong>共享，这种共享对<strong>函数</strong>非常合适，对包含<strong>基本值的属性</strong>值也说的过去（因为可以通过在实力上添加同名属性进行覆盖隐藏）。“但是对于引用类型值的属性，就会有问题了”（其实引用类型也可以进行覆盖呀？）。即使这个属性只是在父类的实例当中，也会变成子类的原型属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.property=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">this</span>.colors=[<span class="string">'red'</span>,<span class="string">'green'</span>];<span class="comment">//引用类型值属性</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">SuperType.prototype.getSuperTypeProperty=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.property;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.subproperty=<span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">SubType.prototype=<span class="keyword">new</span> SuperType();</span><br><span class="line"></span><br><span class="line">SubType.prototype.getSubTyperoperty=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.subproperty;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> instance=<span class="keyword">new</span> SubType();</span><br><span class="line">instance.colors.push(<span class="string">"blue"</span>);<span class="comment">//改变其一影响所有子类实例</span></span><br><span class="line"><span class="built_in">console</span>.log(instance.colors);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> instance2=<span class="keyword">new</span> SubType();</span><br><span class="line"><span class="built_in">console</span>.log(instance2.colors);</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-借用构造函数"><a href="#2-借用构造函数" class="headerlink" title="2. 借用构造函数"></a>2. 借用构造函数</h2><p>借用构造函数在子类中调用父类的构造函数。如下所示：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name=name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">    SuperType.call(<span class="keyword">this</span>,name);</span><br><span class="line">    <span class="keyword">this</span>.age=age;<span class="comment">//子类属性一定要后定义 防止被覆盖</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> instance=<span class="keyword">new</span> SubType(<span class="string">"Hello"</span>,<span class="number">12</span>);</span><br><span class="line"><span class="built_in">console</span>.log(instance.name);</span><br></pre></td></tr></table></figure>
+
+<p>优势：可以在子类构造函数中向超类构造函数<strong>传递参数</strong>。</p>
+<p>问题：就像之前介绍创建对象的设计模式中提到过的，都在构造函数中定义属性和方法的话，就无法实现方法复用了。</p>
+<h2 id="3-组合继承"><a href="#3-组合继承" class="headerlink" title="3. 组合继承"></a>3. 组合继承</h2><p>直接看例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name=name;</span><br><span class="line">    <span class="keyword">this</span>.colors=[<span class="string">'red'</span>,<span class="string">'green'</span>,<span class="string">'blue'</span>];</span><br><span class="line">&#125;</span><br><span class="line">SuperType.prototype.sayName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">    SuperType.call(<span class="keyword">this</span>,name);<span class="comment">//借用构造函数</span></span><br><span class="line">    <span class="keyword">this</span>.age=age;</span><br><span class="line">&#125;</span><br><span class="line">SubType.prototype=<span class="keyword">new</span> SuperType();<span class="comment">//原型链</span></span><br><span class="line">SubType.prototype.sayAge=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.age);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> instance=<span class="keyword">new</span> SubType(<span class="string">"Hello"</span>,<span class="number">12</span>);</span><br><span class="line">instance.colors.push(<span class="string">"black"</span>);</span><br><span class="line">instance.sayName();</span><br><span class="line">instance.sayAge();</span><br><span class="line"><span class="built_in">console</span>.log(instance.colors);<span class="comment">//[ 'red', 'green', 'blue', 'black' ]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> instance2=<span class="keyword">new</span> SubType(<span class="string">"World"</span>,<span class="number">12</span>);</span><br><span class="line">instance2.sayName();</span><br><span class="line">instance2.sayAge();</span><br><span class="line"><span class="built_in">console</span>.log(instance2.colors);<span class="comment">//[ 'red', 'green', 'blue' ]</span></span><br></pre></td></tr></table></figure>
     </div>
   </div>
   
@@ -264,7 +244,7 @@
         
           本文作者 : MOYA <br>
         
-        原文链接 : <a href>http://moyahuang.github.io/passages/第一篇博客：关于hexo的一些命令/</a><br>
+        原文链接 : <a href>http://moyahuang.github.io/passages/继承那些事/</a><br>
         版权声明 : 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
         </blockquote>
       </div>
@@ -324,14 +304,8 @@
           <i class="iconfont icon-06tags"></i>标签: 
           
           <span class="span--tag">
-            <a href="/tags/杂七杂八/">
-              #杂七杂八
-            </a>
-          </span>
-          
-          <span class="span--tag">
-            <a href="/tags/hexo/">
-              #hexo
+            <a href="/tags/JS/">
+              #JS
             </a>
           </span>
           
@@ -353,10 +327,16 @@
 
   <nav class="post-navigation">
     
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/passages/沉溺于无知的世界，原地踏步/" target="_self">沉溺于无知的世界，原地踏步</a>
+      </div>
+    
     
       <div class="nav-next">
         下一篇:
-        <a href="/passages/创建对象的设计模式/" target="_self">创建对象的设计模式</a>
+        <a href="/passages/JS常见迷惑行为/" target="_self">前端常见迷惑行为</a>
         <i class="iconfont icon-next"></i>
       </div>
     
