@@ -222,7 +222,9 @@
       <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>层叠样式表（Cascading Style Sheets，缩写CSS)是用来描述HTML或XML文档呈现的<strong>样式表</strong>语言。</p>
 <h3 id="替换元素和非替换元素"><a href="#替换元素和非替换元素" class="headerlink" title="替换元素和非替换元素"></a>替换元素和非替换元素</h3><p>所谓<strong>替换元素</strong>，举个例子对于标签<code>&lt;img src=&quot;logo.png&quot;&gt;</code>，用户代理（即浏览器）展现的不是文档自身的内容，而是指向了一个地址，最终渲染的时候，由用户代理对标签所占据的位置进行了内容替换。</p>
 <p>相对的，HTML中大多数的元素都是<strong>非替换元素</strong>，例如h1, p, ul等，呈现在用户代理页面上的就是文档中元素本身所代表的内容。</p>
-<h3 id="HTML和XHTML"><a href="#HTML和XHTML" class="headerlink" title="HTML和XHTML"></a>HTML和XHTML</h3><p>自网页的诞生以来，HTML就出现了。<strong>HTML</strong>是一种用来描述标题、段落、列表、超链接的<strong>超文本结构化语言</strong>。所谓超文本其实是指比起单纯的文本，借助HTML文档中的超链接，一个文档可以跳转至另外的文档中。</p>
+<h3 id="HTML和XHTML"><a href="#HTML和XHTML" class="headerlink" title="HTML和XHTML"></a>HTML和XHTML</h3><p>自网页的诞生以来，HTML就出现了。<strong>HTML</strong>是一种用来描述标题、段落、列表、超链接的<strong>超文本结构化标记语言</strong>。所谓超文本（hypertext)其实是指比起单纯的文本，借助HTML文档中的超链接，一个文档可以跳转至另外的文档中。</p>
+<p>XHTML于2000年成为W3C标准，是更严格更纯净的HTML版本。:question:<strong>它几乎等同于HTML4.01，但是是作为一种XML应用被重新定义的HTML。</strong></p>
+<p>(既然HTML和XML的区别在于HTML用来显示数据，XML用于存储传输数据，为什么要以XML应用的方式重新定义HTML)</p>
 <h2 id="引用样式表"><a href="#引用样式表" class="headerlink" title="引用样式表"></a>引用样式表</h2><h3 id="link标记"><a href="#link标记" class="headerlink" title="link标记"></a>link标记</h3><p>基本目的：将文档与文档进行关联。目前一般用于关联<strong>外部样式表</strong>（external style sheet)。</p>
 <p>用法：一定要写在head元素中，不然无法被识别为样式表。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> </span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag"><span class="attr">rel</span>=<span class="string">"stylesheet"</span></span></span><br><span class="line"><span class="tag"><span class="attr">type</span>=<span class="string">"text/css"</span></span></span><br><span class="line"><span class="tag"><span class="attr">href</span>=<span class="string">"location.css"</span> //绝对或相对地址</span></span><br><span class="line"><span class="tag"><span class="attr">media</span>=<span class="string">"all, screen, print,projection"</span> //三个常用的属性，一个<span class="attr">oepra</span>支持的属性</span></span><br><span class="line"><span class="tag"><span class="attr">title</span>=<span class="string">"Default"</span> //仅用于设定候选样式表，现在不经常用。想要设置永久样式表，就不用这个属性</span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
@@ -294,8 +296,147 @@
 </ul>
 <p>:smile:<strong><code>a:focus</code> vs. <code>a:active</code></strong></p>
 <p>对于前者，鼠标只要不点击其他地方，样式就一直生效。对于后者，只有被点击时，样式才会生效。</p>
-<p>:question:上面这些伪类选择器的顺序推荐是<code>link-visited-focus-hover-active</code>，至于为什么用这种顺序或者为什么有时故意要忽略这个顺序，本人目前还不知道。</p>
-<h4 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h4><p>:smile: <a href="#pseudo">伪类 vs. 伪元素</a></p>
+<p>:question:上面这些伪类选择器的顺序推荐是<code>link-visited-focus-hover-active</code>，至于为什么用这种顺序或者为什么有时故意要忽略这个顺序，可以看<a href="#link">这里</a>。</p>
+<p>伪类选择器可以进行串联的，例如可以这么写</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:link</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">:active</span>&#123;<span class="attribute">color</span>: orange;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h4><p>伪类为锚的一些动态添加假想类，伪元素在文档中插入假想的元素，为其添加某种效果。</p>
+<ul>
+<li><code>:：first-letter</code></li>
+<li><code>:：first-line</code></li>
+</ul>
+<p>但是伪元素选择器可以定义的属性是有限的。具体可以参见 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/::first-line" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/CSS/::first-line</a>，其中包括所有字体、背景相关、color、text-，letter-等。</p>
+<p>想要在元素前后插入内容可以使用下面两个伪元素选择器</p>
+<ul>
+<li><code>::before</code></li>
+<li><code>::after</code></li>
+</ul>
+<p>插入方式，见下面的例子：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h2</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">"&#123;&#123;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：伪元素必须放在出现该伪元素的选择器的最后。例如:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p::first-line em&#123;&#125; //错误</span><br><span class="line">p em::first-line&#123;&#125; //正确</span><br></pre></td></tr></table></figure>
+
+<p>:smile: <a href="#pseudo">伪类 vs. 伪元素</a></p>
+<h3 id="哪组样式规则胜出"><a href="#哪组样式规则胜出" class="headerlink" title="哪组样式规则胜出"></a>哪组样式规则胜出</h3><h4 id="特殊性"><a href="#特殊性" class="headerlink" title="特殊性"></a>特殊性</h4><p>同一个元素可能由多种选择器、多种规则来选择。最后哪一组规则生效就成了问题，看下面几个例子：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//简单点的</span><br><span class="line"><span class="selector-tag">h1</span>&#123;<span class="attribute">color</span>:red;&#125;</span><br><span class="line"><span class="selector-tag">body</span> <span class="selector-tag">h1</span>&#123;<span class="attribute">color</span>:green;&#125;</span><br><span class="line"></span><br><span class="line">//复杂点的</span><br><span class="line"><span class="selector-tag">html</span> &gt; <span class="selector-tag">body</span> <span class="selector-tag">table</span> <span class="selector-tag">tr</span><span class="selector-attr">[id="totals"]</span> <span class="selector-tag">td</span> <span class="selector-tag">ul</span>&gt;<span class="selector-tag">li</span>&#123;<span class="attribute">color</span>: maroon;&#125;</span><br><span class="line"><span class="selector-tag">li</span><span class="selector-id">#answer</span>&#123;<span class="attribute">color</span>:navy;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个问题可以通过计算<strong>特殊性值</strong>(specificity)来解决，该值分为四个部分，例如：0, 0, 0, 0。其中各个部分的值为：<strong>内联样式，id值，属性、属性选择、伪类值，元素、伪元素值</strong>。（<a href="#combinator">结合符和通配选择符</a>对特殊性没有任何贡献，即0特殊性）</p>
+<p>下面举几个例子：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* specificity = 0,0,2,2*/</span></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.bright</span> <span class="selector-tag">em</span><span class="selector-class">.dark</span>&#123; <span class="attribute">color</span>: maroon;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* specificity = 0,1,1,1 */</span></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-id">#sidebar</span> *<span class="selector-attr">[href]</span> &#123;<span class="attribute">color</span>: silver;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>特殊性的比较是从左到右排序的。所以0,1,0,1特殊性值比0,0,1,7高。</p>
+</li>
+<li><p>id选择器和指定id属性的选择器在特殊性值上有所不同，前者贡献0，1，0，0，后者贡献0，0，1，0</p>
+</li>
+<li><p>四位特殊值是CSS2.1新增的，CSS2中内联样式的特殊性和ID选择器特殊性相同。</p>
+</li>
+</ul>
+<h4 id="重要声明"><a href="#重要声明" class="headerlink" title="重要声明"></a>重要声明</h4><p>重要声明（!important)用于声明的最后，及分号的前面。这对于类似于font，border类似多个属性的简写（shorthand)非常重要，否则样式规则将失效。<strong>重要声明的规则的优先级高于特殊性规则。</strong></p>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>对某个元素应用的样式，还会应用到它的后代元素，这就是所谓的<strong>继承机制</strong>。一般只需要根据常识记住哪些属性是不能被继承的，例如：大多数框模型属性（内外边距、背景和边框），因为这些属性一旦被继承，文档会变得很乱。</p>
+<p><strong>继承的值没有特殊性。</strong></p>
+<p>:smile: 0特殊性 vs. 没有特殊性</p>
+<p>对于下面的HTML元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;Central &lt;em&gt;Park&lt;/em&gt;&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+
+<p>应用一下的样式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">h1</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>前面说过<a id="combinator">结合符和通配选择器</a>为0特殊性，但是0特殊性与没有特殊性不同，0特殊性的优先级要大于没有特殊性。因此上面这个例子中，em元素的颜色不是蓝色而是红色。效果如下：</p>
+<p><img src="/passages/CSS简约手册/inheritance.png" alt="inheritance"></p>
+<h4 id="层叠"><a href="#层叠" class="headerlink" title="层叠"></a>层叠</h4><p>当两个规则的特殊性相同时，用户代理会选择顺序靠后的规则。CSS2.1的层叠规则，前面或多或少交待了一些。这里再简单增加一些原理性的内容并对层叠规则做个总结（以单个元素为例）</p>
+<p>对于下面的HTML元素</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"header"</span>&gt;</span>Youth is everything!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>声明下面的CSS规则</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">color</span>: gray;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">h1</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">background-color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span><span class="selector-class">.header</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: lightgreen;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">24px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>用户代理将上面的规则解组为</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*&#123;<span class="attribute">color</span>: gray;&#125;</span><br><span class="line"><span class="selector-tag">h1</span>&#123;<span class="attribute">color</span>:white;&#125;</span><br><span class="line"><span class="selector-tag">h1</span>&#123;<span class="attribute">background-color</span>:black;&#125;</span><br><span class="line"><span class="selector-tag">h1</span><span class="selector-class">.header</span>&#123;<span class="attribute">color</span>:lightgreen;&#125;</span><br><span class="line"><span class="selector-tag">h1</span><span class="selector-class">.header</span>&#123;<span class="attribute">font-size</span>: <span class="number">24px</span> <span class="meta">!important</span>;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对于某一元素解组后的规则，用户代理会按序应用下面的<strong>层叠规则</strong>：</p>
+<ol>
+<li>先对所有<strong>重要声明</strong>（可能有三种来源创作者即开发者，读者和用户代理）进行排序，有多种来源的同一属性的重要声明，优先级如下：读者&gt;开发者&gt;用户代理。</li>
+<li>按<strong>特殊性</strong>对所有声明排序，特殊性高的规则优先级高。</li>
+<li>按出现<strong>顺序</strong>给所有声明排序，排序靠后的优先级高。</li>
+</ol>
+<p>注意：只有对于<strong>重要声明</strong>，优先级<strong>读者&gt;开发者</strong>才成立。对于<strong>一般的声明</strong>，优先级<strong>创作者&gt;读者</strong>。因此声明的权重可总结如下：</p>
+<ol>
+<li>读者的重要声明</li>
+<li>创作人员的重要声明</li>
+<li>创作人员的正常声明</li>
+<li>读者的正常声明</li>
+<li>用户代理声明</li>
+</ol>
+<p>正是因为顺序对于样式规则的影响，因此出现了推荐的<a id="link">链接样式顺序</a>为link-visited-hover-active(<strong>LoVeHA</strong>)，例如对于下面的链接样式：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:link</span>&#123;<span class="attribute">color</span>: blue;&#125;</span><br><span class="line"><span class="selector-pseudo">:visited</span>&#123;<span class="attribute">color</span>: purple;&#125;</span><br><span class="line"><span class="selector-pseudo">:hover</span>&#123;<span class="attribute">color</span>: red;&#125;</span><br><span class="line"><span class="selector-pseudo">:active</span>&#123;<span class="attribute">color</span>: orange;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这些伪类选择器的特殊性值都相同，因此顺序成了声明是否生效的重要因素。对于未访问的链接与:link, :hover, :active这三个选择器有关，如果调换任意顺序，某一个规则就无法生效(具体这里就不再阐述)。访问过的链接与之同理。不过:link和:visited这两个的顺序可以任意调换。</p>
+<h3 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h3><h4 id="绝对长度单位"><a href="#绝对长度单位" class="headerlink" title="绝对长度单位"></a>绝对长度单位</h4><p>英寸(in)，厘米(cm)，毫米(mm)，点(pt)，派卡(pc)</p>
+<p>一般用于打印文档，web设计中一般不用绝对度量。  </p>
+<h4 id="相对长度单位"><a href="#相对长度单位" class="headerlink" title="相对长度单位"></a>相对长度单位</h4><ul>
+<li><strong>em</strong> em-height 相对于元素font-size的单位</li>
+<li>ex x-height 相对于某字体字母小写x的单位（目前接受度不高）</li>
+<li><strong>px</strong> 像素点</li>
+</ul>
+<h3 id="字体-font"><a href="#字体-font" class="headerlink" title="字体(font-)"></a>字体(font-)</h3><p>所有字体基本可以分为以下几种<strong>通用字体类型</strong>（generic-family)</p>
+<table>
+<thead>
+<tr>
+<th>类型名称</th>
+<th>解释</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>serif</td>
+<td>有衬线</td>
+<td>Times, Georgia, New Century Schoolbook</td>
+</tr>
+<tr>
+<td>sans-serif</td>
+<td>无衬线</td>
+<td>Helvetica, Geneva, Verdana, Arial, Univers</td>
+</tr>
+<tr>
+<td>monospace</td>
+<td>等宽</td>
+<td>Courier, Courier New, Andale Mono</td>
+</tr>
+<tr>
+<td>cursive</td>
+<td>手写体</td>
+<td>Zapf Chancery, Author, Comic Sans</td>
+</tr>
+<tr>
+<td>fantasy</td>
+<td>无法划分到其他类别的字体</td>
+<td>Western, Woodblock, Klingon</td>
+</tr>
+</tbody></table>
+<p>如果你希望文档使用一种sans-serif类型的字体，但是并不关心具体哪种字体，用户代理会自动为你选择一种(例如Helvetica)。</p>
+<p>CSS权威指南指出（当然是针对英文字体）一般情况下，段落大部分使用某种serif字体，标题使用sans-serif字体。</p>
+<p>对于字体，<strong>常使用的属性</strong>包括<code>font-family, font-weight，font-style，font-size</code>, 下面是一个具体的例子。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">    font-family：Times, TimesNR, "New Century Schoolbook", Georgia, "New York", serif;</span><br><span class="line">    font-weight: normal | bold | bolder | lighter | [100,...,900];</span><br><span class="line">    font-style: italic | oblique | norma; //oblique为倾斜体</span><br><span class="line">    font-size: xx-small | x-small | small | medium | large | x-large | xx-large | smaller 				 | larger | &lt;length&gt; | &lt;percentage&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果想保障字体在各种页面上的显示效果一致，可以尽可能多地列出样式比较相近的字体，最后一定把通用样式类型列举出来作为兜底。</p>
+<p>其他不太常用的</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-variant: small-caps | normal</span><br></pre></td></tr></table></figure>
+
+<p><strong>对于简写属性font</strong>，font-size和font-family是必需的，且顺序不能变，如果声明了line-height属性，顺序应该在font-size之后，并用斜线分割，例如</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h2</span>&#123;<span class="attribute">font</span>: bold italic <span class="number">200%</span>/<span class="number">1.2</span> sans-serif;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="文本属性（text-）"><a href="#文本属性（text-）" class="headerlink" title="文本属性（text-）"></a>文本属性（text-）</h3><ul>
+<li><p><code>text-indent</code></p>
+<p>值：<length> | <perceitage></perceitage></length></p>
+<p>用法：只能用于块级元素，可继承。可以使用负值。</p>
+<h4 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h4><h5 id="水平对齐"><a href="#水平对齐" class="headerlink" title="水平对齐"></a>水平对齐</h5></li>
+<li><p><code>text-align</code></p>
+<p>值：left | center | right | justify </p>
+<p>用法：只能用于块级元素，只影响内容（而center元素还能将元素居中）</p>
+<h5 id="垂直对齐"><a href="#垂直对齐" class="headerlink" title="垂直对齐"></a>垂直对齐</h5></li>
+</ul>
 <h2 id="其他待编辑内容："><a href="#其他待编辑内容：" class="headerlink" title="其他待编辑内容："></a>其他待编辑内容：</h2><ol>
 <li>CSS历史：mozilla/netscaper…</li>
 <li>浏览器兼容性参考：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/CSS</a></li>
