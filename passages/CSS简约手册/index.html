@@ -321,7 +321,7 @@
 <h3 id="哪组样式规则胜出"><a href="#哪组样式规则胜出" class="headerlink" title="哪组样式规则胜出"></a>哪组样式规则胜出</h3><h4 id="特殊性"><a href="#特殊性" class="headerlink" title="特殊性"></a>特殊性</h4><p>同一个元素可能由多种选择器、多种规则来选择。最后哪一组规则生效就成了问题，看下面几个例子：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//简单点的</span><br><span class="line"><span class="selector-tag">h1</span>&#123;<span class="attribute">color</span>:red;&#125;</span><br><span class="line"><span class="selector-tag">body</span> <span class="selector-tag">h1</span>&#123;<span class="attribute">color</span>:green;&#125;</span><br><span class="line"></span><br><span class="line">//复杂点的</span><br><span class="line"><span class="selector-tag">html</span> &gt; <span class="selector-tag">body</span> <span class="selector-tag">table</span> <span class="selector-tag">tr</span><span class="selector-attr">[id="totals"]</span> <span class="selector-tag">td</span> <span class="selector-tag">ul</span>&gt;<span class="selector-tag">li</span>&#123;<span class="attribute">color</span>: maroon;&#125;</span><br><span class="line"><span class="selector-tag">li</span><span class="selector-id">#answer</span>&#123;<span class="attribute">color</span>:navy;&#125;</span><br></pre></td></tr></table></figure>
 
-<p>这个问题可以通过计算<strong>特殊性值</strong>(specificity)来解决，该值分为四个部分，例如：0, 0, 0, 0。其中各个部分的值为：<strong>内联样式，id值，属性、属性选择、伪类值，元素、伪元素值</strong>。（<a href="#combinator">结合符和通配选择符</a>对特殊性没有任何贡献，即0特殊性）</p>
+<p>这个问题可以通过计算<strong>特殊性值</strong>(specificity)来解决，该值分为四个部分，例如：0, 0, 0, 0。其中各个部分的值为：<strong>内联样式，(id值，属性、属性选择、伪类值)，(元素、伪元素值)</strong>。（<a href="#combinator">结合符和通配选择符</a>对特殊性没有任何贡献，即0特殊性）</p>
 <p>下面举几个例子：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* specificity = 0,0,2,2*/</span></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.bright</span> <span class="selector-tag">em</span><span class="selector-class">.dark</span>&#123; <span class="attribute">color</span>: maroon;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* specificity = 0,1,1,1 */</span></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-id">#sidebar</span> *<span class="selector-attr">[href]</span> &#123;<span class="attribute">color</span>: silver;&#125;</span><br></pre></td></tr></table></figure>
 
@@ -378,9 +378,9 @@
 <h4 id="相对长度单位"><a href="#相对长度单位" class="headerlink" title="相对长度单位"></a>相对长度单位</h4><ul>
 <li><strong>em</strong> em-height 相对于元素font-size的单位</li>
 <li>ex x-height 相对于某字体字母小写x的单位（目前接受度不高）</li>
-<li><strong>px</strong> 像素点</li>
+<li><strong>px</strong> 像素点<h3 id="字体和文本属性"><a href="#字体和文本属性" class="headerlink" title="字体和文本属性"></a>字体和文本属性</h3><h4 id="字体属性-font"><a href="#字体属性-font" class="headerlink" title="字体属性(font-)"></a>字体属性(font-)</h4></li>
 </ul>
-<h3 id="字体-font"><a href="#字体-font" class="headerlink" title="字体(font-)"></a>字体(font-)</h3><p>所有字体基本可以分为以下几种<strong>通用字体类型</strong>（generic-family)</p>
+<p>所有字体基本可以分为以下几种<strong>通用字体类型</strong>（generic-family)</p>
 <table>
 <thead>
 <tr>
@@ -427,7 +427,7 @@
 <p><strong>对于简写属性font</strong>，font-size和font-family是必需的，且顺序不能变，如果声明了line-height属性，顺序应该在font-size之后，并用斜线分割，例如</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h2</span>&#123;<span class="attribute">font</span>: bold italic <span class="number">200%</span>/<span class="number">1.2</span> sans-serif;&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="文本属性（text-）"><a href="#文本属性（text-）" class="headerlink" title="文本属性（text-）"></a>文本属性（text-）</h3><ul>
+<h4 id="文本属性（text-）"><a href="#文本属性（text-）" class="headerlink" title="文本属性（text-）"></a>文本属性（text-）</h4><ul>
 <li><p><code>text-indent</code></p>
 <p>值：<length> | <perceitage></perceitage></length></p>
 <p>用法：只能用于块级元素，可继承。可以使用负值。</p>
@@ -445,12 +445,42 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">word-spacing: &lt;length&gt; | normal</span><br><span class="line">letter-spacing: &lt;length&gt; | normal</span><br></pre></td></tr></table></figure>
 
 <p>其他</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">text-decoration: none | [underline || overline || line-through || blink]</span><br><span class="line">text-transform: uppercase | lowercase | capitalize</span><br><span class="line"><span class="selector-tag">text-shadow</span>: ...</span><br><span class="line"><span class="selector-tag">white-space</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">text-decoration: none | [underline || overline || line-through || blink]</span><br><span class="line">text-transform: uppercase | lowercase | capitalize</span><br><span class="line"><span class="selector-tag">text-shadow</span>: ...</span><br><span class="line">white-space: pre-line | normal | nowrap | pre | pre-wrap</span><br></pre></td></tr></table></figure>
 
+<p>尽管<strong>text-decoration</strong>这个属性不会遗传，但是对于下面的HTML元素，下划线仍然会穿过子元素</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">p&#123;</span><br><span class="line">    color: tomato;</span><br><span class="line">    text-decoration: underline;</span><br><span class="line">&#125;</span><br><span class="line">strong&#123;</span><br><span class="line">    color: gray;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    This paragraph has no meaning, and is created for testing.</span><br><span class="line">    <span class="tag">&lt;<span class="name">strong</span>&gt;</span>This paragraph has no meaning, <span class="tag">&lt;/<span class="name">strong</span>&gt;</span>and is created for testing.</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-
+<p>效果如下</p>
+<p><img src="/passages/CSS简约手册/text.png" alt="text"></p>
 </li>
 </ul>
+<h3 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h3><p>CSS假定每个元素都会生成一个矩形的元素框，这个内容框中心有一个内容区，围绕这个内容区分别有可选（宽度可设为0）的内边距、边框和外边距。</p>
+<h4 id="水平格式化"><a href="#水平格式化" class="headerlink" title="水平格式化"></a>水平格式化</h4><p>影响元素框水平宽度的属性依次包括margin-left, border-left, padding-left, width, padding-right, border-right, margin-right。  <strong>7个水平属性的总和等于父元素内容块宽度width</strong>。这7大属性中只有内容区和外边距的属性值可以设置为auto，其他属性默认宽度为0或必须设为特定值。</p>
+<p>当水平宽度必须满足400px，外边距和内容区的值都为100px时，此时用户代理会将margin-right（对于从左到右读的语言）自动重置为auto。</p>
+<blockquote>
+<p>这就引出了将元素居中的方法：左右边距都设置为相等的长度。</p>
+<p>注意text-align属性只能应用于块级元素的内联内容，而并不能将这个元素居中。</p>
+</blockquote>
+<p><strong>负外边距</strong></p>
+<p>外边距的值可以为负（内边距、边框和内容都不能为负），看到下面这个例子</p>
+<p class="codepen" data-height="265" data-theme-id="0" data-default-tab="css,result" data-user="moyahuang" data-slug-hash="xxxVjjv" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="xxxVjjv">
+  <span>See the Pen <a href="https://codepen.io/moyahuang/pen/xxxVjjv" target="_blank" rel="noopener">
+  xxxVjjv</a> by moyahuang (<a href="https://codepen.io/moyahuang" target="_blank" rel="noopener">@moyahuang</a>)
+  on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<p>根据公式20px+()-50px=200px, p元素的内容框的宽度为230px，超出了父元素的宽度。</p>
+<p>设置负外边距不仅可能会超过父元素的边框，还可能会超过浏览器窗口的边界</p>
+<p class="codepen" data-height="265" data-theme-id="0" data-default-tab="css,result" data-user="moyahuang" data-slug-hash="xxxVjjv" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="xxxVjjv">
+  <span>See the Pen <a href="https://codepen.io/moyahuang/pen/xxxVjjv" target="_blank" rel="noopener">
+  xxxVjjv</a> by moyahuang (<a href="https://codepen.io/moyahuang" target="_blank" rel="noopener">@moyahuang</a>)
+  on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+
 <h2 id="其他待编辑内容："><a href="#其他待编辑内容：" class="headerlink" title="其他待编辑内容："></a>其他待编辑内容：</h2><ol>
 <li>CSS历史：mozilla/netscaper…</li>
 <li>浏览器兼容性参考：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/CSS</a></li>
