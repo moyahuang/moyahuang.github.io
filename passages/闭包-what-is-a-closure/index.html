@@ -8,12 +8,12 @@
   
   
   
-  <title>前端常见迷惑行为 | Moya&#39;s Secret Garden</title>
+  <title>闭包 | what is a closure | Moya&#39;s Secret Garden</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="前端,JS,CSS,">
+    <meta name="keywords" content="JS,">
   
 
   <script>
@@ -193,24 +193,17 @@
 
 <div class="post">
   <h1 class="article-title">
-    <span>前端常见迷惑行为</span>
+    <span>闭包 | what is a closure</span>
   </h1>
   <div class="article-top-meta">
     <span>
       发布 : 
-      2019-08-19
+      2019-11-10
     </span>
     
-      <span>
-        分类 : 
-          <a href="/categories/前端/">
-            前端
-          </a>
-      </span>
-    
     
       <span>
-        浏览 : <span class="article-timer" data-identity="JS常见迷惑行为"></span>
+        浏览 : <span class="article-timer" data-identity="闭包-what-is-a-closure"></span>
       </span>
     
   </div>
@@ -219,21 +212,25 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      <h3 id="JSX中返回方法，而不是语句"><a href="#JSX中返回方法，而不是语句" class="headerlink" title="JSX中返回方法，而不是语句"></a>JSX中返回方法，而不是语句</h3><p>正确的写法</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div onClick=&#123;()=&gt;alert(<span class="string">"click"</span>)&#125;&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+      <h3 id="什么叫闭包"><a href="#什么叫闭包" class="headerlink" title="什么叫闭包"></a>什么叫闭包</h3><p>对于闭包，MDN上的解释是这样的</p>
+<blockquote>
+<p>A <strong>closure</strong> is the combination of a function bundled together (enclosed) with references to its surrounding state (the <strong>lexical environment</strong>). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.</p>
+</blockquote>
+<p>也就是说，任何一个方法创建后，闭包就会被创建。一个闭包是一个函数和它的词法环境（即该方法创建时所处的作用域的所有资源）</p>
+<p>要理解什么是闭包，先看下面两个例子：</p>
+<p>例一：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">"Mozilla"</span>; <span class="comment">// name is a local variable created by init</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">displayName</span>(<span class="params"></span>) </span>&#123; <span class="comment">// displayName() is the inner function, a closure</span></span><br><span class="line">        alert (name); <span class="comment">// displayName() uses variable declared in the parent function    </span></span><br><span class="line">    &#125;</span><br><span class="line">    displayName();    </span><br><span class="line">&#125;</span><br><span class="line">init();</span><br></pre></td></tr></table></figure>
 
-<p>错误的写法</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div onClick=&#123;alert(<span class="string">"click"</span>)&#125;&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述代码的效果不须我在这里赘言。函数displayName可以访问其外部函数的变量name，因此其弹出的警示框内容为name的值”mozilla”。</p>
+<p>例二：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeFunc</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> name = <span class="string">'Mozilla'</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">displayName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(name);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> displayName;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myFunc = makeFunc();</span><br><span class="line">myFunc();</span><br></pre></td></tr></table></figure>
 
-<p>上面这种写法会造成每次重载页面时调用onClick的语句</p>
-<h3 id="伪选择器-p-first-child"><a href="#伪选择器-p-first-child" class="headerlink" title="伪选择器 p:first-child"></a>伪选择器 p:first-child</h3><p>表示作为某元素的第一个子元素的元素</p>
-<p>例如：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>使用下面的CSS语句会将样式应用到<code>hello world</code></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:first-child</span>&#123;	</span><br><span class="line">	<span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>### </p>
+<p>JS的闭包特性可以从上面这个栗子中得到体现。因为通常来说，方法调用后（makeFunc())，方法内创建的所有资源也会随之销毁。但是当方法displayName作为makeFunc的返回值被传递给myFunc后，我们发现调用myFunc的效果与例1相同。这里就足以说明在JS中，不仅是displayName方法本身被返回，其所在词法环境（我想说人话，但还是术语比较高效）也被返回，因此警示框仍正常提示“Mozilla”。</p>
+<h3 id="闭包的一些具体用例"><a href="#闭包的一些具体用例" class="headerlink" title="闭包的一些具体用例"></a>闭包的一些具体用例</h3><p>用例1 调整网页字体大小</p>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures</a></li>
+</ol>
     </div>
   </div>
   
@@ -244,7 +241,7 @@
         
           本文作者 : MOYA <br>
         
-        原文链接 : <a href>http://moyahuang.github.io/passages/JS常见迷惑行为/</a><br>
+        原文链接 : <a href>http://moyahuang.github.io/passages/闭包-what-is-a-closure/</a><br>
         版权声明 : 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
         </blockquote>
       </div>
@@ -309,12 +306,6 @@
             </a>
           </span>
           
-          <span class="span--tag">
-            <a href="/tags/CSS/">
-              #CSS
-            </a>
-          </span>
-          
         
       </span>
     </div>
@@ -336,15 +327,9 @@
       <div class="nav-pre">
         <i class="iconfont icon-prev"></i>
         上一篇:
-        <a href="/passages/继承那些事/" target="_self">继承那些事</a>
+        <a href="/passages/Video-Traking-Andrew-Ng-Machine-Learningg/" target="_self">Video Traking--Andrew Ng: Machine Learningg</a>
       </div>
     
-    
-      <div class="nav-next">
-        下一篇:
-        <a href="/passages/HTML+CSS定位的七七八八/" target="_self">HTML+CSS定位的七七八八</a>
-        <i class="iconfont icon-next"></i>
-      </div>
     
   </nav>
 

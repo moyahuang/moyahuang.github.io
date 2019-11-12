@@ -213,17 +213,89 @@
   <div class="article-content">
     <div class="markdown-body">
       <h2 id="Objects"><a href="#Objects" class="headerlink" title="Objects"></a>Objects</h2><ul>
+<li>what is an object?</li>
 <li>simple types of JS</li>
 <li>why are numbers, strings and booleans object-like?</li>
 <li>how to add a create method to the Object function?</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="built_in">Object</span>.create !== <span class="string">'function'</span>)&#123;</span><br><span class="line">    <span class="built_in">Object</span>.create=<span class="function"><span class="keyword">function</span>(<span class="params">o</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> F=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">        F.prototype=o;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>what is an object literal?</li>
+</ul>
+<h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h2><ul>
+<li>what is the difference between a function and an object</li>
+<li>what is a <code>function literal</code></li>
+<li>what is <code>anonymous</code> function</li>
+<li>what is a <code>closure</code></li>
+<li>what are the two additional parameters that a function has</li>
+<li>what determines the value of <code>this</code> parameter </li>
+<li>what are the four patterns of invocation</li>
+</ul>
+<h4 id="Method-invocation-pattern"><a href="#Method-invocation-pattern" class="headerlink" title="Method invocation pattern"></a>Method invocation pattern</h4><p>Method invocation pattern is a method that is defined as a <strong>property</strong> of an object, for example</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject=&#123;</span><br><span class="line">    value: <span class="number">0</span>,</span><br><span class="line">    increment: <span class="function"><span class="keyword">function</span>(<span class="params">inc</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.value+=<span class="keyword">typeof</span> inc===<span class="string">'number'</span>?inc:<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>And the methods is invoked when using dot expression or [subscript] expression, like this</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//invocation method one</span></span><br><span class="line">myObject.increment();</span><br><span class="line"></span><br><span class="line"><span class="comment">//invacation method two</span></span><br><span class="line">myObject[<span class="string">'increment'</span>](<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<p>The parameter <code>this</code> is only bound when the function is invoked , also referred as <strong>late binding</strong>. Methods can use this to access the object context so that it can retrieve the values from the object or modify the object.</p>
+<h4 id="Function-invocation-pattern"><a href="#Function-invocation-pattern" class="headerlink" title="Function invocation pattern?"></a>Function invocation pattern?</h4><p>When a function is invoked in this way</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum=add(<span class="number">1</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<p><code>this</code> is bound to the <strong>global</strong> object, which is a <strong>design error</strong> of the language.</p>
+<p>But this is not expected when the function is used as a inner function. You suppose <code>this</code> is pointed to the outer function, but it is not.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value=<span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> myNum=&#123;</span><br><span class="line">    value: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line">myNum.double=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> helper=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.value=add(<span class="keyword">this</span>.value, <span class="keyword">this</span>.value);<span class="comment">//this here indicates the global object</span></span><br><span class="line">    &#125;</span><br><span class="line">    helper();</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(myNum.value); <span class="comment">//4</span></span><br></pre></td></tr></table></figure>
+
+<p>So the situation above is not what we wanted, we can implement a simple workaround technique like this</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">myNum.double=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> that=<span class="keyword">this</span>; <span class="comment">//use another variable to store the context</span></span><br><span class="line">    <span class="keyword">var</span> helper=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         that.value=add(that.value, that.value);<span class="comment">//this here indicates the global object</span></span><br><span class="line">    &#125;</span><br><span class="line">    helper();</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(myNum.value);<span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Constructor-invocation-pattern"><a href="#Constructor-invocation-pattern" class="headerlink" title="Constructor invocation pattern"></a>Constructor invocation pattern</h4><ul>
+<li>what is a prototypal inheritance language</li>
+</ul>
+<p>When a function is invoked with the <code>new</code> prefix, a new object is created with a hidden link to the value of the function’s prototype member. And <code>this</code> is bound to the new object. </p>
+<p>And by convention, such function is capitalized.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Person=<span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>._name=name;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.getName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> mike=<span class="keyword">new</span> Person(<span class="string">"Michael"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(mike.getName());</span><br></pre></td></tr></table></figure>
+
+<h4 id="Apply-invocation-pattern"><a href="#Apply-invocation-pattern" class="headerlink" title="Apply invocation pattern"></a>Apply invocation pattern</h4><p>An method from an object can be applied in another object when they have the same property names. It can be used in this way: 1. <strong>an object’s method</strong> is 2. <strong>appl</strong>ied to 3. a<strong>nother object</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Animal=&#123;</span><br><span class="line">    bark:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.sound);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> dog=&#123;</span><br><span class="line">    sound: <span class="string">"wang"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Animal.bark.apply(dog);</span><br></pre></td></tr></table></figure>
+
+<p>In this situation, this is applied to the parameter of the apply function.</p>
+<h4 id="Return"><a href="#Return" class="headerlink" title="Return"></a>Return</h4><ul>
+<li><p>what does <code>return</code> do</p>
+</li>
+<li><p>if no return value is specified, what will be returned</p>
+</li>
+<li><p>when a function is invoked with <code>new</code> and the return value is not an object, what will be returned?</p>
+</li>
+</ul>
+<h4 id="Exceptions"><a href="#Exceptions" class="headerlink" title="Exceptions"></a>Exceptions</h4><ul>
+<li>how to throw an exception</li>
+<li>how to catch an exception</li>
+</ul>
+<h4 id="Augmenting-Types"><a href="#Augmenting-Types" class="headerlink" title="Augmenting Types"></a>Augmenting Types</h4><ul>
+<li>define a method that helps us make augmenting methods</li>
+</ul>
+<p>the basic types of JS can be <strong>augmented</strong>. To make an example</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//this method can hide the ugliness of the using of 'prototype'</span></span><br><span class="line"><span class="built_in">Function</span>.prototype.method=<span class="function"><span class="keyword">function</span>(<span class="params">name,func</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="keyword">this</span>.prototype[name])&#123;</span><br><span class="line">        <span class="keyword">this</span>.prototype[name]=func<span class="string">';</span></span><br><span class="line"><span class="string">        return this;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>Once the Function is augmented, we can invoke the method with other basic types. For example, we sometimes need to extract the Integer part of a number.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>.method(<span class="string">"integer"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>[<span class="keyword">this</span>&lt;<span class="number">0</span><span class="string">'ceil'</span>:<span class="string">'floor'</span>](<span class="keyword">this</span>);<span class="comment">//unload</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log((<span class="number">-1.6</span>).integer());<span class="comment">//load</span></span><br></pre></td></tr></table></figure>
+
+<p>Or we need to get rid of the white spaces at the start/end of a word</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.method(<span class="string">"trim"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/^\s+|\s$/g</span>, <span class="string">''</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Memoization"><a href="#Memoization" class="headerlink" title="Memoization"></a>Memoization</h4><ul>
+<li>please make a function that helps making memoized functions like fibonacci and factorial</li>
+</ul>
 <p>:question:</p>
 <ol>
-<li><p>it is said that for in statement can loop over all of the property names in an object, but by my observation, only the properties owned by the object will be visited.</p>
+<li><p>it is said that <code>for in</code> statement can loop over all of the property names in an object, but by my observation, only the properties owned by the object will be visited.</p>
 </li>
 <li><p>“if a particular order of properties is required, avoid the for in statement entirely” but it is listed in order</p>
+</li>
+<li><p>what is the difference between a function and a method?</p>
+</li>
+<li><p>what values can be produced by <code>typeof</code></p>
 </li>
 </ol>
     </div>
