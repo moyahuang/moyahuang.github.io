@@ -8,12 +8,12 @@
   
   
   
-  <title>前端常见迷惑行为 | Moya&#39;s Secret Garden</title>
+  <title>谈谈关键词this | Speaking of THIS | Moya&#39;s Secret Garden</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="前端,CSS,JS,">
+    <meta name="keywords" content="前端,JS,">
   
 
   <script>
@@ -193,12 +193,12 @@
 
 <div class="post">
   <h1 class="article-title">
-    <span>前端常见迷惑行为</span>
+    <span>谈谈关键词this | Speaking of THIS</span>
   </h1>
   <div class="article-top-meta">
     <span>
       发布 : 
-      2019-08-19
+      2019-11-12
     </span>
     
       <span>
@@ -210,7 +210,7 @@
     
     
       <span>
-        浏览 : <span class="article-timer" data-identity="JS常见迷惑行为"></span>
+        浏览 : <span class="article-timer" data-identity="谈谈关键词this-Speaking-of-THIS"></span>
       </span>
     
   </div>
@@ -219,21 +219,60 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      <h3 id="JSX中返回方法，而不是语句"><a href="#JSX中返回方法，而不是语句" class="headerlink" title="JSX中返回方法，而不是语句"></a>JSX中返回方法，而不是语句</h3><p>正确的写法</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div onClick=&#123;()=&gt;alert(<span class="string">"click"</span>)&#125;&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+      <h2 id="what-is-THIS"><a href="#what-is-THIS" class="headerlink" title="what is THIS"></a>what is THIS</h2><p>What THIS is depends on how a function is called in most cases, though in ES5, bind() can be used to set the value of THIS.</p>
+<p>In non-strict mode, THIS is always a reference to an object which is the <strong>current execution context</strong>. In strict mode, THIS can be any value(:question: which I dont really understand)</p>
+<p>Basically the execution context can be divided into global and function context(whether it be an object method or not)</p>
+<h3 id="Global-context"><a href="#Global-context" class="headerlink" title="Global context"></a>Global context</h3><p>In the global execution context (outside of any function), THIS refers to the global object. In a browser, THIS is <em>window</em>; however, in Node, THIS is <em>module.exports</em>(:question: I am not sure if it is the global object).</p>
+<p><strong>In web browser</strong>, the global object is window </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span> === <span class="built_in">window</span>); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">b=<span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.b); <span class="comment">// 10</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.b); <span class="comment">//10</span></span><br></pre></td></tr></table></figure>
 
-<p>错误的写法</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div onClick=&#123;alert(<span class="string">"click"</span>)&#125;&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>In Node,</strong> <code>global</code> is the global object but not THIS. THIS refers to module.exports.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num=<span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(global.num); <span class="comment">// 10</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.num); <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
 
-<p>上面这种写法会造成每次重载页面时调用onClick的语句</p>
-<h3 id="伪选择器-p-first-child"><a href="#伪选择器-p-first-child" class="headerlink" title="伪选择器 p:first-child"></a>伪选择器 p:first-child</h3><p>表示作为某元素的第一个子元素的元素</p>
-<p>例如：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>:question:If I define the num as a property of num, we can see from the above and the following example that THIS is not global.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.num=<span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">module</span>.exports.num); <span class="comment">// 10</span></span><br><span class="line"><span class="built_in">console</span>.log(global.num); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
 
-<p>使用下面的CSS语句会将样式应用到<code>hello world</code></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:first-child</span>&#123;	</span><br><span class="line">	<span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Function-context"><a href="#Function-context" class="headerlink" title="Function context"></a>Function context</h3><p>Inside a function, THIS is set by how the function is called. </p>
+<p><strong>In non-strict mode</strong>, THIS defaults to the global object.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function f1()&#123; return this;&#125;</span><br><span class="line">//in a browser</span><br><span class="line">console.log(f1() === window); //true</span><br><span class="line">//in Node</span><br><span class="line">console.log(f1() === global); //true</span><br></pre></td></tr></table></figure>
 
-<p>### </p>
+<p>:question: This is SOOO weird! In terms of the Node case: when in a function, THIS refers to <em>global</em>; when outside a function, THIS refers to <em>module.exports</em>.</p>
+<p><strong>In strict mode</strong>, THIS remains as <code>undefined</code> unless it is set by using <code>call()</code>or <code>apply()</code></p>
+<p>(Tip: funcName.call(thisObject, parameters…))</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="meta">    'use strict'</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(f2()===<span class="literal">undefined</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Setting the value of THIS</strong> </p>
+<p> <strong>Example 1</strong>: function with no parameter</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj=&#123;<span class="attr">a</span>:<span class="string">'Custom'</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> a=<span class="string">'Global'</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">whatsThis</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(whatsThis()); <span class="comment">// 'Global'</span></span><br><span class="line"><span class="built_in">console</span>.log(whatsThis.call(obj)); <span class="comment">//'Custom'</span></span><br><span class="line"><span class="built_in">console</span>.log(whatsThis.apply(obj)); <span class="comment">//'Custom'</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 2</strong>: function with parameters</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">c, d</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.a+<span class="keyword">this</span>.b+c+d;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj=&#123;</span><br><span class="line">    a:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//the first parameter is the object used as THIS</span></span><br><span class="line"><span class="built_in">console</span>.log(add.call(obj,<span class="number">3</span>,<span class="number">4</span>));<span class="comment">//other parameters are used as second, third ... parameter</span></span><br><span class="line"><span class="built_in">console</span>.log(add.apply(obj,[<span class="number">3</span>,<span class="number">4</span>])); <span class="comment">//the second parameter is an array for the other parameters</span></span><br></pre></td></tr></table></figure>
+
+<p>Note that, with <code>call</code> and <code>apply</code>, the <strong>first parameter</strong> is always converted into an <strong>object</strong>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">this</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar.call(<span class="number">8</span>); <span class="comment">//[object Number]</span></span><br><span class="line">bar.call(<span class="string">'foo'</span>); <span class="comment">//[object String]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="The-bind-method"><a href="#The-bind-method" class="headerlink" title="The bind method"></a>The bind method</h2><p>ES5 introduced <code>bind</code> and it creates a new function with the invoked original function and  THIS is <strong>permanently</strong> bound to the object  passed as the first argument.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> g=f.bind(&#123;<span class="attr">a</span>:<span class="string">"Gran"</span>&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(g()); <span class="comment">//"Gran"</span></span><br><span class="line"><span class="keyword">var</span> h=g.bind(&#123;<span class="attr">a</span>:<span class="string">"Tim"</span>&#125;); <span class="comment">//or f.bind(&#123;...&#125;)</span></span><br><span class="line"><span class="built_in">console</span>.log(h()); <span class="comment">//"Gran"</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Arrow-functions"><a href="#Arrow-functions" class="headerlink" title="Arrow functions"></a>Arrow functions</h2><p>For an arrow function，<strong>THIS is determined when it is created</strong> no matter how the function is called. So with <code>call</code>, <code>apply</code>和<code>bind</code>, the first argument should always be <strong>null</strong>.</p>
+<p><strong>In the global context</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var foo=(()=&gt;this);</span><br><span class="line">console.log(foo() === window); //true</span><br></pre></td></tr></table></figure>
+
+<p>or</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj=&#123;<span class="attr">func</span>:foo&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj.func() === <span class="built_in">window</span>); <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(foo.call(obj) === <span class="built_in">window</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Function context (created inside a function)</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj=&#123;</span><br><span class="line">    func: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function">(<span class="params">(</span>)=&gt;</span><span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> f=obj.func();</span><br><span class="line"><span class="built_in">console</span>.log(f() === obj); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>:warning:<strong>Caution</strong> if the object method is not invoked like this, THIS will follow the value of f2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var f2=obj.func;</span><br><span class="line">console.log(f2()() === window); //true</span><br></pre></td></tr></table></figure>
+
+<h2 id="As-an-object-method"><a href="#As-an-object-method" class="headerlink" title="As an object method"></a>As an object method</h2><p>When a function is called as a method of an object, THIS is set to the object.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o=&#123;</span><br><span class="line">    prop:<span class="string">'waiting'</span>,</span><br><span class="line">    getProp:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.prop;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(o.getProp()); <span class="comment">//'waiting'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this</a></li>
+</ol>
     </div>
   </div>
   
@@ -244,7 +283,7 @@
         
           本文作者 : MOYA <br>
         
-        原文链接 : <a href>http://moyahuang.github.io/passages/JS常见迷惑行为/</a><br>
+        原文链接 : <a href>http://moyahuang.github.io/passages/谈谈关键词this-Speaking-of-THIS/</a><br>
         版权声明 : 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
         </blockquote>
       </div>
@@ -304,12 +343,6 @@
           <i class="iconfont icon-06tags"></i>标签: 
           
           <span class="span--tag">
-            <a href="/tags/CSS/">
-              #CSS
-            </a>
-          </span>
-          
-          <span class="span--tag">
             <a href="/tags/JS/">
               #JS
             </a>
@@ -336,15 +369,9 @@
       <div class="nav-pre">
         <i class="iconfont icon-prev"></i>
         上一篇:
-        <a href="/passages/继承那些事/" target="_self">继承那些事</a>
+        <a href="/passages/闭包-what-is-a-closure/" target="_self">闭包 | what is a closure</a>
       </div>
     
-    
-      <div class="nav-next">
-        下一篇:
-        <a href="/passages/HTML+CSS定位的七七八八/" target="_self">HTML+CSS定位的七七八八</a>
-        <i class="iconfont icon-next"></i>
-      </div>
     
   </nav>
 

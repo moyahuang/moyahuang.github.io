@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="JS,">
+    <meta name="keywords" content="前端,JS,">
   
 
   <script>
@@ -201,6 +201,13 @@
       2019-11-10
     </span>
     
+      <span>
+        分类 : 
+          <a href="/categories/前端/">
+            前端
+          </a>
+      </span>
+    
     
       <span>
         浏览 : <span class="article-timer" data-identity="闭包-what-is-a-closure"></span>
@@ -227,7 +234,16 @@
 
 <p>JS的闭包特性可以从上面这个栗子中得到体现。因为通常来说，方法调用后（makeFunc())，方法内创建的所有资源也会随之销毁。但是当方法displayName作为makeFunc的返回值被传递给myFunc后，我们发现调用myFunc的效果与例1相同。这里就足以说明在JS中，不仅是displayName方法本身被返回，其所在词法环境（我想说人话，但还是术语比较高效）也被返回，因此警示框仍正常提示“Mozilla”。</p>
 <h3 id="闭包的一些具体用例"><a href="#闭包的一些具体用例" class="headerlink" title="闭包的一些具体用例"></a>闭包的一些具体用例</h3><p>用例1 调整网页字体大小</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">height</span>=<span class="string">"265"</span> <span class="attr">style</span>=<span class="string">"width: 100%;"</span> <span class="attr">scrolling</span>=<span class="string">"no"</span> <span class="attr">title</span>=<span class="string">"PageSizer"</span> <span class="attr">src</span>=<span class="string">"https://codepen.io/moyahuang/embed/pooZXbw?height=265&amp;theme-id=default&amp;default-tab=result"</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">allowtransparency</span>=<span class="string">"true"</span> <span class="attr">allowfullscreen</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">  See the Pen <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'https://codepen.io/moyahuang/pen/pooZXbw'</span>&gt;</span>PageSizer<span class="tag">&lt;/<span class="name">a</span>&gt;</span> by moyahuang</span><br><span class="line">  (<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'https://codepen.io/moyahuang'</span>&gt;</span>@moyahuang<span class="tag">&lt;/<span class="name">a</span>&gt;</span>) on <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'https://codepen.io'</span>&gt;</span>CodePen<span class="tag">&lt;/<span class="name">a</span>&gt;</span>.</span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="result" data-user="moyahuang" data-slug-hash="pooZXbw" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="PageSizer">
+  <span>See the Pen <a href="https://codepen.io/moyahuang/pen/pooZXbw" target="_blank" rel="noopener">
+  PageSizer</a> by moyahuang (<a href="https://codepen.io/moyahuang" target="_blank" rel="noopener">@moyahuang</a>)
+  on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+
+
 
 <p>参考资料：</p>
 <ol>
@@ -332,6 +348,12 @@
         <a href="/passages/Video-Traking-Andrew-Ng-Machine-Learningg/" target="_self">Video Traking--Andrew Ng: Machine Learningg</a>
       </div>
     
+    
+      <div class="nav-next">
+        下一篇:
+        <a href="/passages/谈谈关键词this-Speaking-of-THIS/" target="_self">谈谈关键词this | Speaking of THIS</a>
+        <i class="iconfont icon-next"></i>
+      </div>
     
   </nav>
 
