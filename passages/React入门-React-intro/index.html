@@ -221,36 +221,31 @@
     <div class="markdown-body">
       <h2 id="一、-React是什么"><a href="#一、-React是什么" class="headerlink" title="一、 React是什么"></a>一、 React是什么</h2><p>React是一个声明式的组件化构建用户界面的JavaScript库。</p>
 <p>React一般用于内容随着时间变化的大型Web应用以及单页应用程序（例如Instagram），对其进行视图渲染。</p>
-<p>（React诞生的背景原因：Facebook认为MVC模式他们巨量的代码库和庞大的组织使得每需要添加一项新功能或者特性时，系统的复杂度成级数增长，致使代码变得脆弱而不可预测。为了以“某种方式组织代码，使其更加可预测”）</p>
+<p>React诞生的背景原因：Facebook认为MVC模式他们巨量的代码库和庞大的组织使得每需要添加一项新功能或者特性时，系统的复杂度成级数增长，致使代码变得脆弱而不可预测。为了以“某种方式组织代码，使其更加可预测”</p>
 <p>国内大型互联网企业几乎都在使用React，诸如阿里、腾讯、滴滴、华为等等。</p>
-<blockquote>
-<p>//to be continued:</p>
-<p>声明式：<a href="https://segmentfault.com/a/1190000007463108" target="_blank" rel="noopener">https://segmentfault.com/a/1190000007463108</a></p>
-<p>组件化：用户界面的构建单位</p>
-</blockquote>
-<h2 id="二、概念"><a href="#二、概念" class="headerlink" title="二、概念"></a>二、概念</h2><p><strong>组件(Component)</strong>：React组件由React组件（React Component）和React元素（React Element）组成。在React中，根据功能和职责可以将你的应用程序分成几个部分。</p>
+<h2 id="二、概念"><a href="#二、概念" class="headerlink" title="二、概念"></a>二、概念</h2><h3 id="组件-Component"><a href="#组件-Component" class="headerlink" title="组件(Component)"></a>组件(Component)</h3><p>React组件由React组件（React Component）和React元素（React Element）组成。在React中，根据功能和职责可以将你的应用程序分成几个部分。</p>
 <p><img src="/passages/React入门-React-intro/concepts_of_reactjs_component-1.png" alt="concepts_of_reactjs_component-1"></p>
-<p><strong>虚拟DOM(Virtual DOM)</strong>: 看起来像是HTML DOM元素的标签的一种数据结构（？）</p>
-<p>![1575115622376](C:\Users\Moya Huang\AppData\Roaming\Typora\typora-user-images\1575115622376.png)</p>
-<p><strong>状态（state）：</strong>在React里，只需要更新组件的state, 就可根据新的state重新渲染用户界面，而无需操纵DOM。</p>
-<p>什么叫无需操纵DOM呢？传统上我们更新页面上一个不断变化的元素是这样做的</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//获取DOM元素</span></span><br><span class="line">    <span class="keyword">var</span> ndTimer=<span class="built_in">document</span>.getElementById(<span class="string">"timer"</span>);</span><br><span class="line">    <span class="comment">//渲染（填充）数据</span></span><br><span class="line">    ndTimer.innerHTML=<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">&#125;, <span class="number">100</span>);</span><br></pre></td></tr></table></figure>
-
-<p>上面两步都可以说是在操纵DOM。</p>
-<p>而React做到的是可以根据state的变化，自动更新相应发生变化的DOM元素。</p>
-<p><strong>props:</strong> props与state的主要区别在于props是不可变的，而state可以通过用户的交互等来来改变。</p>
-<p><strong>JSX:</strong> 是JavaScript的一种语法扩展。React创造了JSX替代常规的JavaScript，在JavaScript融合了HTML</p>
+<h3 id="虚拟DOM-Virtual-DOM"><a href="#虚拟DOM-Virtual-DOM" class="headerlink" title="虚拟DOM(Virtual DOM):"></a>虚拟DOM(Virtual DOM):</h3><p>在JS中声明的类似HTML DOM元素的标签</p>
+<p><img src="/passages/React入门-React-intro/.%5CReact%E5%85%A5%E9%97%A8-React-intro%5C1575115622376.png" alt="1575115622376"></p>
+<h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><p> 是JavaScript的一种语法扩展。React创造了JSX替代常规的JavaScript，在JavaScript融合了HTML</p>
 <p>例一、将HTML标签赋值给js声明的变量</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = &lt;h1&gt;Hello, world!&lt;/h1&gt;;</span><br></pre></td></tr></table></figure>
 
 <p>例二、HTML标签中还可嵌套JavaScript表达式</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;&#123;<span class="number">1</span>+<span class="number">1</span>&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">    ,</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'example'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
+<h3 id="状态（state）"><a href="#状态（state）" class="headerlink" title="状态（state）"></a>状态（state）</h3><p>在React里，只需要更新组件的state, 就可根据新的state重新渲染用户界面，而无需操纵DOM。</p>
+<p>什么叫无需操纵DOM呢？传统上我们更新页面上一个不断变化的元素是这样做的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//获取DOM元素</span></span><br><span class="line">    <span class="keyword">var</span> ndTimer=<span class="built_in">document</span>.getElementById(<span class="string">"timer"</span>);</span><br><span class="line">    <span class="comment">//渲染（填充）数据</span></span><br><span class="line">    ndTimer.innerHTML=<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">&#125;, <span class="number">100</span>);</span><br></pre></td></tr></table></figure>
+
+<p>上面两步都可以说是在操纵DOM。</p>
+<p>而React做到的是可以根据state的变化，自动更新相应发生变化的DOM元素。</p>
+<h3 id="props"><a href="#props" class="headerlink" title="props"></a>props</h3><p>props与state的主要区别在于props是不可变的，而state可以通过用户的交互等来来改变。</p>
 <h2 id="三、一些简单示例"><a href="#三、一些简单示例" class="headerlink" title="三、一些简单示例"></a>三、一些简单示例</h2><h3 id="搭建开发环境"><a href="#搭建开发环境" class="headerlink" title="搭建开发环境"></a>搭建开发环境</h3><ol>
 <li>选择JavaScript语法编译器<code>Babel</code></li>
 <li>引入两个js文件<code>react.js</code>和<code>react-dom.js</code></li>
 </ol>
-<p><img src="/passages/React入门-React-intro/G:%5CBlog%5CHexo%5Csource_posts%5CReact%E5%85%A5%E9%97%A8-React-intro%5CSnipaste_2019-11-30_21-20-47.png" alt="1575119980903"></p>
+<p><img src="/passages/React入门-React-intro/.%5CReact%E5%85%A5%E9%97%A8-React-intro%5CSnipaste_2019-11-30_21-20-47.png" alt="1575119980903"></p>
 <h3 id="React示例"><a href="#React示例" class="headerlink" title="React示例"></a>React示例</h3><h4 id="基本组件"><a href="#基本组件" class="headerlink" title="基本组件"></a>基本组件</h4><p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="moyahuang" data-slug-hash="RwNbLYJ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="React smallest example">
   <span>See the Pen <a href="https://codepen.io/moyahuang/pen/RwNbLYJ" target="_blank" rel="noopener">
   React smallest example</a> by moyahuang (<a href="https://codepen.io/moyahuang" target="_blank" rel="noopener">@moyahuang</a>)
@@ -259,7 +254,7 @@
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 <p>最终被编译为成真实的DOM元素</p>
-<p>![1575114397222](C:\Users\Moya Huang\AppData\Roaming\Typora\typora-user-images\1575114397222.png)</p>
+<p><img src="/passages/React入门-React-intro/.%5CReact%E5%85%A5%E9%97%A8-React-intro%5C1575114397222.png" alt="1575114397222"></p>
 <h4 id="有状态组件"><a href="#有状态组件" class="headerlink" title="有状态组件"></a>有状态组件</h4><p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="moyahuang" data-slug-hash="JjoPMRq" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JjoPMRq">
   <span>See the Pen <a href="https://codepen.io/moyahuang/pen/JjoPMRq" target="_blank" rel="noopener">
   JjoPMRq</a> by moyahuang (<a href="https://codepen.io/moyahuang" target="_blank" rel="noopener">@moyahuang</a>)
@@ -303,6 +298,12 @@
 <li>一个组件需要和另一个组件进行状态共享</li>
 <li>一个组件需要改变另一个组件的状态</li>
 </ul>
+<ol start="3">
+<li><p>良好的生态</p>
+<p>例如对于上述的数据状态管理，就可以使用React生态中的Redux对中等持续性数据进行维护。</p>
+<p>（中等持续性数据就是指在页面刷新前保持相对稳定的数据，比如说通过Ajax请求到的数据，或者个人中心页面通过编辑信息提交的数据）</p>
+</li>
+</ol>
     </div>
   </div>
   
