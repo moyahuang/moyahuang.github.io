@@ -287,6 +287,29 @@
 <h4 id="Memoization"><a href="#Memoization" class="headerlink" title="Memoization"></a>Memoization</h4><ul>
 <li>please make a function that helps making memoized functions like fibonacci and factorial</li>
 </ul>
+<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><ul>
+<li>what would happen if the length of an array object is set to be larger than the actual value?</li>
+<li>what if the length is set to be smaller?</li>
+<li>how to append new element to an array？</li>
+<li>how to correctly delete an element of an array?</li>
+<li>how to enumerate the elements of an array in order?</li>
+<li>to avoid failures to identify arrays that were constructed in a different window or frame, how to define the function </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> is_array=<span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.apply(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>please define a function that creates a matrix and another function that creates an identity matrix</li>
+<li>how to define a comparison function that sorts an array of numbers?</li>
+</ul>
+<blockquote>
+<p>note: imagine the middle point of the two parameters as the origin,  return negative if the left parameter should come first, return positive if otherwise.</p>
+</blockquote>
+<ul>
+<li>please define a method that sort an array of objects by taking a member name</li>
+</ul>
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><ul>
+<li>what’s the difference between string.match(regexp) and regexp.match(string)  p89</li>
+</ul>
 <p>:question:</p>
 <ol>
 <li><p>it is said that <code>for in</code> statement can loop over all of the property names in an object, but by my observation, only the properties owned by the object will be visited.</p>
