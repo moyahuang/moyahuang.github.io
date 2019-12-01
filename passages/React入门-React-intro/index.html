@@ -226,7 +226,7 @@
 <h2 id="二、概念"><a href="#二、概念" class="headerlink" title="二、概念"></a>二、概念</h2><h3 id="组件-Component"><a href="#组件-Component" class="headerlink" title="组件(Component)"></a>组件(Component)</h3><p>React组件由React组件（React Component）和React元素（React Element）组成。在React中，根据功能和职责可以将你的应用程序分成几个部分。</p>
 <p><img src="/passages/React入门-React-intro/concepts_of_reactjs_component-1.png" alt="concepts_of_reactjs_component-1"></p>
 <h3 id="虚拟DOM-Virtual-DOM"><a href="#虚拟DOM-Virtual-DOM" class="headerlink" title="虚拟DOM(Virtual DOM):"></a>虚拟DOM(Virtual DOM):</h3><p>在JS中声明的类似HTML DOM元素的标签</p>
-<p><img src="/passages/React入门-React-intro/1575115622376.png" alt="1575115622376"></p>
+<p><img src="/passages/React入门-React-intro/virtual_doms.png" alt="1575115622376"></p>
 <h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><p> 是JavaScript的一种语法扩展。React创造了JSX替代常规的JavaScript，在JavaScript融合了HTML</p>
 <p>例一、将HTML标签赋值给js声明的变量</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = &lt;h1&gt;Hello, world!&lt;/h1&gt;;</span><br></pre></td></tr></table></figure>
@@ -245,7 +245,7 @@
 <li>选择JavaScript语法编译器<code>Babel</code></li>
 <li>引入两个js文件<code>react.js</code>和<code>react-dom.js</code></li>
 </ol>
-<p><img src="/passages/React入门-React-intro/Snipaste_2019-11-30_21-20-47.png" alt="1575119980903"></p>
+<p><img src="/passages/React入门-React-intro/pen_setting.png" alt="1575119980903"></p>
 <h3 id="React示例"><a href="#React示例" class="headerlink" title="React示例"></a>React示例</h3><h4 id="基本组件"><a href="#基本组件" class="headerlink" title="基本组件"></a>基本组件</h4><p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="moyahuang" data-slug-hash="RwNbLYJ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="React smallest example">
   <span>See the Pen <a href="https://codepen.io/moyahuang/pen/RwNbLYJ" target="_blank" rel="noopener">
   React smallest example</a> by moyahuang (<a href="https://codepen.io/moyahuang" target="_blank" rel="noopener">@moyahuang</a>)
@@ -254,7 +254,7 @@
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 <p>最终被编译为成真实的DOM元素</p>
-<p><img src="/passages/React入门-React-intro/1575114397222.png" alt="1575114397222"></p>
+<p><img src="/passages/React入门-React-intro/root.png" alt="1575114397222"></p>
 <h4 id="有状态组件"><a href="#有状态组件" class="headerlink" title="有状态组件"></a>有状态组件</h4><p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="moyahuang" data-slug-hash="JjoPMRq" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JjoPMRq">
   <span>See the Pen <a href="https://codepen.io/moyahuang/pen/JjoPMRq" target="_blank" rel="noopener">
   JjoPMRq</a> by moyahuang (<a href="https://codepen.io/moyahuang" target="_blank" rel="noopener">@moyahuang</a>)
@@ -283,7 +283,7 @@
 </ul>
 <h3 id="数据状态管理使用单项数据流，查找问题快捷、方便"><a href="#数据状态管理使用单项数据流，查找问题快捷、方便" class="headerlink" title="数据状态管理使用单项数据流，查找问题快捷、方便"></a>数据状态管理使用单项数据流，查找问题快捷、方便</h3><p><strong>单向数据流</strong>是指在React中数据只能由父组件通过props传递给子组件，不能由子组件向父组件传递数据。</p>
 <p><strong>数据状态管理</strong>，举个例子，这是简书的一篇文章页面，在左侧点赞后，下方的点赞按钮也应该被切换成点亮状态。</p>
-<p><img src="/passages/React入门-React-intro/React%E5%85%A5%E9%97%A8-React-intro%5C1575169613141.png" alt="1575169613141"></p>
+<p><img src="/passages/React入门-React-intro/thumb_up.png" alt="1575169613141"></p>
 <p>我们可以通过下面的逻辑实现上图的效果</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">按钮1点击事件函数&#123;</span><br><span class="line">	按钮1样式=橘色样式；</span><br><span class="line">	按钮2样式=橘色样式；</span><br><span class="line">&#125;</span><br><span class="line">按钮2点击事件函数&#123;</span><br><span class="line">	按钮1样式=橘色样式；</span><br><span class="line">	按钮2样式=橘色样式；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
