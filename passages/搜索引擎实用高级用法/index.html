@@ -8,12 +8,12 @@
   
   
   
-  <title>React入门 | React intro | Moya&#39;s Secret Garden</title>
+  <title>搜索引擎实用高级用法 | Moya&#39;s Secret Garden</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="前端,框架,">
+    <meta name="keywords" content="工具,">
   
 
   <script>
@@ -193,24 +193,17 @@
 
 <div class="post">
   <h1 class="article-title">
-    <span>React入门 | React intro</span>
+    <span>搜索引擎实用高级用法</span>
   </h1>
   <div class="article-top-meta">
     <span>
       发布 : 
-      2019-11-30
+      2019-12-27
     </span>
     
-      <span>
-        分类 : 
-          <a href="/categories/前端/">
-            前端
-          </a>
-      </span>
-    
     
       <span>
-        浏览 : <span class="article-timer" data-identity="React入门-React-intro"></span>
+        浏览 : <span class="article-timer" data-identity="搜索引擎实用高级用法"></span>
       </span>
     
   </div>
@@ -219,86 +212,137 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      <h2 id="一、-React是什么"><a href="#一、-React是什么" class="headerlink" title="一、 React是什么"></a>一、 React是什么</h2><p>React是一个声明式的组件化构建用户界面的JavaScript库。</p>
-<p>React一般用于内容随着时间变化的大型Web应用以及单页应用程序（例如Instagram），对其进行视图渲染。</p>
-<p>React诞生的背景原因：Facebook认为MVC模式他们巨量的代码库和庞大的组织使得每需要添加一项新功能或者特性时，系统的复杂度成级数增长，致使代码变得脆弱而不可预测。为了以“某种方式组织代码，使其更加可预测”</p>
-<p>国内大型互联网企业几乎都在使用React，诸如阿里、腾讯、滴滴、华为等等。</p>
-<h2 id="二、概念"><a href="#二、概念" class="headerlink" title="二、概念"></a>二、概念</h2><h3 id="组件-Component"><a href="#组件-Component" class="headerlink" title="组件(Component)"></a>组件(Component)</h3><p>React组件由React组件（React Component）和React元素（React Element）组成。在React中，根据功能和职责可以将你的应用程序分成几个部分。</p>
-<p><img src="/passages/React入门-React-intro/concepts_of_reactjs_component-1.png" alt="concepts_of_reactjs_component-1"></p>
-<h3 id="虚拟DOM-Virtual-DOM"><a href="#虚拟DOM-Virtual-DOM" class="headerlink" title="虚拟DOM(Virtual DOM):"></a>虚拟DOM(Virtual DOM):</h3><p>在JS中声明的类似HTML DOM元素的标签</p>
-<p><img src="/passages/React入门-React-intro/virtual_doms.png" alt="1575115622376"></p>
-<h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><p> 是JavaScript的一种语法扩展。React创造了JSX替代常规的JavaScript，在JavaScript融合了HTML</p>
-<p>例一、将HTML标签赋值给js声明的变量</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
-
-<p>例二、HTML标签中还可嵌套JavaScript表达式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;&#123;<span class="number">1</span>+<span class="number">1</span>&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">    ,</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'example'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h3 id="状态（state）"><a href="#状态（state）" class="headerlink" title="状态（state）"></a>状态（state）</h3><p>在React里，只需要更新组件的state, 就可根据新的state重新渲染用户界面，而无需操纵DOM。</p>
-<p>什么叫无需操纵DOM呢？传统上我们更新页面上一个不断变化的元素是这样做的</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//获取DOM元素</span></span><br><span class="line">    <span class="keyword">var</span> ndTimer=<span class="built_in">document</span>.getElementById(<span class="string">"timer"</span>);</span><br><span class="line">    <span class="comment">//渲染（填充）数据</span></span><br><span class="line">    ndTimer.innerHTML=<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">&#125;, <span class="number">100</span>);</span><br></pre></td></tr></table></figure>
-
-<p>上面两步都可以说是在操纵DOM。</p>
-<p>而React做到的是可以根据state的变化，自动更新相应发生变化的DOM元素。</p>
-<h3 id="props"><a href="#props" class="headerlink" title="props"></a>props</h3><p>props与state的主要区别在于props是不可变的，而state可以通过用户的交互等来来改变。</p>
-<h2 id="三、一些简单示例"><a href="#三、一些简单示例" class="headerlink" title="三、一些简单示例"></a>三、一些简单示例</h2><h3 id="搭建开发环境"><a href="#搭建开发环境" class="headerlink" title="搭建开发环境"></a>搭建开发环境</h3><ol>
-<li>选择JavaScript语法编译器<code>Babel</code></li>
-<li>引入两个js文件<code>react.js</code>和<code>react-dom.js</code></li>
-</ol>
-<p><img src="/passages/React入门-React-intro/pen_setting.png" alt="1575119980903"></p>
-<h3 id="React示例"><a href="#React示例" class="headerlink" title="React示例"></a>React示例</h3><h4 id="基本组件"><a href="#基本组件" class="headerlink" title="基本组件"></a>基本组件</h4><p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="moyahuang" data-slug-hash="RwNbLYJ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="React smallest example">
-  <span>See the Pen <a href="https://codepen.io/moyahuang/pen/RwNbLYJ" target="_blank" rel="noopener">
-  React smallest example</a> by moyahuang (<a href="https://codepen.io/moyahuang" target="_blank" rel="noopener">@moyahuang</a>)
-  on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
-<p>最终被编译为成真实的DOM元素</p>
-<p><img src="/passages/React入门-React-intro/root.png" alt="1575114397222"></p>
-<h4 id="有状态组件"><a href="#有状态组件" class="headerlink" title="有状态组件"></a>有状态组件</h4><p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="moyahuang" data-slug-hash="JjoPMRq" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JjoPMRq">
-  <span>See the Pen <a href="https://codepen.io/moyahuang/pen/JjoPMRq" target="_blank" rel="noopener">
-  JjoPMRq</a> by moyahuang (<a href="https://codepen.io/moyahuang" target="_blank" rel="noopener">@moyahuang</a>)
-  on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
-<h4 id="有事件处理的应用"><a href="#有事件处理的应用" class="headerlink" title="有事件处理的应用"></a>有事件处理的应用</h4><p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="moyahuang" data-slug-hash="JjoPMNQ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="TodoApp-ReactDemo">
-  <span>See the Pen <a href="https://codepen.io/moyahuang/pen/JjoPMNQ" target="_blank" rel="noopener">
-  TodoApp-ReactDemo</a> by moyahuang (<a href="https://codepen.io/moyahuang" target="_blank" rel="noopener">@moyahuang</a>)
-  on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
-<h2 id="四、React的优点"><a href="#四、React的优点" class="headerlink" title="四、React的优点"></a>四、React的优点</h2><h3 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h3><p>组件化设计思想的原则一是在于单一职责，即一个组件只做一件事情。其好处在于修改组件时，不用担心会对其他组件造成影响。但是过度拆分组件，没有必要，反而会增加编写繁琐程度。因此如果某个功能集合会发生潜在的改变，就应该最大程度地保证该功能集合的单一职责性。</p>
-<p>举个例子：某个组件需要通过网络请求获取数据并展示数据内容，其潜在的功能集合改变有：</p>
-<ul>
-<li><p>请求API地址发生变化</p>
-</li>
-<li><p>请求返回数据格式变化</p>
-</li>
-<li><p>开发者想更换网络请求第三方库，比如jQuery.ajax改成axios</p>
-</li>
-<li><p>更改请求数据逻辑</p>
-</li>
-</ul>
-<h3 id="数据状态管理使用单项数据流，查找问题快捷、方便"><a href="#数据状态管理使用单项数据流，查找问题快捷、方便" class="headerlink" title="数据状态管理使用单项数据流，查找问题快捷、方便"></a>数据状态管理使用单项数据流，查找问题快捷、方便</h3><p><strong>单向数据流</strong>是指在React中数据只能由父组件通过props传递给子组件，不能由子组件向父组件传递数据。</p>
-<p><strong>数据状态管理</strong>，举个例子，这是简书的一篇文章页面，在左侧点赞后，下方的点赞按钮也应该被切换成点亮状态。</p>
-<p><img src="/passages/React入门-React-intro/thumb_up.png" alt="1575169613141"></p>
-<p>我们可以通过下面的逻辑实现上图的效果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">按钮1点击事件函数&#123;</span><br><span class="line">	按钮1样式=橘色样式；</span><br><span class="line">	按钮2样式=橘色样式；</span><br><span class="line">&#125;</span><br><span class="line">按钮2点击事件函数&#123;</span><br><span class="line">	按钮1样式=橘色样式；</span><br><span class="line">	按钮2样式=橘色样式；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>但是当需要变动的元素比较多时，这样很容易滋生bugs。</p>
-<p>在这个场景下，我们可以维护一个是否点赞的数据状态</p>
-<p>thumbUp: true / false</p>
-<p>在组件化的React中需要考虑:</p>
-<ul>
-<li>一个组件需要和另一个组件进行状态共享</li>
-<li>一个组件需要改变另一个组件的状态</li>
-</ul>
-<h3 id="良好的生态"><a href="#良好的生态" class="headerlink" title="良好的生态"></a>良好的生态</h3><p>例如对于上述的数据状态管理，就可以使用React生态中的Redux对中等持续性数据进行维护。</p>
+      <h2 id="Google"><a href="#Google" class="headerlink" title="Google"></a>Google</h2><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>用途</th>
+<th>实际用法实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>“”(双引号)</td>
+<td>搜索词放在双引号中，代表完全匹配搜索</td>
+<td>“keyword”</td>
+</tr>
+<tr>
+<td>*（通配符）</td>
+<td>星号代表任何文字，比如想查找“搜索*擎”，返回的结果就不仅包含“搜索引擎”，还包含了“搜索收擎”，“搜索巨擎”等内容。</td>
+<td>”搜索*擎“</td>
+</tr>
+<tr>
+<td>+（与）</td>
+<td>搜索所有包含关键词“keyword1”和“keyword2**”的中文网页</td>
+<td>“keyword1 keyword2” 或者“keyword1+keyword2”</td>
+</tr>
+<tr>
+<td>-（非）</td>
+<td>搜索去除keyword2的keyword1</td>
+<td>“keyword1 -keyword2”</td>
+</tr>
+<tr>
+<td>OR(或)</td>
+<td>搜索 A 或者 B</td>
+<td>“keyword1 OR keyword2”</td>
+</tr>
+<tr>
+<td>~keyword1</td>
+<td>搜索它的同义词</td>
+<td>~喜欢</td>
+</tr>
+<tr>
+<td>site:</td>
+<td>搜索指定域名的内容</td>
+<td>keyword site:<a href="http://www.github.com" target="_blank" rel="noopener">www.github.com</a></td>
+</tr>
+<tr>
+<td>filetype:</td>
+<td>限制搜索的词语是网页中链接内包含的关键词</td>
+<td>filetype:pdf ios开发</td>
+</tr>
+<tr>
+<td>inanchor:keyword</td>
+<td>指令返回的结果是导入链接锚文字中包含搜索词的页面</td>
+<td>inanchor:关于我们</td>
+</tr>
+<tr>
+<td>-filetype:</td>
+<td>-filetype:SOMEFILETYPE = 剔除指定文件类型.</td>
+<td>-filetype:SOMEFILETYPE</td>
+</tr>
+<tr>
+<td>allinanchor:</td>
+<td>限制搜索的词语是网页中链接内包含的关键词（可使用多个关键词）</td>
+<td>allinanchor:keyword1 keyword2</td>
+</tr>
+<tr>
+<td>allintext:</td>
+<td>限制搜索的词语是网页内文包含的关键词（可使用多个关键词）</td>
+<td>allintext:keyword1 keyword2</td>
+</tr>
+<tr>
+<td>intext:</td>
+<td>限制搜索的词语是网页内文包含的关键词</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>测试过<code>~</code>查找同义词，不太好用。符号类就不说了，常用高级查询关键词也就四个：<code>site</code>, <code>filetype</code>, <code>inanchor</code>, <code>intext</code>。</p>
 <blockquote>
-<p>中等持续性数据就是指在页面刷新前保持相对稳定的数据，比如说通过Ajax请求到的数据，或者个人中心页面通过编辑信息提交的数据）</p>
+<p>这里摘自</p>
+<p><a href="https://blog.csdn.net/u012946824/article/details/53185189" target="_blank" rel="noopener">https://blog.csdn.net/u012946824/article/details/53185189</a></p>
 </blockquote>
+<h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><p><code>GitHub</code>的搜索功能真的超级强大。搜索的范围不仅限于仓库名和README，包含整个仓库！</p>
+<h4 id="仓库搜索"><a href="#仓库搜索" class="headerlink" title="仓库搜索"></a>仓库搜索</h4><table>
+<thead>
+<tr>
+<th>语法</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>stars:&gt;=100<br>stars:10…50</td>
+<td>限定星数</td>
+</tr>
+<tr>
+<td>created: 2017-01-01</td>
+<td>限制创建时间在某时间之后</td>
+</tr>
+<tr>
+<td>-language: Objective-C</td>
+<td>限制开发语言</td>
+</tr>
+<tr>
+<td>user: jquery</td>
+<td>查找某用户所有仓库</td>
+</tr>
+<tr>
+<td>NOT cat</td>
+<td>排除所有包含某单词的仓库</td>
+</tr>
+</tbody></table>
+<h4 id="文件搜索"><a href="#文件搜索" class="headerlink" title="文件搜索"></a>文件搜索</h4><table>
+<thead>
+<tr>
+<th>语法</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cat repo:facebook/react</td>
+<td>在仓库facebook/react中搜索包含内容cat的文件</td>
+</tr>
+<tr>
+<td>examples path:/docs/</td>
+<td>在指定路径下</td>
+</tr>
+<tr>
+<td>join extension:java</td>
+<td>在扩展名.java的文件中查找包含内容join的文件</td>
+</tr>
+</tbody></table>
+<p>另外还有用户搜索、issue搜索等，感觉不是很常用，不再列举。需要用时可在github官网搜索页面左下角可以查看cheat sheet：</p>
+<p><img src="/passages/搜索引擎实用高级用法/cheatsheet.png" alt="1577444682018"></p>
+
     </div>
   </div>
   
@@ -309,7 +353,7 @@
         
           本文作者 : MOYA <br>
         
-        原文链接 : <a href>http://moyahuang.github.io/passages/React入门-React-intro/</a><br>
+        原文链接 : <a href>http://moyahuang.github.io/passages/搜索引擎实用高级用法/</a><br>
         版权声明 : 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
         </blockquote>
       </div>
@@ -369,8 +413,8 @@
           <i class="iconfont icon-06tags"></i>标签: 
           
           <span class="span--tag">
-            <a href="/tags/框架/">
-              #框架
+            <a href="/tags/工具/">
+              #工具
             </a>
           </span>
           
@@ -395,15 +439,9 @@
       <div class="nav-pre">
         <i class="iconfont icon-prev"></i>
         上一篇:
-        <a href="/passages/JS的继承是个啥玩意儿-Understanding-inheritance-in-JSS/" target="_self">JS的继承是个啥玩意儿 | Understanding inheritance in JS</a>
+        <a href="/passages/React入门-React-intro/" target="_self">React入门 | React intro</a>
       </div>
     
-    
-      <div class="nav-next">
-        下一篇:
-        <a href="/passages/搜索引擎实用高级用法/" target="_self">搜索引擎实用高级用法</a>
-        <i class="iconfont icon-next"></i>
-      </div>
     
   </nav>
 
