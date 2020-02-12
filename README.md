@@ -5,7 +5,7 @@
 - 手机：18208141734 
 - Email：moyahuang@foxmail.com 
 - 微信号：moya_huang
-- 个人博客：[http://moyahuang.github.io](http://moyahuang.github.io)
+- 在线简历/个人博客：[http://moyahuang.github.io](http://moyahuang.github.io)
  
 # 教育背景
  - 研究生 | 四川大学计算机学院软件工程 2018年9月-至今
