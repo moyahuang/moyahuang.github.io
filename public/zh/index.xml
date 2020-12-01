@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>中文</title>
+    <link>https://moyahuang.github.io/zh/</link>
+    <description>Recent content on 中文</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <managingEditor>moyahuang@foxmail.com (Moya Huang)</managingEditor>
+    <webMaster>moyahuang@foxmail.com (Moya Huang)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Tue, 01 Dec 2020 14:55:50 +0800</lastBuildDate>
+    
+        <atom:link href="https://moyahuang.github.io/zh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+
+      
+      <item>
+        <title>软件著作权申请实录</title>
+        <link>https://moyahuang.github.io/zh/posts/%E8%BD%AF%E4%BB%B6%E8%91%97%E4%BD%9C%E6%9D%83%E7%94%B3%E8%AF%B7%E5%AE%9E%E5%BD%95/</link>
+        <pubDate>Tue, 01 Dec 2020 14:55:50 +0800</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Tue, 01 Dec 2020 14:55:50 +0800</atom:modified>
+        <guid>https://moyahuang.github.io/zh/posts/%E8%BD%AF%E4%BB%B6%E8%91%97%E4%BD%9C%E6%9D%83%E7%94%B3%E8%AF%B7%E5%AE%9E%E5%BD%95/</guid>
+        <description>下文原名为《西南版权中心申请软著注意事项》，作者为Echo（非本人）。内容根据2020年10月15日至12月1日共6次现场办理软件著作权（预</description>
+        
+        <dc:creator>Moya</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>踩坑</category>
+            
+          
+            
+              <category>软件著作权</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>经典排序算法</title>
+        <link>https://moyahuang.github.io/zh/posts/%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</link>
+        <pubDate>Wed, 08 Jan 2020 14:00:50 +0800</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Wed, 08 Jan 2020 14:00:50 +0800</atom:modified>
+        <guid>https://moyahuang.github.io/zh/posts/%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</guid>
+        <description>冒泡排序 算法思想： 从数列第一个元素R1开始，与邻近元素R2进行比较，若R1&amp;gt;R2，则交换；同理，依次比较R2R3R4R5…，经过一趟比</description>
+        
+        <dc:creator>Moya</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>算法</category>
+            
+          
+        
+        
+        
+          
+            
+              <category>数据结构与算法</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>JS的继承是个啥玩意儿</title>
+        <link>https://moyahuang.github.io/zh/posts/js%E7%9A%84%E7%BB%A7%E6%89%BF%E6%98%AF%E4%B8%AA%E5%95%A5%E7%8E%A9%E6%84%8F%E5%84%BF/</link>
+        <pubDate>Thu, 14 Nov 2019 14:00:50 +0800</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Thu, 14 Nov 2019 14:00:50 +0800</atom:modified>
+        <guid>https://moyahuang.github.io/zh/posts/js%E7%9A%84%E7%BB%A7%E6%89%BF%E6%98%AF%E4%B8%AA%E5%95%A5%E7%8E%A9%E6%84%8F%E5%84%BF/</guid>
+        <description>继承可以帮我们实现1. 代码重用 2. 以及进行规约？ JS的对象采用原型继承(prototype-based inheritance)机制。当属性和方</description>
+        
+        <dc:creator>Moya</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>前端</category>
+            
+          
+            
+              <category>JavaScript</category>
+            
+          
+        
+        
+        
+          
+            
+              <category>前端</category>
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

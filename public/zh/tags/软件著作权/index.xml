@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>软件著作权 on 中文</title>
+    <link>https://moyahuang.github.io/zh/tags/%E8%BD%AF%E4%BB%B6%E8%91%97%E4%BD%9C%E6%9D%83/</link>
+    <description>Recent content in 软件著作权 on 中文</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <managingEditor>moyahuang@foxmail.com (Moya Huang)</managingEditor>
+    <webMaster>moyahuang@foxmail.com (Moya Huang)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Tue, 01 Dec 2020 14:55:50 +0800</lastBuildDate>
+    
+        <atom:link href="https://moyahuang.github.io/zh/tags/%E8%BD%AF%E4%BB%B6%E8%91%97%E4%BD%9C%E6%9D%83/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>软件著作权申请实录</title>
+        <link>https://moyahuang.github.io/zh/posts/%E8%BD%AF%E4%BB%B6%E8%91%97%E4%BD%9C%E6%9D%83%E7%94%B3%E8%AF%B7%E5%AE%9E%E5%BD%95/</link>
+        <pubDate>Tue, 01 Dec 2020 14:55:50 +0800</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Tue, 01 Dec 2020 14:55:50 +0800</atom:modified>
+        <guid>https://moyahuang.github.io/zh/posts/%E8%BD%AF%E4%BB%B6%E8%91%97%E4%BD%9C%E6%9D%83%E7%94%B3%E8%AF%B7%E5%AE%9E%E5%BD%95/</guid>
+        <description>下文原名为《西南版权中心申请软著注意事项》，作者为Echo（非本人）。内容根据2020年10月15日至12月1日共6次现场办理软件著作权（预</description>
+        
+        <dc:creator>Moya</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>踩坑</category>
+            
+          
+            
+              <category>软件著作权</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>
