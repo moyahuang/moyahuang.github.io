@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>English</title>
+    <link>https://moyahuang.github.io/en/</link>
+    <description>Recent content on English</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>moyahuang@foxmail.com (Moya Huang)</managingEditor>
+    <webMaster>moyahuang@foxmail.com (Moya Huang)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Thu, 29 Oct 2020 06:40:51 +0900</lastBuildDate>
+    
+        <atom:link href="https://moyahuang.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+
+      
+      <item>
+        <title>JavaScript--the good parts</title>
+        <link>https://moyahuang.github.io/en/posts/javascript-the-good-parts/</link>
+        <pubDate>Thu, 29 Oct 2020 06:40:51 +0900</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Thu, 29 Oct 2020 06:40:51 +0900</atom:modified>
+        <guid>https://moyahuang.github.io/en/posts/javascript-the-good-parts/</guid>
+        <description>Objects what is an object? simple types of JS why are numbers, strings and booleans object-like? how to add a create method to the Object function? 1 2 3 4 5 6 7 if(typeof Object.create !== &amp;#39;function&amp;#39;){ Object.create=function(o){ var F=function(){}; F.prototype=o; return new F(); } } -what is an object literal? Functions what is the difference between a function and an object what is a function literal what is anonymous</description>
+        
+        <dc:creator>Moya Huang</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>JavaScript</category>
+            
+          
+        
+        
+          
+            
+          
+        
+        
+          
+            
+              <category>前端</category>
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>
