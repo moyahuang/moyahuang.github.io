@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://moyahuang.github.io/zh/</loc>
-    <lastmod>2020-12-01T14:55:50+08:00</lastmod>
+    <lastmod>2020-12-03T10:50:50+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -19,7 +19,7 @@
   
   <url>
     <loc>https://moyahuang.github.io/zh/posts/</loc>
-    <lastmod>2020-12-01T14:55:50+08:00</lastmod>
+    <lastmod>2020-12-03T10:50:50+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -34,7 +34,7 @@
   
   <url>
     <loc>https://moyahuang.github.io/zh/tags/</loc>
-    <lastmod>2020-12-01T14:55:50+08:00</lastmod>
+    <lastmod>2020-12-03T10:50:50+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -45,6 +45,16 @@
                 hreflang="zh"
                 href="https://moyahuang.github.io/zh/tags/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://moyahuang.github.io/zh/tags/%E4%B8%80%E7%BC%95%E9%98%B3%E5%85%89/</loc>
+    <lastmod>2020-12-03T10:50:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moyahuang.github.io/zh/posts/%E5%A5%B3%E6%80%A7%E5%AF%B9%E5%A5%B3%E6%80%A7%E7%9A%84%E6%B8%A9%E6%9F%94%E5%B0%8F%E8%AE%B0%E5%85%B3%E4%BA%8E%E9%83%AD%E5%AE%B6%E6%A1%A5%E5%8C%97%E8%A1%97/</loc>
+    <lastmod>2020-12-03T10:50:50+08:00</lastmod>
   </url>
   
   <url>
