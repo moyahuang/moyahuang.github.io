@@ -14,7 +14,7 @@
     <managingEditor>moyahuang@foxmail.com (Moya Huang)</managingEditor>
     <webMaster>moyahuang@foxmail.com (Moya Huang)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Thu, 03 Dec 2020 10:50:50 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 11 Dec 2020 14:10:50 +0800</lastBuildDate>
     
         <atom:link href="https://moyahuang.github.io/zh/index.xml" rel="self" type="application/rss+xml" />
     
@@ -42,6 +42,82 @@
         
       
 
+      
+      <item>
+        <title>走过的路都将成为财富之Debugging大合集</title>
+        <link>https://moyahuang.github.io/zh/posts/%E8%B5%B0%E8%BF%87%E7%9A%84%E8%B7%AF%E9%83%BD%E5%B0%86%E6%88%90%E4%B8%BA%E8%B4%A2%E5%AF%8C%E4%B9%8Bdebugging%E5%A4%A7%E5%90%88%E9%9B%86/</link>
+        <pubDate>Fri, 11 Dec 2020 14:10:50 +0800</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Fri, 11 Dec 2020 14:10:50 +0800</atom:modified>
+        <guid>https://moyahuang.github.io/zh/posts/%E8%B5%B0%E8%BF%87%E7%9A%84%E8%B7%AF%E9%83%BD%E5%B0%86%E6%88%90%E4%B8%BA%E8%B4%A2%E5%AF%8C%E4%B9%8Bdebugging%E5%A4%A7%E5%90%88%E9%9B%86/</guid>
+        <description>Smart Contract ⚠️[truffle init]Error: Error making request to https://raw.githubusercontent.com&amp;hellip; date: 2020/12/11 description: √ Preparing to download × Downloading Error: Error: Error: Error making request to https://raw.githubusercontent.com/truffle-box/bare-box/master/truffle-box.json. Got error: read ECONNRESET. Please check the format of the requested resource. at Object.unbox (C:\Users\w\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\truffle-box\box.js:65:1) at processTicksAndRejections (internal/process/task_queues.js:97:5) Truffle v5.0.2 (core: 5.0.2) Node v12.18.3 solution: 修改hosts 打开C</description>
+        
+        <dc:creator>Moya</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>踩坑</category>
+            
+          
+            
+              <category>开发</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>技术合同登记</title>
+        <link>https://moyahuang.github.io/zh/posts/%E6%8A%80%E6%9C%AF%E5%90%88%E5%90%8C%E7%99%BB%E8%AE%B0/</link>
+        <pubDate>Fri, 11 Dec 2020 14:00:50 +0800</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Fri, 11 Dec 2020 14:00:50 +0800</atom:modified>
+        <guid>https://moyahuang.github.io/zh/posts/%E6%8A%80%E6%9C%AF%E5%90%88%E5%90%8C%E7%99%BB%E8%AE%B0/</guid>
+        <description>// todo</description>
+        
+        <dc:creator>Moya</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>分类恐惧症</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>那些话曾经给我力量</title>
+        <link>https://moyahuang.github.io/zh/posts/%E9%82%A3%E4%BA%9B%E8%AF%9D%E6%9B%BE%E7%BB%8F%E7%BB%99%E6%88%91%E5%8A%9B%E9%87%8F/</link>
+        <pubDate>Fri, 04 Dec 2020 10:42:52 +0800</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Fri, 04 Dec 2020 10:42:52 +0800</atom:modified>
+        <guid>https://moyahuang.github.io/zh/posts/%E9%82%A3%E4%BA%9B%E8%AF%9D%E6%9B%BE%E7%BB%8F%E7%BB%99%E6%88%91%E5%8A%9B%E9%87%8F/</guid>
+        <description>Français &amp;ldquo;Il n&amp;rsquo;ya qu&amp;rsquo;un héroïsme au monde：c&amp;rsquo;est de voir le monde tel qu&amp;rsquo;il est et de l&amp;rsquo;aimer.&amp;quot; English &amp;ldquo;There&amp;rsquo;s only one heroism in the world: to know the world as it is, and to love it.&amp;quot; 中文 “世</description>
+        
+        <dc:creator>Moya Huang</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>能量瓶</category>
+            
+          
+        
+        
+        
+      </item>
       
       <item>
         <title>女性对女性的温柔小记&amp;关于郭家桥北街</title>
@@ -88,6 +164,30 @@
           
             
               <category>软件著作权</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>工业互联网小百科</title>
+        <link>https://moyahuang.github.io/zh/posts/%E5%B7%A5%E4%B8%9A%E4%BA%92%E8%81%94%E7%BD%91%E5%B0%8F%E7%99%BE%E7%A7%91/</link>
+        <pubDate>Wed, 08 Jan 2020 14:00:50 +0800</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Wed, 08 Jan 2020 14:00:50 +0800</atom:modified>
+        <guid>https://moyahuang.github.io/zh/posts/%E5%B7%A5%E4%B8%9A%E4%BA%92%E8%81%94%E7%BD%91%E5%B0%8F%E7%99%BE%E7%A7%91/</guid>
+        <description>概念 工业互联网 工业互联网是链接工业全系统、全产业链、全价值链，支撑工业智能化发展的关键基础设施，是新一代信息技术与制造业深度融合所形成的新兴</description>
+        
+        <dc:creator>Moya</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>分类恐惧症</category>
             
           
         

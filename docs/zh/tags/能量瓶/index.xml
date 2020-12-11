@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>能量瓶 on 中文</title>
+    <link>https://moyahuang.github.io/zh/tags/%E8%83%BD%E9%87%8F%E7%93%B6/</link>
+    <description>Recent content in 能量瓶 on 中文</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <managingEditor>moyahuang@foxmail.com (Moya Huang)</managingEditor>
+    <webMaster>moyahuang@foxmail.com (Moya Huang)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Fri, 04 Dec 2020 10:42:52 +0800</lastBuildDate>
+    
+        <atom:link href="https://moyahuang.github.io/zh/tags/%E8%83%BD%E9%87%8F%E7%93%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>那些话曾经给我力量</title>
+        <link>https://moyahuang.github.io/zh/posts/%E9%82%A3%E4%BA%9B%E8%AF%9D%E6%9B%BE%E7%BB%8F%E7%BB%99%E6%88%91%E5%8A%9B%E9%87%8F/</link>
+        <pubDate>Fri, 04 Dec 2020 10:42:52 +0800</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Fri, 04 Dec 2020 10:42:52 +0800</atom:modified>
+        <guid>https://moyahuang.github.io/zh/posts/%E9%82%A3%E4%BA%9B%E8%AF%9D%E6%9B%BE%E7%BB%8F%E7%BB%99%E6%88%91%E5%8A%9B%E9%87%8F/</guid>
+        <description>Français &amp;ldquo;Il n&amp;rsquo;ya qu&amp;rsquo;un héroïsme au monde：c&amp;rsquo;est de voir le monde tel qu&amp;rsquo;il est et de l&amp;rsquo;aimer.&amp;quot; English &amp;ldquo;There&amp;rsquo;s only one heroism in the world: to know the world as it is, and to love it.&amp;quot; 中文 “世</description>
+        
+        <dc:creator>Moya Huang</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>能量瓶</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

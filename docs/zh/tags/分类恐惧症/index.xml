@@ -14,6 +14,7 @@
     <managingEditor>moyahuang@foxmail.com (Moya Huang)</managingEditor>
     <webMaster>moyahuang@foxmail.com (Moya Huang)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Fri, 11 Dec 2020 14:00:50 +0800</lastBuildDate>
     
         <atom:link href="https://moyahuang.github.io/zh/tags/%E5%88%86%E7%B1%BB%E6%81%90%E6%83%A7%E7%97%87/index.xml" rel="self" type="application/rss+xml" />
     
@@ -24,13 +25,61 @@
       <item>
         <title>Posts</title>
         <link>https://moyahuang.github.io/zh/posts/</link>
-        <pubDate>Thu, 03 Dec 2020 10:50:50 +0800</pubDate>
+        <pubDate>Fri, 11 Dec 2020 14:10:50 +0800</pubDate>
         <author>moyahuang@foxmail.com (Moya Huang)</author>
         
         <guid>https://moyahuang.github.io/zh/posts/</guid>
         <description></description>
         
         <dc:creator>moya</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>分类恐惧症</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>技术合同登记</title>
+        <link>https://moyahuang.github.io/zh/posts/%E6%8A%80%E6%9C%AF%E5%90%88%E5%90%8C%E7%99%BB%E8%AE%B0/</link>
+        <pubDate>Fri, 11 Dec 2020 14:00:50 +0800</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Fri, 11 Dec 2020 14:00:50 +0800</atom:modified>
+        <guid>https://moyahuang.github.io/zh/posts/%E6%8A%80%E6%9C%AF%E5%90%88%E5%90%8C%E7%99%BB%E8%AE%B0/</guid>
+        <description>// todo</description>
+        
+        <dc:creator>Moya</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>分类恐惧症</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>工业互联网小百科</title>
+        <link>https://moyahuang.github.io/zh/posts/%E5%B7%A5%E4%B8%9A%E4%BA%92%E8%81%94%E7%BD%91%E5%B0%8F%E7%99%BE%E7%A7%91/</link>
+        <pubDate>Wed, 08 Jan 2020 14:00:50 +0800</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Wed, 08 Jan 2020 14:00:50 +0800</atom:modified>
+        <guid>https://moyahuang.github.io/zh/posts/%E5%B7%A5%E4%B8%9A%E4%BA%92%E8%81%94%E7%BD%91%E5%B0%8F%E7%99%BE%E7%A7%91/</guid>
+        <description>概念 工业互联网 工业互联网是链接工业全系统、全产业链、全价值链，支撑工业智能化发展的关键基础设施，是新一代信息技术与制造业深度融合所形成的新兴</description>
+        
+        <dc:creator>Moya</dc:creator>
         
         
         

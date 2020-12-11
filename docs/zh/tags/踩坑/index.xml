@@ -14,13 +14,41 @@
     <managingEditor>moyahuang@foxmail.com (Moya Huang)</managingEditor>
     <webMaster>moyahuang@foxmail.com (Moya Huang)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Tue, 01 Dec 2020 14:55:50 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 11 Dec 2020 14:10:50 +0800</lastBuildDate>
     
         <atom:link href="https://moyahuang.github.io/zh/tags/%E8%B8%A9%E5%9D%91/index.xml" rel="self" type="application/rss+xml" />
     
     
     
 
+      
+      <item>
+        <title>走过的路都将成为财富之Debugging大合集</title>
+        <link>https://moyahuang.github.io/zh/posts/%E8%B5%B0%E8%BF%87%E7%9A%84%E8%B7%AF%E9%83%BD%E5%B0%86%E6%88%90%E4%B8%BA%E8%B4%A2%E5%AF%8C%E4%B9%8Bdebugging%E5%A4%A7%E5%90%88%E9%9B%86/</link>
+        <pubDate>Fri, 11 Dec 2020 14:10:50 +0800</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Fri, 11 Dec 2020 14:10:50 +0800</atom:modified>
+        <guid>https://moyahuang.github.io/zh/posts/%E8%B5%B0%E8%BF%87%E7%9A%84%E8%B7%AF%E9%83%BD%E5%B0%86%E6%88%90%E4%B8%BA%E8%B4%A2%E5%AF%8C%E4%B9%8Bdebugging%E5%A4%A7%E5%90%88%E9%9B%86/</guid>
+        <description>Smart Contract ⚠️[truffle init]Error: Error making request to https://raw.githubusercontent.com&amp;hellip; date: 2020/12/11 description: √ Preparing to download × Downloading Error: Error: Error: Error making request to https://raw.githubusercontent.com/truffle-box/bare-box/master/truffle-box.json. Got error: read ECONNRESET. Please check the format of the requested resource. at Object.unbox (C:\Users\w\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\truffle-box\box.js:65:1) at processTicksAndRejections (internal/process/task_queues.js:97:5) Truffle v5.0.2 (core: 5.0.2) Node v12.18.3 solution: 修改hosts 打开C</description>
+        
+        <dc:creator>Moya</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>踩坑</category>
+            
+          
+            
+              <category>开发</category>
+            
+          
+        
+        
+        
+      </item>
       
       <item>
         <title>软件著作权申请实录</title>
