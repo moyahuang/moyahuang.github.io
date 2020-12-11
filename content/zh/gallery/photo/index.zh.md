@@ -1,10 +1,10 @@
 ---
 title: "Photo"
-date: 2018-10-12T10:20:16+09:00
+date: 2020-12-01T10:20:16+09:00
 description: Photo Gallery
 type: "gallery"
 mode: "one-by-one"
-description: "定格光影"
+description: "定格"
 images:
   - image: IMG_5839.jpg
     caption: 成都随处可见的卖鞋垫的奶奶
@@ -16,3 +16,4 @@ images:
     caption: 早上喧哗的郭家桥北街
 draft: false
 ---
+温暖而又平凡的过往

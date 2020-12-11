@@ -73,6 +73,26 @@
   </url>
   
   <url>
+    <loc>https://moyahuang.github.io/zh/gallery/art/</loc>
+    <lastmod>2020-12-11T10:20:16+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moyahuang.github.io/zh/gallery/</loc>
+    <lastmod>2020-12-11T10:20:16+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://moyahuang.github.io/en/gallery/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://moyahuang.github.io/zh/gallery/"
+                />
+  </url>
+  
+  <url>
     <loc>https://moyahuang.github.io/zh/tags/%E8%83%BD%E9%87%8F%E7%93%B6/</loc>
     <lastmod>2020-12-04T10:42:52+08:00</lastmod>
   </url>
@@ -100,6 +120,21 @@
   <url>
     <loc>https://moyahuang.github.io/zh/posts/%E8%BD%AF%E4%BB%B6%E8%91%97%E4%BD%9C%E6%9D%83%E7%94%B3%E8%AF%B7%E5%AE%9E%E5%BD%95/</loc>
     <lastmod>2020-12-01T14:55:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moyahuang.github.io/zh/gallery/photo/</loc>
+    <lastmod>2020-12-01T10:20:16+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://moyahuang.github.io/en/gallery/photo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://moyahuang.github.io/zh/gallery/photo/"
+                />
   </url>
   
   <url>
@@ -205,41 +240,6 @@
                 hreflang="zh"
                 href="https://moyahuang.github.io/zh/archive/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://moyahuang.github.io/zh/gallery/</loc>
-    <lastmod>2018-10-12T10:20:16+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://moyahuang.github.io/en/gallery/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://moyahuang.github.io/zh/gallery/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://moyahuang.github.io/zh/gallery/photo/</loc>
-    <lastmod>2018-10-12T10:20:16+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://moyahuang.github.io/en/gallery/photo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://moyahuang.github.io/zh/gallery/photo/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://moyahuang.github.io/zh/gallery/art/</loc>
-    <lastmod>2018-10-11T10:20:16+09:00</lastmod>
   </url>
   
   <url>

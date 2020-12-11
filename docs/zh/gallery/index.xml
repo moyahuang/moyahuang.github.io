@@ -14,7 +14,7 @@
     <managingEditor>moyahuang@foxmail.com (Moya Huang)</managingEditor>
     <webMaster>moyahuang@foxmail.com (Moya Huang)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Fri, 12 Oct 2018 10:20:16 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 11 Dec 2020 10:20:16 +0900</lastBuildDate>
     
         <atom:link href="https://moyahuang.github.io/zh/gallery/index.xml" rel="self" type="application/rss+xml" />
     
@@ -23,13 +23,13 @@
 
       
       <item>
-        <title>Photo</title>
-        <link>https://moyahuang.github.io/zh/gallery/photo/</link>
-        <pubDate>Fri, 12 Oct 2018 10:20:16 +0900</pubDate>
+        <title>Art</title>
+        <link>https://moyahuang.github.io/zh/gallery/art/</link>
+        <pubDate>Fri, 11 Dec 2020 10:20:16 +0900</pubDate>
         <author>moyahuang@foxmail.com (Moya Huang)</author>
-        <atom:modified>Fri, 12 Oct 2018 10:20:16 +0900</atom:modified>
-        <guid>https://moyahuang.github.io/zh/gallery/photo/</guid>
-        <description></description>
+        <atom:modified>Fri, 11 Dec 2020 10:20:16 +0900</atom:modified>
+        <guid>https://moyahuang.github.io/zh/gallery/art/</guid>
+        <description>偶尔画画的一些痕迹</description>
         
         <dc:creator>Moya Huang</dc:creator>
         
@@ -41,13 +41,13 @@
       </item>
       
       <item>
-        <title>Art</title>
-        <link>https://moyahuang.github.io/zh/gallery/art/</link>
-        <pubDate>Thu, 11 Oct 2018 10:20:16 +0900</pubDate>
+        <title>Photo</title>
+        <link>https://moyahuang.github.io/zh/gallery/photo/</link>
+        <pubDate>Tue, 01 Dec 2020 10:20:16 +0900</pubDate>
         <author>moyahuang@foxmail.com (Moya Huang)</author>
-        <atom:modified>Thu, 11 Oct 2018 10:20:16 +0900</atom:modified>
-        <guid>https://moyahuang.github.io/zh/gallery/art/</guid>
-        <description></description>
+        <atom:modified>Tue, 01 Dec 2020 10:20:16 +0900</atom:modified>
+        <guid>https://moyahuang.github.io/zh/gallery/photo/</guid>
+        <description>温暖而又平凡的过往</description>
         
         <dc:creator>Moya Huang</dc:creator>
         
