@@ -32,3 +32,20 @@ solution: 修改hosts
 
 raw.githubusercontent.com的ip地址可以在以下或其他网站查询，没有则可以另外谷歌：
 https://www.ipaddress.com/
+
+
+**⚠️[truffle develop]PSSecurityException**
+date: 2020/12/11
+description:
+```
+息，请参阅 https:/go.microsoft.com/fwlink/?LinkID=135170 中的 about_Execution_Policies。
+所在位置 行:1 字符: 1
++ truffle develop
++ ~~~~~~~
+    + CategoryInfo          : SecurityError: (:) []，PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+```
+solution: 更改开发者选项
+1. windows搜索并打开开发者设置
+2. 点击标签powershell的应用
+问题解决

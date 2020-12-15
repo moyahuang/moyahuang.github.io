@@ -14,13 +14,31 @@
     <managingEditor>moyahuang@foxmail.com (Moya Huang)</managingEditor>
     <webMaster>moyahuang@foxmail.com (Moya Huang)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Fri, 11 Dec 2020 14:10:50 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 13 Dec 2020 18:06:20 +0800</lastBuildDate>
     
         <atom:link href="https://moyahuang.github.io/zh/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     
 
+      
+      <item>
+        <title>区块链开发</title>
+        <link>https://moyahuang.github.io/zh/posts/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%BC%80%E5%8F%91/</link>
+        <pubDate>Sun, 13 Dec 2020 18:06:20 +0800</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Sun, 13 Dec 2020 18:06:20 +0800</atom:modified>
+        <guid>https://moyahuang.github.io/zh/posts/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%BC%80%E5%8F%91/</guid>
+        <description>Intro MetaMask MetaMask是通过浏览器访问分布式应用（dapps）的一个Chrome插件。可访问以太坊主网，任一以太坊测试网（Ropsten, Kovan, and</description>
+        
+        <dc:creator>Moya Huang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
       <item>
         <title>走过的路都将成为财富之Debugging大合集</title>

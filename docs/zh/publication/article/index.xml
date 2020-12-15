@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>article on 中文</title>
+    <link>https://moyahuang.github.io/zh/publication/article/</link>
+    <description>Recent content in article on 中文</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <managingEditor>moyahuang@foxmail.com (Moya Huang)</managingEditor>
+    <webMaster>moyahuang@foxmail.com (Moya Huang)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Tue, 15 Dec 2020 14:08:48 +0000</lastBuildDate>
+    
+        <atom:link href="https://moyahuang.github.io/zh/publication/article/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>Demo Abstract: FingerLite: Finger Gesture Recognition Using Ambient Light</title>
+        <link>https://moyahuang.github.io/zh/publication/article/3/</link>
+        <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Mon, 06 Jul 2020 00:00:00 +0000</atom:modified>
+        <guid>https://moyahuang.github.io/zh/publication/article/3/</guid>
+        <description></description>
+        
+        <dc:creator>Moya Huang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Ambient Light Based Hand Gesture Recognition Enabled by Recurrent Neural Network</title>
+        <link>https://moyahuang.github.io/zh/publication/article/2/</link>
+        <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Wed, 01 Jan 2020 00:00:00 +0000</atom:modified>
+        <guid>https://moyahuang.github.io/zh/publication/article/2/</guid>
+        <description></description>
+        
+        <dc:creator>Moya Huang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>A Matrix-based component decomposition algorithm of Tibetan characters</title>
+        <link>https://moyahuang.github.io/zh/publication/article/1/</link>
+        <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Sun, 05 May 2019 00:00:00 +0000</atom:modified>
+        <guid>https://moyahuang.github.io/zh/publication/article/1/</guid>
+        <description></description>
+        
+        <dc:creator>Moya Huang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

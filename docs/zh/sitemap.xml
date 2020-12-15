@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://moyahuang.github.io/zh/</loc>
-    <lastmod>2020-12-11T14:10:50+08:00</lastmod>
+    <lastmod>2020-12-15T14:08:48+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -18,8 +18,53 @@
   </url>
   
   <url>
+    <loc>https://moyahuang.github.io/zh/publication/article/</loc>
+    <lastmod>2020-12-15T14:08:48+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://moyahuang.github.io/en/publication/article/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://moyahuang.github.io/zh/publication/article/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://moyahuang.github.io/zh/publication/misc/</loc>
+    <lastmod>2020-12-15T14:08:48+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://moyahuang.github.io/en/publication/misc/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://moyahuang.github.io/zh/publication/misc/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://moyahuang.github.io/zh/publication/</loc>
+    <lastmod>2020-12-15T14:08:48+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://moyahuang.github.io/en/publication/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://moyahuang.github.io/zh/publication/"
+                />
+  </url>
+  
+  <url>
     <loc>https://moyahuang.github.io/zh/posts/</loc>
-    <lastmod>2020-12-11T14:10:50+08:00</lastmod>
+    <lastmod>2020-12-13T18:06:20+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -30,6 +75,11 @@
                 hreflang="zh"
                 href="https://moyahuang.github.io/zh/posts/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://moyahuang.github.io/zh/posts/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2020-12-13T18:06:20+08:00</lastmod>
   </url>
   
   <url>
@@ -153,6 +203,16 @@
   </url>
   
   <url>
+    <loc>https://moyahuang.github.io/zh/publication/article/3/</loc>
+    <lastmod>2020-07-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moyahuang.github.io/zh/publication/misc/1/</loc>
+    <lastmod>2020-03-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://moyahuang.github.io/zh/series/</loc>
     <lastmod>2020-01-08T14:00:50+08:00</lastmod>
     <xhtml:link
@@ -185,6 +245,11 @@
   <url>
     <loc>https://moyahuang.github.io/zh/posts/%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2020-01-08T14:00:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moyahuang.github.io/zh/publication/article/2/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -240,6 +305,11 @@
                 hreflang="zh"
                 href="https://moyahuang.github.io/zh/archive/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://moyahuang.github.io/zh/publication/article/1/</loc>
+    <lastmod>2019-05-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>

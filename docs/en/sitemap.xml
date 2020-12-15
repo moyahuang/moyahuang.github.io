@@ -125,6 +125,16 @@
   <url>
     <loc>https://moyahuang.github.io/en/publication/article/</loc>
     <lastmod>2020-03-05T14:08:48+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://moyahuang.github.io/zh/publication/article/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://moyahuang.github.io/en/publication/article/"
+                />
   </url>
   
   <url>
@@ -135,11 +145,31 @@
   <url>
     <loc>https://moyahuang.github.io/en/publication/misc/</loc>
     <lastmod>2020-03-05T14:08:48+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://moyahuang.github.io/zh/publication/misc/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://moyahuang.github.io/en/publication/misc/"
+                />
   </url>
   
   <url>
     <loc>https://moyahuang.github.io/en/publication/</loc>
     <lastmod>2020-03-05T14:08:48+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://moyahuang.github.io/zh/publication/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://moyahuang.github.io/en/publication/"
+                />
   </url>
   
   <url>
