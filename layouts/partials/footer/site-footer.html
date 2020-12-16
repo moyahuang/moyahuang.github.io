@@ -36,6 +36,8 @@
         {{ end }}
         
     </div> 
-</footer>
 
-{{ if .Params.math}}{{ partial "math.html" . }}{{ end }}
+    {{ if $.Site.GoogleAnalytics }}  
+        {{ template "_internal/google_analytics_async.html" . }}
+    {{ end }}
+</footer>

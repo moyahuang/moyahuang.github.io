@@ -14,7 +14,7 @@
     <managingEditor>moyahuang@foxmail.com (Moya Huang)</managingEditor>
     <webMaster>moyahuang@foxmail.com (Moya Huang)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Tue, 15 Dec 2020 14:08:48 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Dec 2020 22:47:25 +0800</lastBuildDate>
     
         <atom:link href="https://moyahuang.github.io/zh/index.xml" rel="self" type="application/rss+xml" />
     
@@ -44,18 +44,64 @@
 
       
       <item>
+        <title>复现《Smart Contract Based Access Control for the Internet of Things》</title>
+        <link>https://moyahuang.github.io/zh/posts/%E5%A4%8D%E7%8E%B0smart-contract-based-access-control-for-the-internet-of-things/</link>
+        <pubDate>Tue, 15 Dec 2020 22:47:25 +0800</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Tue, 15 Dec 2020 22:47:25 +0800</atom:modified>
+        <guid>https://moyahuang.github.io/zh/posts/%E5%A4%8D%E7%8E%B0smart-contract-based-access-control-for-the-internet-of-things/</guid>
+        <description>论文引文信息（in Chicago） Zhang, Yuanyu, Shoji Kasahara, Yulong Shen, Xiaohong Jiang, and Jianxiong Wan. &amp;ldquo;Smart contract-based access control for the internet of things.&amp;rdquo; IEEE Internet of Things Journal 6, no. 2 (2018): 1594-1605. 论文分析 论文概述 论文设计了三种类型的智能合约用</description>
+        
+        <dc:creator>Moya</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>学术</category>
+            
+          
+            
+              <category>区块链</category>
+            
+          
+            
+              <category>智能合约</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
         <title>区块链开发</title>
         <link>https://moyahuang.github.io/zh/posts/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%BC%80%E5%8F%91/</link>
         <pubDate>Sun, 13 Dec 2020 18:06:20 +0800</pubDate>
         <author>moyahuang@foxmail.com (Moya Huang)</author>
         <atom:modified>Sun, 13 Dec 2020 18:06:20 +0800</atom:modified>
         <guid>https://moyahuang.github.io/zh/posts/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%BC%80%E5%8F%91/</guid>
-        <description>Intro MetaMask MetaMask是通过浏览器访问分布式应用（dapps）的一个Chrome插件。可访问以太坊主网，任一以太坊测试网（Ropsten, Kovan, and</description>
+        <description>Intro Solidity Solidity 是一门面向合约的、为实现智能合约而创建的高级编程语言。这门语言受到了 C++，Python 和 Javascript 语言的影响，设计的目的是能在以太坊虚拟机（</description>
         
-        <dc:creator>Moya Huang</dc:creator>
+        <dc:creator>Moya</dc:creator>
         
         
         
+        
+          
+            
+              <category>学术</category>
+            
+          
+            
+              <category>区块链</category>
+            
+          
+            
+              <category>智能合约</category>
+            
+          
         
         
         
