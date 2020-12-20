@@ -1766,7 +1766,7 @@ if (!doNotTrack) {
 <div class="single__infos">
   <time class="single__info" title="创建日期">📅&nbsp;2020年12月11日 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;1&nbsp;分钟 </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;2&nbsp;分钟 </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="作者">🙀&nbsp;Moya</span>
   
@@ -1823,6 +1823,39 @@ description:</p>
 <li>点击标签powershell的应用<br />
 问题解决</li>
 </ol>
+<p><strong>⚠️[remix] smart contract deploy error</strong><br />
+date: 2020/12/18<br />
+description:</p>
+<pre><code>creation of Judge errored: Error encoding arguments: Error: invalid BigNumber string (argument=&quot;value&quot;, value=&quot;&quot;, code=INVALID_ARGUMENT, version=bignumber/5.0.8)
+</code></pre><p>solution: 应该在部署时传入构造函数的参数<br />
+<figure >
+  
+  
+  
+    <img data-src="/images/screenshots/Snipaste_2020-12-18_20-07-53.jpg"  data-caption="" src="data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='' height='' viewBox='0 0 24 24'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cpath fill='%23aaa' d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1zm-4.44-6.19l-2.35 3.02-1.56-1.88c-.2-.25-.58-.24-.78.01l-1.74 2.23c-.26.33-.02.81.39.81h8.98c.41 0 .65-.47.4-.8l-2.55-3.39c-.19-.26-.59-.26-.79 0z'/%3E%3C/svg%3E" class="lazyload" style="width:;height:;"/>
+  
+
+  
+  
+    <figcaption style="text-align: ">
+      <strong>Remix IDE截图</strong>:
+      
+    </figcaption>
+  
+</figure></p>
+<p><strong>⚠️ [web3.js] Invalid JSON RPC response: undefined</strong><br />
+date: 2020/12/18<br />
+description:</p>
+<pre><code>Error: Invalid JSON RPC response: undefined
+</code></pre><p>solution: 网络不存在，检查<code>HttpProvider</code>参数url地址（Ganache创建的私有区块链端口为7545）</p>
+<p>[web3.js] BigNumber Error: new BigNumber() not a base 16 number<br />
+date: 2020/12/18<br />
+description:</p>
+<pre><code>BigNumber Error: new BigNumber() not a base 16 number: 
+    at raise (...\node_modules\bignumber.js\bignumber.js)
+</code></pre><p>solution:</p>
+<p>研究内容：访问控制通过确保授权用户对资源进行权限范围内的操作的一种技术手段，其目的在于实现数据开放的同时保证数据的安全和隐私性。计划基于以太坊智能合约设计并实现去中心化的访问控制机制，对其可行性、性能、隐私性等方面进行探索。<br />
+关键词：访问控制，区块链，智能合约</p>
 
     </article>
     

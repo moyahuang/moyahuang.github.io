@@ -14,7 +14,7 @@
     <managingEditor>moyahuang@foxmail.com (Moya Huang)</managingEditor>
     <webMaster>moyahuang@foxmail.com (Moya Huang)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Tue, 15 Dec 2020 22:47:25 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 20 Dec 2020 10:56:10 +0800</lastBuildDate>
     
         <atom:link href="https://moyahuang.github.io/zh/posts/index.xml" rel="self" type="application/rss+xml" />
     
@@ -23,13 +23,37 @@
 
       
       <item>
+        <title>我为什么对思想输出开始有了冲动</title>
+        <link>https://moyahuang.github.io/zh/posts/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AF%B9%E6%80%9D%E6%83%B3%E8%BE%93%E5%87%BA%E5%BC%80%E5%A7%8B%E6%9C%89%E4%BA%86%E5%86%B2%E5%8A%A8/</link>
+        <pubDate>Sun, 20 Dec 2020 10:56:10 +0800</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Sun, 20 Dec 2020 10:56:10 +0800</atom:modified>
+        <guid>https://moyahuang.github.io/zh/posts/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AF%B9%E6%80%9D%E6%83%B3%E8%BE%93%E5%87%BA%E5%BC%80%E5%A7%8B%E6%9C%89%E4%BA%86%E5%86%B2%E5%8A%A8/</guid>
+        <description>在我众多弱点中最让我感觉到棘手的就是口语表达能力。即使是一个没有任何影响力的普通人，如果能够清晰精准甚至形象诙谐地表达自己的观点，描绘一个故</description>
+        
+        <dc:creator>Moya</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>杂谈</category>
+            
+          
+        
+        
+        
+      </item>
+      
+      <item>
         <title>复现《Smart Contract Based Access Control for the Internet of Things》</title>
         <link>https://moyahuang.github.io/zh/posts/%E5%A4%8D%E7%8E%B0smart-contract-based-access-control-for-the-internet-of-things/</link>
         <pubDate>Tue, 15 Dec 2020 22:47:25 +0800</pubDate>
         <author>moyahuang@foxmail.com (Moya Huang)</author>
         <atom:modified>Tue, 15 Dec 2020 22:47:25 +0800</atom:modified>
         <guid>https://moyahuang.github.io/zh/posts/%E5%A4%8D%E7%8E%B0smart-contract-based-access-control-for-the-internet-of-things/</guid>
-        <description>论文引文信息（in Chicago） Zhang, Yuanyu, Shoji Kasahara, Yulong Shen, Xiaohong Jiang, and Jianxiong Wan. &amp;ldquo;Smart contract-based access control for the internet of things.&amp;rdquo; IEEE Internet of Things Journal 6, no. 2 (2018): 1594-1605. 论文分析 论文概述 论文设计了三种类型的智能合约用</description>
+        <description>搞科研一定要注意：不要用商业性和实用性去苛求科研。例如，本文仅仅验证了系统可行性，是少量设备、理想环境下的一种演示。在性能、安全、隐私、可扩</description>
         
         <dc:creator>Moya</dc:creator>
         
@@ -260,12 +284,6 @@
         
         
         
-          
-            
-              <category>数据结构与算法</category>
-            
-          
-        
       </item>
       
       <item>
@@ -293,12 +311,6 @@
           
         
         
-        
-          
-            
-              <category>前端</category>
-            
-          
         
       </item>
       

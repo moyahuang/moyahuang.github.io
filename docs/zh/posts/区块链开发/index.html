@@ -1803,9 +1803,13 @@ if (!doNotTrack) {
 <li><em>Remix</em></li>
 </ul>
 <blockquote>
-<p>基于浏览器的 IDE，集成了编译器和 Solidity 运行时环境，不需要服务端组件。<br />
-<em>MetaMask</em><br />
-MetaMask是通过浏览器访问分布式应用（dapps）的一个Chrome插件。可访问以太坊主网，任一以太坊测试网（Ropsten, Kovan, and Rinkeby），或者本地区块链。</p>
+<p>基于浏览器的 IDE，集成了编译器和 Solidity 运行时环境，不需要服务端组件。</p>
+</blockquote>
+<ul>
+<li><em>MetaMask</em></li>
+</ul>
+<blockquote>
+<p>MetaMask是通过浏览器访问分布式应用（dapps）的一个Chrome插件。可访问以太坊主网，任一以太坊测试网（Ropsten, Kovan, and Rinkeby），或者本地区块链。</p>
 </blockquote>
 <ul>
 <li><em>Geth</em></li>
@@ -1813,6 +1817,12 @@ MetaMask是通过浏览器访问分布式应用（dapps）的一个Chrome插件�
 <blockquote>
 <p>Geth是Go Ethereum的缩写，是以太坊协议的三大原始实现之一（另外还有C++和Python），也是最受欢迎的客户端实现。它可以作为客户端运行在几乎任一操作系统上。安装了客户端的节点可以与其他节点建立p2p通信信道，签署和广播交易，挖掘，部署和与智能合约交互。<br />
 启动Geth时，客户端会自动在端口8545启动RPC服务器。然后使用web3j等库连接到localhost：8545或使用curl或wget手动调用它来访问此端口的RPC服务器及其方法。</p>
+</blockquote>
+<ul>
+<li>Web3.js</li>
+</ul>
+<blockquote>
+<p>web.js是通过HTTP/IPC/WebSocket等协议用于和本地或远程以太坊节点进行交互的javascript库。</p>
 </blockquote>
 <h2 id="简单的智能合约">简单的智能合约</h2>
 <ol>
@@ -1855,14 +1865,14 @@ MetaMask是通过浏览器访问分布式应用（dapps）的一个Chrome插件�
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-solidity" data-lang="solidity"><span class="n">Coin</span><span class="p">.</span><span class="n">Sent</span><span class="p">().</span><span class="n">watch</span><span class="p">({},</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s">&#34;Coin transfer: &#34;</span> <span class="o">+</span> <span class="n">result</span><span class="p">.</span><span class="n">args</span><span class="p">.</span><span class="n">amount</span> <span class="o">+</span>
-            <span class="s">&#34; coins were sent from &#34;</span> <span class="o">+</span> <span class="n">result</span><span class="p">.</span><span class="n">args</span><span class="p">.</span><span class="kr">from</span> <span class="o">+</span>
-            <span class="s">&#34; to &#34;</span> <span class="o">+</span> <span class="n">result</span><span class="p">.</span><span class="n">args</span><span class="p">.</span><span class="n">to</span> <span class="o">+</span> <span class="s">&#34;.&#34;</span><span class="p">);</span>
-        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s">&#34;Balances now:</span><span class="se">\n</span><span class="s">&#34;</span> <span class="o">+</span>
-            <span class="s">&#34;Sender: &#34;</span> <span class="o">+</span> <span class="n">Coin</span><span class="p">.</span><span class="n">balances</span><span class="p">.</span><span class="nb">call</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">args</span><span class="p">.</span><span class="kr">from</span><span class="p">)</span> <span class="o">+</span>
-            <span class="s">&#34;Receiver: &#34;</span> <span class="o">+</span> <span class="n">Coin</span><span class="p">.</span><span class="n">balances</span><span class="p">.</span><span class="nb">call</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">args</span><span class="p">.</span><span class="n">to</span><span class="p">));</span>
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">Coin</span><span class="p">.</span><span class="nx">Sent</span><span class="p">().</span><span class="nx">watch</span><span class="p">({},</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Coin transfer: &#34;</span> <span class="o">+</span> <span class="nx">result</span><span class="p">.</span><span class="nx">args</span><span class="p">.</span><span class="nx">amount</span> <span class="o">+</span>
+            <span class="s2">&#34; coins were sent from &#34;</span> <span class="o">+</span> <span class="nx">result</span><span class="p">.</span><span class="nx">args</span><span class="p">.</span><span class="nx">from</span> <span class="o">+</span>
+            <span class="s2">&#34; to &#34;</span> <span class="o">+</span> <span class="nx">result</span><span class="p">.</span><span class="nx">args</span><span class="p">.</span><span class="nx">to</span> <span class="o">+</span> <span class="s2">&#34;.&#34;</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Balances now:\n&#34;</span> <span class="o">+</span>
+            <span class="s2">&#34;Sender: &#34;</span> <span class="o">+</span> <span class="nx">Coin</span><span class="p">.</span><span class="nx">balances</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">args</span><span class="p">.</span><span class="nx">from</span><span class="p">)</span> <span class="o">+</span>
+            <span class="s2">&#34;Receiver: &#34;</span> <span class="o">+</span> <span class="nx">Coin</span><span class="p">.</span><span class="nx">balances</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">args</span><span class="p">.</span><span class="nx">to</span><span class="p">));</span>
     <span class="p">}</span>
 <span class="p">})</span>
 </code></pre></td></tr></table>
@@ -1976,11 +1986,12 @@ MetaMask是通过浏览器访问分布式应用（dapps）的一个Chrome插件�
 </div><p>note:<br />
 官方教程推荐使用clef工具进行账户管理，具体步骤可参见</p>
 <h2 id="参考教程">参考教程</h2>
-<p>[1]<a href="https://www.bilibili.com/video/BV1gK4y1x7BC">柏链公开课：第五期 Geth的安装</a><br />
-[2]<a href="https://github.com/yekai1003/rungeth/blob/master/Geth%E5%AE%89%E8%A3%85%E4%B8%8E%E5%90%AF%E5%8A%A8.md">讲师github：Geth安装与启动</a><br />
-[3]<a href="https://remix-ide.readthedocs.io/en/latest/#">Remix IDE官方文档</a><br />
-[4]<a href="https://solidity-cn.readthedocs.io/zh/develop/introduction-to-smart-contracts.html">Solidity官方文档</a><br />
-[5]<a href="http://www.lianmenhu.com/blockchain-8217-1">链门户：Geth介绍及如何运行以太坊节点</a></p>
+<p>[1] <a href="https://www.bilibili.com/video/BV1gK4y1x7BC">柏链公开课：第五期 Geth的安装</a><br />
+[2] <a href="https://github.com/yekai1003/rungeth/blob/master/Geth%E5%AE%89%E8%A3%85%E4%B8%8E%E5%90%AF%E5%8A%A8.md">讲师github：Geth安装与启动</a><br />
+[3] <a href="https://remix-ide.readthedocs.io/en/latest/#">Remix IDE官方文档</a><br />
+[4] <a href="https://solidity-cn.readthedocs.io/zh/develop/introduction-to-smart-contracts.html">Solidity官方文档</a><br />
+[5] <a href="http://www.lianmenhu.com/blockchain-8217-1">链门户：Geth介绍及如何运行以太坊节点</a><br />
+[5] <a href="https://web3js.readthedocs.io/en/v1.3.0/index.html#">web3js官方文档</a></p>
 
     </article>
     

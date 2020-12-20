@@ -29,7 +29,7 @@
         <author>moyahuang@foxmail.com (Moya Huang)</author>
         <atom:modified>Tue, 15 Dec 2020 22:47:25 +0800</atom:modified>
         <guid>https://moyahuang.github.io/zh/posts/%E5%A4%8D%E7%8E%B0smart-contract-based-access-control-for-the-internet-of-things/</guid>
-        <description>论文引文信息（in Chicago） Zhang, Yuanyu, Shoji Kasahara, Yulong Shen, Xiaohong Jiang, and Jianxiong Wan. &amp;ldquo;Smart contract-based access control for the internet of things.&amp;rdquo; IEEE Internet of Things Journal 6, no. 2 (2018): 1594-1605. 论文分析 论文概述 论文设计了三种类型的智能合约用</description>
+        <description>搞科研一定要注意：不要用商业性和实用性去苛求科研。例如，本文仅仅验证了系统可行性，是少量设备、理想环境下的一种演示。在性能、安全、隐私、可扩</description>
         
         <dc:creator>Moya</dc:creator>
         
