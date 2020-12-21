@@ -27,7 +27,7 @@ header:
     title:
       - 进击的莫莫哒
     subtitle:
-      - "A typical ENFP: Passionate / Curious / Happy / Resilient / Loving / Resolute"
+      - "绝不轻易认输的学术腊鸡"
     titleColor: 
     titleShadow: true
     titleFontSize: 44
