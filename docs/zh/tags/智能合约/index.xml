@@ -14,13 +14,45 @@
     <managingEditor>moyahuang@foxmail.com (Moya Huang)</managingEditor>
     <webMaster>moyahuang@foxmail.com (Moya Huang)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Tue, 15 Dec 2020 22:47:25 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 21 Dec 2020 22:21:26 +0800</lastBuildDate>
     
         <atom:link href="https://moyahuang.github.io/zh/tags/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/index.xml" rel="self" type="application/rss+xml" />
     
     
     
 
+      
+      <item>
+        <title>复现BBRAC</title>
+        <link>https://moyahuang.github.io/zh/posts/%E5%A4%8D%E7%8E%B0bbrac/</link>
+        <pubDate>Mon, 21 Dec 2020 22:21:26 +0800</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Mon, 21 Dec 2020 22:21:26 +0800</atom:modified>
+        <guid>https://moyahuang.github.io/zh/posts/%E5%A4%8D%E7%8E%B0bbrac/</guid>
+        <description>AccessControl.sol 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69</description>
+        
+        <dc:creator>Moya</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>学术</category>
+            
+          
+            
+              <category>区块链</category>
+            
+          
+            
+              <category>智能合约</category>
+            
+          
+        
+        
+        
+      </item>
       
       <item>
         <title>复现《Smart Contract Based Access Control for the Internet of Things》</title>
