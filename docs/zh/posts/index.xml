@@ -14,13 +14,55 @@
     <managingEditor>moyahuang@foxmail.com (Moya Huang)</managingEditor>
     <webMaster>moyahuang@foxmail.com (Moya Huang)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 20 Dec 2020 10:56:10 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 02 Jan 2021 18:09:48 +0800</lastBuildDate>
     
         <atom:link href="https://moyahuang.github.io/zh/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     
 
+      
+      <item>
+        <title>男人这么美好的东西——跑酷团队STORROR</title>
+        <link>https://moyahuang.github.io/zh/posts/%E7%94%B7%E4%BA%BA%E8%BF%99%E4%B9%88%E7%BE%8E%E5%A5%BD%E7%9A%84%E4%B8%9C%E8%A5%BF%E8%B7%91%E9%85%B7%E5%9B%A2%E9%98%9Fstorror/</link>
+        <pubDate>Sat, 02 Jan 2021 18:09:48 +0800</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Sat, 02 Jan 2021 18:09:48 +0800</atom:modified>
+        <guid>https://moyahuang.github.io/zh/posts/%E7%94%B7%E4%BA%BA%E8%BF%99%E4%B9%88%E7%BE%8E%E5%A5%BD%E7%9A%84%E4%B8%9C%E8%A5%BF%E8%B7%91%E9%85%B7%E5%9B%A2%E9%98%9Fstorror/</guid>
+        <description>STORROR是英国的一个专业跑酷团队，正式成立于2010年10月10日。成员包括两对兄弟在内分别是：人畜无害Max和辫子哥Benj Cave</description>
+        
+        <dc:creator>Moya Huang</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>穿搭笔记</title>
+        <link>https://moyahuang.github.io/zh/posts/%E7%A9%BF%E6%90%AD%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Sat, 26 Dec 2020 19:27:35 +0800</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Sat, 26 Dec 2020 19:27:35 +0800</atom:modified>
+        <guid>https://moyahuang.github.io/zh/posts/%E7%A9%BF%E6%90%AD%E7%AC%94%E8%AE%B0/</guid>
+        <description>想让我的穿着体现我的内在和行事作风。 我的衣橱 基本款 流行款 上衣 打底（✔条纹，高领） 毛衣（V领，圆领，✔高领） 卫衣（✔连帽，无帽） 衬衫（纯色，✔</description>
+        
+        <dc:creator>Moya</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>分类恐惧症</category>
+            
+          
+        
+        
+        
+      </item>
       
       <item>
         <title>我为什么对思想输出开始有了冲动</title>
@@ -39,38 +81,6 @@
           
             
               <category>杂谈</category>
-            
-          
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>复现《Smart Contract Based Access Control for the Internet of Things》</title>
-        <link>https://moyahuang.github.io/zh/posts/%E5%A4%8D%E7%8E%B0smart-contract-based-access-control-for-the-internet-of-things/</link>
-        <pubDate>Tue, 15 Dec 2020 22:47:25 +0800</pubDate>
-        <author>moyahuang@foxmail.com (Moya Huang)</author>
-        <atom:modified>Tue, 15 Dec 2020 22:47:25 +0800</atom:modified>
-        <guid>https://moyahuang.github.io/zh/posts/%E5%A4%8D%E7%8E%B0smart-contract-based-access-control-for-the-internet-of-things/</guid>
-        <description>搞科研一定要注意：不要用商业性和实用性去苛求科研。例如，本文仅仅验证了系统可行性，是少量设备、理想环境下的一种演示。在性能、安全、隐私、可扩</description>
-        
-        <dc:creator>Moya</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>学术</category>
-            
-          
-            
-              <category>区块链</category>
-            
-          
-            
-              <category>智能合约</category>
             
           
         

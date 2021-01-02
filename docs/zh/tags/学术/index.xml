@@ -14,45 +14,13 @@
     <managingEditor>moyahuang@foxmail.com (Moya Huang)</managingEditor>
     <webMaster>moyahuang@foxmail.com (Moya Huang)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Tue, 15 Dec 2020 22:47:25 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 13 Dec 2020 18:06:20 +0800</lastBuildDate>
     
         <atom:link href="https://moyahuang.github.io/zh/tags/%E5%AD%A6%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
     
     
     
 
-      
-      <item>
-        <title>复现《Smart Contract Based Access Control for the Internet of Things》</title>
-        <link>https://moyahuang.github.io/zh/posts/%E5%A4%8D%E7%8E%B0smart-contract-based-access-control-for-the-internet-of-things/</link>
-        <pubDate>Tue, 15 Dec 2020 22:47:25 +0800</pubDate>
-        <author>moyahuang@foxmail.com (Moya Huang)</author>
-        <atom:modified>Tue, 15 Dec 2020 22:47:25 +0800</atom:modified>
-        <guid>https://moyahuang.github.io/zh/posts/%E5%A4%8D%E7%8E%B0smart-contract-based-access-control-for-the-internet-of-things/</guid>
-        <description>搞科研一定要注意：不要用商业性和实用性去苛求科研。例如，本文仅仅验证了系统可行性，是少量设备、理想环境下的一种演示。在性能、安全、隐私、可扩</description>
-        
-        <dc:creator>Moya</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>学术</category>
-            
-          
-            
-              <category>区块链</category>
-            
-          
-            
-              <category>智能合约</category>
-            
-          
-        
-        
-        
-      </item>
       
       <item>
         <title>区块链开发</title>
