@@ -10,17 +10,17 @@
 
 
   
-  <script defer src="/js/fuse.min.8dfbf8696f107ab8b55732efbb04c5c51576692a4a2cce6effef9f6e92d341a7.js"></script>
+  <script defer src="/js/fuse.min.32195737929df2c8096e855a5789cbb3f1331224d9169e8705493e7008f47df8.js"></script>
 
 
 
-<script src="/js/enquire.min.aa37bdcb743826eecdae5c5d177fc7d6552340f1b4378ffaa9c82b2c6111400b.js"></script>
+<script src="/js/enquire.min.dfb99dee1e029d51d6cfb672d847929890b1585402de17f5ed092edd72a688b4.js"></script>
 
-<script defer src="/js/lazysizes.min.498676c34eb225e85357ab0ce19c3c1244f3bd0bf595e5684d1b9d50ea4fbc42.js"></script>
+<script defer src="/js/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js"></script>
 
-<script defer src="/js/helper/getParents.min.1618c696be7c98933f9a92677f518b512a74e55bdbb976b09936b4182e93181b.js"></script>
+<script defer src="/js/helper/getParents.min.cd44056d552c69703dced61ae60f99166a0ddf44be93d6aa5d5127d98bf98984.js"></script>
 
-<script defer src="/js/helper/fadeinout.min.efa35f4c090622130b3f4cfae6971448b5ffb61c5f0a8f21cdfd157fa712abc4.js"></script>
+<script defer src="/js/helper/fadeinout.min.1551b6dbdacc77e412a26a29d3b84d2dcdc8f05c3b617433a475dc53c8872bdb.js"></script>
 
 <script defer src="/js/helper/closest.min.js"></script>
   
@@ -663,6 +663,12 @@
     
     var enableSearch = JSON.parse("true");
     
+    var searchDistance = JSON.parse("null");
+    
+    var searchThreshold = JSON.parse("null");
+    
+    var searchContent = JSON.parse("null");
+    
     var enableSearchHighlight = JSON.parse("true");
     
     var searchResultPosition = JSON.parse("\"main\"");
@@ -686,12 +692,13 @@
         xhr.onload = function () {
           if (xhr.status === 200) {
             fuse = new Fuse(JSON.parse(xhr.response.toString('utf-8')), {
-              keys: sectionType.includes('publication') ? ['title', 'abstract'] : ['title', 'description', 'content'],
+              keys: sectionType.includes('publication') ? ['title', 'abstract'] : 
+                searchContent ? ['title', 'description', 'content'] : ['title', 'description'],
               includeMatches: enableSearchHighlight,
               shouldSort: true, 
-              threshold: 0.4, 
+              threshold: searchThreshold ? searchThreshold : 0.4, 
               location: 0, 
-              distance: 100, 
+              distance: searchDistance ? searchDistance : 100, 
               maxPatternLength: 32,
               minMatchCharLength: 1,
               isCaseSensitive: false, 
@@ -715,7 +722,7 @@
       var a = document.createElement('a');
       a.innerHTML = obj.item.title;
       a.setAttribute('class', 'search-result__item--title');
-      a.setAttribute('href', obj.item.permalink);
+      a.setAttribute('href', obj.item.uri);
 
       var descDiv = document.createElement('div');
       descDiv.setAttribute('class', 'search-result__item--desc');
@@ -1315,7 +1322,8 @@
     }
   
   });
-</script>    
+</script>
+    
     
 
 
@@ -1328,9 +1336,9 @@
 <meta name="description" content="Moya Huang, Miao Huang, blog, personal website, Sichuan University" />
 
 
-<meta name="created" content="2021-01-02T18:09:48&#43;0800">
-<meta name="modified" content="2021-01-02T18:09:48&#43;0800">
-<meta property="article:published_time" content="2021-01-02T18:09:48&#43;0800">
+<meta name="created" content="2022-04-05T00:37:04&#43;0800">
+<meta name="modified" content="2022-04-05T00:37:04&#43;0800">
+<meta property="article:published_time" content="2022-04-05T00:37:04&#43;0800">
 
 <meta name="author" content="Moya Huang">
 
@@ -1341,7 +1349,7 @@
 <meta property="og:type" content="website">
 <meta property="og:description" content="Moya Huang, Miao Huang, blog, personal website, Sichuan University">
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.96.0" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1393,16 +1401,14 @@
 
     
   
-<script type="application/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESJG7CHKKS"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'G-ESJG7CHKKS', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-ESJG7CHKKS', { 'anonymize_ip': false });
 }
 </script>
 
@@ -1785,6 +1791,41 @@ if (!doNotTrack) {
 
     <div class="summary-classic__content">
       <header>
+        <h5 class="title h5"><a href='https://moyahuang.github.io/zh/posts/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/'>每天进步一点点 ｜ 节流和防抖</a> </h5>
+        <h6 class="subtitle caption">
+          <time title="创建日期" dir="ltr">📅&nbsp;2022年04月05日 </time>
+          
+          <span title="阅读时长" dir="ltr"> &middot; ☕&nbsp;1&nbsp;分钟 </span>
+          
+          &middot; <span title="作者" dir="ltr">🙀&nbsp;Moya</span>
+          
+        </h6>
+      </header>
+      <div>
+        <div class="summary-classic__text p2">
+          
+            是一种性能优化手段，控制高频事件的发生次数。 防抖 debounce 特征 防抖的特点一句话概括就是wait and see。即观察用户在一段时间内是否发生重复动作，如果
+          
+        </div>
+      </div>
+    </div>
+
+    
+    
+  </div>
+  <hr />
+</article>
+
+
+            
+                
+  <article class="summary-classic" data-ani="true">
+  <div class="summary-classic__flex-box" >
+
+    
+
+    <div class="summary-classic__content">
+      <header>
         <h5 class="title h5"><a href='https://moyahuang.github.io/zh/posts/%E7%94%B7%E4%BA%BA%E8%BF%99%E4%B9%88%E7%BE%8E%E5%A5%BD%E7%9A%84%E4%B8%9C%E8%A5%BF%E8%B7%91%E9%85%B7%E5%9B%A2%E9%98%9Fstorror/'>男人这么美好的东西——跑酷团队STORROR</a> </h5>
         <h6 class="subtitle caption">
           <time title="创建日期" dir="ltr">📅&nbsp;2021年01月02日 </time>
@@ -2004,7 +2045,7 @@ if (!doNotTrack) {
       <div>
         <div class="summary-classic__text p2">
           
-            Français &ldquo;Il n&rsquo;ya qu&rsquo;un héroïsme au monde：c&rsquo;est de voir le monde tel qu&rsquo;il est et de l&rsquo;aimer.&quot; English &ldquo;There&rsquo;s only one heroism in the world: to know the world as it is, and to love it.&quot; 中文 “世
+            Français &ldquo;Il n&rsquo;ya qu&rsquo;un héroïsme au monde：c&rsquo;est de voir le monde tel qu&rsquo;il est et de l&rsquo;aimer.&rdquo; English &ldquo;There&rsquo;s only one heroism in the world: to know the world as it is, and to love it.&rdquo; 中文 “世
           
         </div>
       </div>
@@ -2393,6 +2434,10 @@ if (!doNotTrack) {
             <ul class="sidebar-recent__ul">
                 
                     <li>
+                        <a href="/zh/posts/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/" class="sidebar-recent__a p2">每天进步一点点 ｜ 节流和防抖</a>
+                    </li>
+                
+                    <li>
                         <a href="/zh/posts/%E7%94%B7%E4%BA%BA%E8%BF%99%E4%B9%88%E7%BE%8E%E5%A5%BD%E7%9A%84%E4%B8%9C%E8%A5%BF%E8%B7%91%E9%85%B7%E5%9B%A2%E9%98%9Fstorror/" class="sidebar-recent__a p2">男人这么美好的东西——跑酷团队STORROR</a>
                     </li>
                 
@@ -2406,10 +2451,6 @@ if (!doNotTrack) {
                 
                     <li>
                         <a href="/zh/posts/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%BC%80%E5%8F%91/" class="sidebar-recent__a p2">区块链开发</a>
-                    </li>
-                
-                    <li>
-                        <a href="/zh/posts/%E8%B5%B0%E8%BF%87%E7%9A%84%E8%B7%AF%E9%83%BD%E5%B0%86%E6%88%90%E4%B8%BA%E8%B4%A2%E5%AF%8C%E4%B9%8Bdebugging%E5%A4%A7%E5%90%88%E9%9B%86/" class="sidebar-recent__a p2">走过的路都将成为财富之Debugging大合集</a>
                     </li>
                 
             </ul>
@@ -2437,7 +2478,7 @@ if (!doNotTrack) {
                         JavaScript
                     </span>
                     <span class="taxo__num" dir="auto">
-                        1
+                        2
                     </span>
                 </a>
             </span>
@@ -2476,7 +2517,7 @@ if (!doNotTrack) {
                         前端
                     </span>
                     <span class="taxo__num" dir="auto">
-                        1
+                        2
                     </span>
                 </a>
             </span>
@@ -2539,6 +2580,19 @@ if (!doNotTrack) {
                 <a href="/zh/tags/%E6%9D%82%E8%B0%88/" class="is-tags taxo__link" data-dir="ltr">
                     <span class="taxo__text">
                         杂谈
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/zh/tags/%E6%AF%8F%E5%A4%A9%E8%BF%9B%E6%AD%A5%E4%B8%80%E7%82%B9%E7%82%B9/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        每天进步一点点
                     </span>
                     <span class="taxo__num" dir="auto">
                         1
@@ -2765,7 +2819,7 @@ if (!doNotTrack) {
                 
             <p class="caption">
                 
-                    ©2021, All Rights Reserved
+                    ©2022, All Rights Reserved
                 
             </p>
         

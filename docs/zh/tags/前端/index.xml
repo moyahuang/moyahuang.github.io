@@ -13,14 +13,44 @@
     <language>zh</language>
     <managingEditor>moyahuang@foxmail.com (Moya Huang)</managingEditor>
     <webMaster>moyahuang@foxmail.com (Moya Huang)</webMaster>
-    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Thu, 14 Nov 2019 14:00:50 +0800</lastBuildDate>
+    <copyright>©2022, All Rights Reserved</copyright>
+    <lastBuildDate>Tue, 05 Apr 2022 00:37:04 +0800</lastBuildDate>
     
         <atom:link href="https://moyahuang.github.io/zh/tags/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    
 
+      
+      <item>
+        <title>每天进步一点点 ｜ 节流和防抖</title>
+        <link>https://moyahuang.github.io/zh/posts/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/</link>
+        <pubDate>Tue, 05 Apr 2022 00:37:04 +0800</pubDate>
+        <author>moyahuang@foxmail.com (Moya Huang)</author>
+        <atom:modified>Tue, 05 Apr 2022 00:37:04 +0800</atom:modified>
+        <guid>https://moyahuang.github.io/zh/posts/%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/</guid>
+        <description>是一种性能优化手段，控制高频事件的发生次数。 防抖 debounce 特征 防抖的特点一句话概括就是wait and see。即观察用户在一段时间内是否发生重复动作，如果</description>
+        
+        <dc:creator>Moya</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>前端</category>
+            
+          
+            
+              <category>JavaScript</category>
+            
+          
+            
+              <category>每天进步一点点</category>
+            
+          
+        
+        
+        
+      </item>
       
       <item>
         <title>JS的继承是个啥玩意儿</title>

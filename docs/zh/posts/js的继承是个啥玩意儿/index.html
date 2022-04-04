@@ -10,17 +10,17 @@
 
 
   
-  <script defer src="/js/fuse.min.8dfbf8696f107ab8b55732efbb04c5c51576692a4a2cce6effef9f6e92d341a7.js"></script>
+  <script defer src="/js/fuse.min.32195737929df2c8096e855a5789cbb3f1331224d9169e8705493e7008f47df8.js"></script>
 
 
 
-<script src="/js/enquire.min.aa37bdcb743826eecdae5c5d177fc7d6552340f1b4378ffaa9c82b2c6111400b.js"></script>
+<script src="/js/enquire.min.dfb99dee1e029d51d6cfb672d847929890b1585402de17f5ed092edd72a688b4.js"></script>
 
-<script defer src="/js/lazysizes.min.498676c34eb225e85357ab0ce19c3c1244f3bd0bf595e5684d1b9d50ea4fbc42.js"></script>
+<script defer src="/js/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js"></script>
 
-<script defer src="/js/helper/getParents.min.1618c696be7c98933f9a92677f518b512a74e55bdbb976b09936b4182e93181b.js"></script>
+<script defer src="/js/helper/getParents.min.cd44056d552c69703dced61ae60f99166a0ddf44be93d6aa5d5127d98bf98984.js"></script>
 
-<script defer src="/js/helper/fadeinout.min.efa35f4c090622130b3f4cfae6971448b5ffb61c5f0a8f21cdfd157fa712abc4.js"></script>
+<script defer src="/js/helper/fadeinout.min.1551b6dbdacc77e412a26a29d3b84d2dcdc8f05c3b617433a475dc53c8872bdb.js"></script>
 
 <script defer src="/js/helper/closest.min.js"></script>
   
@@ -663,6 +663,12 @@
     
     var enableSearch = JSON.parse("true");
     
+    var searchDistance = JSON.parse("null");
+    
+    var searchThreshold = JSON.parse("null");
+    
+    var searchContent = JSON.parse("null");
+    
     var enableSearchHighlight = JSON.parse("true");
     
     var searchResultPosition = JSON.parse("\"main\"");
@@ -686,12 +692,13 @@
         xhr.onload = function () {
           if (xhr.status === 200) {
             fuse = new Fuse(JSON.parse(xhr.response.toString('utf-8')), {
-              keys: sectionType.includes('publication') ? ['title', 'abstract'] : ['title', 'description', 'content'],
+              keys: sectionType.includes('publication') ? ['title', 'abstract'] : 
+                searchContent ? ['title', 'description', 'content'] : ['title', 'description'],
               includeMatches: enableSearchHighlight,
               shouldSort: true, 
-              threshold: 0.4, 
+              threshold: searchThreshold ? searchThreshold : 0.4, 
               location: 0, 
-              distance: 100, 
+              distance: searchDistance ? searchDistance : 100, 
               maxPatternLength: 32,
               minMatchCharLength: 1,
               isCaseSensitive: false, 
@@ -715,7 +722,7 @@
       var a = document.createElement('a');
       a.innerHTML = obj.item.title;
       a.setAttribute('class', 'search-result__item--title');
-      a.setAttribute('href', obj.item.permalink);
+      a.setAttribute('href', obj.item.uri);
 
       var descDiv = document.createElement('div');
       descDiv.setAttribute('class', 'search-result__item--desc');
@@ -1315,7 +1322,8 @@
     }
   
   });
-</script>    
+</script>
+    
     
 
 
@@ -1342,7 +1350,7 @@
 <meta property="og:type" content="article">
 <meta property="og:description" content="Moya Huang, Miao Huang, blog, personal website, Sichuan University">
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.96.0" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1401,16 +1409,14 @@
 
     
   
-<script type="application/javascript">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESJG7CHKKS"></script>
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'G-ESJG7CHKKS', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-ESJG7CHKKS', { 'anonymize_ip': false });
 }
 </script>
 
@@ -1797,20 +1803,20 @@ if (!doNotTrack) {
 当定义了这样一个函数（类）时</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Crane</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">){}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Crane</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">){}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>JS会为Crane.prototype增加一个属性<code>constructor</code>，其值指向刚才定义的方法（对象）或构造函数（以下统称为构造函数）本身，并且该构造函数还包括下面几个属性</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">Crane</span><span class="p">.</span><span class="nx">prototype</span><span class="o">=</span><span class="p">{</span><span class="nx">constructor</span><span class="o">:</span> <span class="k">this</span><span class="p">}</span> 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">Crane</span><span class="p">.</span><span class="nx">prototype</span><span class="o">=</span><span class="p">{</span><span class="nx">constructor</span><span class="o">:</span> <span class="k">this</span><span class="p">}</span> 
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>用一张图可以表示为</p>
 <p><a href="https://moyahuang.github.io/passages/JS%E7%9A%84%E7%BB%A7%E6%89%BF%E6%98%AF%E4%B8%AA%E5%95%A5%E7%8E%A9%E6%84%8F%E5%84%BF-Understanding-inheritance-in-JSS/JS%E7%9A%84%E7%BB%A7%E6%89%BF%E6%98%AF%E4%B8%AA%E5%95%A5%E7%8E%A9%E6%84%8F%E5%84%BF-Understanding-inheritance-in-JSS%5Cconstructor.png"><img src="https://moyahuang.github.io/passages/JS%E7%9A%84%E7%BB%A7%E6%89%BF%E6%98%AF%E4%B8%AA%E5%95%A5%E7%8E%A9%E6%84%8F%E5%84%BF-Understanding-inheritance-in-JSS/JS%E7%9A%84%E7%BB%A7%E6%89%BF%E6%98%AF%E4%B8%AA%E5%95%A5%E7%8E%A9%E6%84%8F%E5%84%BF-Understanding-inheritance-in-JSS%5Cconstructor.png" alt="constructor" /></a></p>
@@ -1822,7 +1828,7 @@ if (!doNotTrack) {
 <p>上面提到的构造函数使用关键词<code>new</code>即可创建对象，这种模式怎样实现继承呢？我们看到下面的例子</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1842,31 +1848,31 @@ if (!doNotTrack) {
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Bird</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">color</span><span class="p">){</span>  
- <span class="k">this</span><span class="p">.</span><span class="nx">type</span><span class="o">=</span><span class="nx">type</span><span class="p">;</span>  
- <span class="k">this</span><span class="p">.</span><span class="nx">color</span><span class="o">=</span><span class="nx">color</span><span class="p">;</span>  
- <span class="k">this</span><span class="p">.</span><span class="nx">fly</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>  
- <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">color</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">type</span><span class="o">+</span><span class="s2">&#34; is flying!&#34;</span><span class="p">);</span>  
- <span class="p">}</span>  
-<span class="p">}</span>  
-<span class="c1">//Parrot也是鸟 它有所有Bird拥有的属性  
-</span><span class="c1"></span><span class="kd">function</span> <span class="nx">Parrot</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">color</span><span class="p">){</span>  
- <span class="nx">Bird</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">color</span><span class="p">);</span> <span class="c1">//继承鸟的所有属性和方法  
-</span><span class="c1"></span> <span class="k">this</span><span class="p">.</span><span class="nx">talk</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>  
- <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">color</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">type</span><span class="o">+</span><span class="s2">&#34; is talking!&#34;</span><span class="p">)</span>  
- <span class="p">}</span>  
-<span class="p">}</span>  
-  
-<span class="kd">var</span> <span class="nx">prr</span><span class="o">=</span><span class="k">new</span> <span class="nx">Parrot</span><span class="p">(</span><span class="s2">&#34;鹦鹉&#34;</span><span class="err">，</span> <span class="s2">&#34;彩色de&#34;</span><span class="p">);</span>  
-<span class="nx">prr</span><span class="p">.</span><span class="nx">talk</span><span class="p">();</span>  
-<span class="nx">prr</span><span class="p">.</span><span class="nx">fly</span><span class="p">();</span>  
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Bird</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">color</span><span class="p">){</span>  
+</span></span><span class="line"><span class="cl"> <span class="k">this</span><span class="p">.</span><span class="nx">type</span><span class="o">=</span><span class="nx">type</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"> <span class="k">this</span><span class="p">.</span><span class="nx">color</span><span class="o">=</span><span class="nx">color</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"> <span class="k">this</span><span class="p">.</span><span class="nx">fly</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>  
+</span></span><span class="line"><span class="cl"> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">color</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">type</span><span class="o">+</span><span class="s2">&#34; is flying!&#34;</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="c1">//Parrot也是鸟 它有所有Bird拥有的属性  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">Parrot</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">color</span><span class="p">){</span>  
+</span></span><span class="line"><span class="cl"> <span class="nx">Bird</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">color</span><span class="p">);</span> <span class="c1">//继承鸟的所有属性和方法  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="k">this</span><span class="p">.</span><span class="nx">talk</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>  
+</span></span><span class="line"><span class="cl"> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">color</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">type</span><span class="o">+</span><span class="s2">&#34; is talking!&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">prr</span><span class="o">=</span><span class="k">new</span> <span class="nx">Parrot</span><span class="p">(</span><span class="s2">&#34;鹦鹉&#34;</span><span class="err">，</span> <span class="s2">&#34;彩色de&#34;</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl"><span class="nx">prr</span><span class="p">.</span><span class="nx">talk</span><span class="p">();</span>  
+</span></span><span class="line"><span class="cl"><span class="nx">prr</span><span class="p">.</span><span class="nx">fly</span><span class="p">();</span>  
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="httpsmoyahuanggithubiopassagesjse79a84e7bba7e689bfe698afe4b8aae595a5e78ea9e6848fe584bf-understanding-inheritance-in-jsse4bdbfe794a8es6e79a84e7b1bbe585b3e994aee8af8d-使用es6的类关键词使用es6的类关键词"><a href="https://moyahuang.github.io/passages/JS%E7%9A%84%E7%BB%A7%E6%89%BF%E6%98%AF%E4%B8%AA%E5%95%A5%E7%8E%A9%E6%84%8F%E5%84%BF-Understanding-inheritance-in-JSS/#%E4%BD%BF%E7%94%A8ES6%E7%9A%84%E7%B1%BB%E5%85%B3%E9%94%AE%E8%AF%8D" title="使用ES6的类关键词"></a>使用ES6的类关键词</h3>
 <p>ES6引入了类机制，使用关键词<code>extends</code>即可实现继承。上面的代码可以改成这样</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1884,29 +1890,29 @@ if (!doNotTrack) {
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">class</span> <span class="nx">Bird</span><span class="p">{</span>  
- <span class="nx">constructor</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">color</span><span class="p">){</span>  
- <span class="k">this</span><span class="p">.</span><span class="nx">type</span><span class="o">=</span><span class="nx">type</span><span class="p">;</span>  
- <span class="k">this</span><span class="p">.</span><span class="nx">color</span><span class="o">=</span><span class="nx">color</span><span class="p">;</span>  
- <span class="p">}</span>  
- <span class="nx">fly</span><span class="p">(){</span>  
- <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">color</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">type</span><span class="o">+</span><span class="s2">&#34; is flying!&#34;</span><span class="p">);</span>  
- <span class="p">}</span>  
-<span class="p">}</span>  
-  
-<span class="kr">class</span> <span class="nx">Parrot</span> <span class="kr">extends</span> <span class="nx">Bird</span><span class="p">{</span>  
- <span class="nx">constructor</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">color</span><span class="p">){</span>  
- <span class="kr">super</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">color</span><span class="p">);</span>  
- <span class="p">}</span>  
- <span class="nx">talk</span><span class="p">(){</span> <span class="p">...</span> <span class="p">}</span>  
-<span class="p">}</span>  
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">Bird</span><span class="p">{</span>  
+</span></span><span class="line"><span class="cl"> <span class="nx">constructor</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">color</span><span class="p">){</span>  
+</span></span><span class="line"><span class="cl"> <span class="k">this</span><span class="p">.</span><span class="nx">type</span><span class="o">=</span><span class="nx">type</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"> <span class="k">this</span><span class="p">.</span><span class="nx">color</span><span class="o">=</span><span class="nx">color</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>  
+</span></span><span class="line"><span class="cl"> <span class="nx">fly</span><span class="p">(){</span>  
+</span></span><span class="line"><span class="cl"> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">color</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">type</span><span class="o">+</span><span class="s2">&#34; is flying!&#34;</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">Parrot</span> <span class="kr">extends</span> <span class="nx">Bird</span><span class="p">{</span>  
+</span></span><span class="line"><span class="cl"> <span class="nx">constructor</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">color</span><span class="p">){</span>  
+</span></span><span class="line"><span class="cl"> <span class="kr">super</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">color</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>  
+</span></span><span class="line"><span class="cl"> <span class="nx">talk</span><span class="p">(){</span> <span class="p">...</span> <span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>  
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="伪类模式不推荐">伪类模式（不推荐）</h3>
 <p>我认为伪类模式与上面的继承方法的不同点在于，子类的构造函数会包含所有的属性，而无法不会进行属性的传递。因其关键点在于将子类的原型设置为父类对象。下面看一个例子</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1928,64 +1934,64 @@ if (!doNotTrack) {
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Mammal</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span>  
- <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="o">=</span><span class="nx">name</span><span class="p">;</span>  
-<span class="p">}</span>  
-<span class="c1">//注意这里要采用加强prototype的方式添加方法  
-</span><span class="c1"></span><span class="nx">Mammal</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">get_name</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>  
- <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>  
-<span class="p">}</span>  
-<span class="nx">Mammal</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">says</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>  
- <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">saying</span><span class="o">||</span><span class="s1">&#39;&#39;</span><span class="p">;</span>  
-<span class="p">}</span>  
-<span class="kd">var</span> <span class="nx">Cat</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span>  
- <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="o">=</span><span class="nx">name</span><span class="p">;</span>  
- <span class="k">this</span><span class="p">.</span><span class="nx">saying</span><span class="o">=</span><span class="s1">&#39;meow&#39;</span><span class="p">;</span>  
-<span class="p">}</span>  
-<span class="nx">Cat</span><span class="p">.</span><span class="nx">prototype</span><span class="o">=</span><span class="k">new</span> <span class="nx">Mammal</span><span class="p">();</span>  
-<span class="nx">Cat</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">get_name</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>  
- <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">says</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span><span class="c1">//调用父类的方法  
-</span><span class="c1"></span><span class="p">}</span>  
-<span class="kd">var</span> <span class="nx">myCat</span><span class="o">=</span><span class="k">new</span> <span class="nx">Cat</span><span class="p">(</span><span class="s2">&#34;Katy&#34;</span><span class="p">);</span>  
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCat</span><span class="p">.</span><span class="nx">get_name</span><span class="p">());</span> <span class="c1">// &#34;meow Katy&#34;  
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">Mammal</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span>  
+</span></span><span class="line"><span class="cl"> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="o">=</span><span class="nx">name</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="c1">//注意这里要采用加强prototype的方式添加方法  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">Mammal</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">get_name</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>  
+</span></span><span class="line"><span class="cl"> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="nx">Mammal</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">says</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>  
+</span></span><span class="line"><span class="cl"> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">saying</span><span class="o">||</span><span class="s1">&#39;&#39;</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">Cat</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span>  
+</span></span><span class="line"><span class="cl"> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="o">=</span><span class="nx">name</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"> <span class="k">this</span><span class="p">.</span><span class="nx">saying</span><span class="o">=</span><span class="s1">&#39;meow&#39;</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="nx">Cat</span><span class="p">.</span><span class="nx">prototype</span><span class="o">=</span><span class="k">new</span> <span class="nx">Mammal</span><span class="p">();</span>  
+</span></span><span class="line"><span class="cl"><span class="nx">Cat</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">get_name</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>  
+</span></span><span class="line"><span class="cl"> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">says</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span><span class="c1">//调用父类的方法  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">myCat</span><span class="o">=</span><span class="k">new</span> <span class="nx">Cat</span><span class="p">(</span><span class="s2">&#34;Katy&#34;</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCat</span><span class="p">.</span><span class="nx">get_name</span><span class="p">());</span> <span class="c1">// &#34;meow Katy&#34;  
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>当然，《JS语法精粹》里对上述的一些步骤进行了方法的封装，使程序表达性更高，隐藏了重复写<code>prototype</code>的一些”ugliness”。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Cat</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span>  
-	<span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="o">=</span><span class="nx">name</span><span class="p">;</span>  
-	<span class="k">this</span><span class="p">.</span><span class="nx">saying</span><span class="o">=</span><span class="s2">&#34;meow&#34;</span><span class="p">;</span>  
-	<span class="p">}.</span><span class="nx">inherits</span><span class="p">(</span><span class="nx">Mammal</span><span class="p">)</span>  
-	<span class="p">.</span><span class="nx">method</span><span class="p">(</span><span class="s2">&#34;get_name&#34;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){...});</span>  
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">Cat</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span>  
+</span></span><span class="line"><span class="cl">	<span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="o">=</span><span class="nx">name</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">	<span class="k">this</span><span class="p">.</span><span class="nx">saying</span><span class="o">=</span><span class="s2">&#34;meow&#34;</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">	<span class="p">}.</span><span class="nx">inherits</span><span class="p">(</span><span class="nx">Mammal</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">	<span class="p">.</span><span class="nx">method</span><span class="p">(</span><span class="s2">&#34;get_name&#34;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){...});</span>  
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>其中<code>inherits</code>是这么定义的</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nb">Function</span><span class="p">.</span><span class="nx">method</span><span class="p">(</span><span class="s2">&#34;inherits&#34;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">Parent</span><span class="p">){</span>  
-	<span class="k">this</span><span class="p">.</span><span class="nx">prototype</span><span class="o">=</span><span class="k">new</span> <span class="nx">Parent</span><span class="p">();</span>  
-	<span class="k">return</span> <span class="k">this</span><span class="p">;</span>  
-<span class="p">})</span>  
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nb">Function</span><span class="p">.</span><span class="nx">method</span><span class="p">(</span><span class="s2">&#34;inherits&#34;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">Parent</span><span class="p">){</span>  
+</span></span><span class="line"><span class="cl">	<span class="k">this</span><span class="p">.</span><span class="nx">prototype</span><span class="o">=</span><span class="k">new</span> <span class="nx">Parent</span><span class="p">();</span>  
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="k">this</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="p">})</span>  
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Function.method也是《JS语法精粹》定义的一个方法，常常用到，这里我写一遍算是复习了</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1993,13 +1999,13 @@ if (!doNotTrack) {
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">method</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">func</span><span class="p">){</span>  
-	<span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">prototype</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span><span class="o">!==</span><span class="s2">&#34;function&#34;</span><span class="p">){</span>  
-	<span class="k">this</span><span class="p">.</span><span class="nx">prototype</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span><span class="o">=</span><span class="nx">func</span><span class="p">;</span>  
-		<span class="k">return</span> <span class="k">this</span><span class="p">;</span>  
-	<span class="p">}</span>  
-<span class="p">}</span>  
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">method</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">func</span><span class="p">){</span>  
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">prototype</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span><span class="o">!==</span><span class="s2">&#34;function&#34;</span><span class="p">){</span>  
+</span></span><span class="line"><span class="cl">	<span class="k">this</span><span class="p">.</span><span class="nx">prototype</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span><span class="o">=</span><span class="nx">func</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="k">this</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>  
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="伪类模式的缺点">伪类模式的缺点：</h4>
 <h3 id="httpsmoyahuanggithubiopassagesjse79a84e7bba7e689bfe698afe4b8aae595a5e78ea9e6848fe584bf-understanding-inheritance-in-jsse58e9fe59e8be6a8a1e5bc8f-原型模式原型模式"><a href="https://moyahuang.github.io/passages/JS%E7%9A%84%E7%BB%A7%E6%89%BF%E6%98%AF%E4%B8%AA%E5%95%A5%E7%8E%A9%E6%84%8F%E5%84%BF-Understanding-inheritance-in-JSS/#%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F" title="原型模式"></a>原型模式</h3>
@@ -2007,7 +2013,7 @@ if (!doNotTrack) {
 <p>首先我们要做的就是创建一个对象</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2024,27 +2030,27 @@ if (!doNotTrack) {
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">myMammal</span><span class="o">=</span><span class="p">{</span>  
-	<span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;mammal&#34;</span><span class="p">,</span>  
-	<span class="nx">get_name</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>  
-		<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>  
-	<span class="p">}</span>  
-	<span class="nx">says</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>  
-		<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">saying</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>  
-	<span class="p">}</span>  
-<span class="p">}</span>  
-<span class="kd">var</span> <span class="nx">myCat</span><span class="o">=</span><span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">myMammal</span><span class="p">);</span>  
-<span class="nx">myCat</span><span class="p">.</span><span class="nx">name</span><span class="o">=</span><span class="s2">&#34;Siamese&#34;</span><span class="p">;</span>  
-<span class="nx">myCat</span><span class="p">.</span><span class="nx">saying</span><span class="o">=</span><span class="s2">&#34;meow&#34;</span><span class="p">;</span>  
-<span class="nx">myCat</span><span class="p">.</span><span class="nx">get_name</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>  
-	<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">says</span><span class="o">+</span><span class="s2">&#34; &#34;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>  
-<span class="p">}</span>  
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">myMammal</span><span class="o">=</span><span class="p">{</span>  
+</span></span><span class="line"><span class="cl">	<span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;mammal&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">	<span class="nx">get_name</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>  
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>  
+</span></span><span class="line"><span class="cl">	<span class="nx">says</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>  
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">saying</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">myCat</span><span class="o">=</span><span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">myMammal</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl"><span class="nx">myCat</span><span class="p">.</span><span class="nx">name</span><span class="o">=</span><span class="s2">&#34;Siamese&#34;</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="nx">myCat</span><span class="p">.</span><span class="nx">saying</span><span class="o">=</span><span class="s2">&#34;meow&#34;</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="nx">myCat</span><span class="p">.</span><span class="nx">get_name</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>  
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">says</span><span class="o">+</span><span class="s2">&#34; &#34;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>  
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>其中Object.create是《JS语言精粹》定义的一个方法，其作用是返回一个以参数对象为原型的新对象，下面来复习一遍</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2053,14 +2059,14 @@ if (!doNotTrack) {
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="k">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span> <span class="o">!==</span> <span class="s1">&#39;function&#39;</span><span class="p">){</span>  
-	<span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">o</span><span class="p">){</span>  
-		<span class="kd">var</span> <span class="nx">F</span><span class="o">=</span><span class="kd">function</span><span class="p">(){};</span>  
-	    <span class="nx">F</span><span class="p">.</span><span class="nx">prototype</span><span class="o">=</span><span class="nx">o</span><span class="p">;</span>  
-	    <span class="k">return</span> <span class="k">new</span> <span class="nx">F</span><span class="p">();</span>  
-	<span class="p">}</span>  
-<span class="p">}</span>  
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span> <span class="o">!==</span> <span class="s1">&#39;function&#39;</span><span class="p">){</span>  
+</span></span><span class="line"><span class="cl">	<span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">o</span><span class="p">){</span>  
+</span></span><span class="line"><span class="cl">		<span class="kd">var</span> <span class="nx">F</span><span class="o">=</span><span class="kd">function</span><span class="p">(){};</span>  
+</span></span><span class="line"><span class="cl">	    <span class="nx">F</span><span class="p">.</span><span class="nx">prototype</span><span class="o">=</span><span class="nx">o</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">	    <span class="k">return</span> <span class="k">new</span> <span class="nx">F</span><span class="p">();</span>  
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>  
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>上面的这种方式叫做<strong>差异化继承(differential inheritance)</strong></p>
 <h3 id="函数模式">函数模式</h3>
@@ -2075,7 +2081,7 @@ if (!doNotTrack) {
 <p>这是书上的伪代码模板</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2084,21 +2090,21 @@ if (!doNotTrack) {
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">constructor</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">spec</span><span class="p">,</span> <span class="nx">my</span><span class="p">){</span>  
- <span class="kd">var</span> <span class="nx">that</span><span class="p">,</span> <span class="nx">other</span> <span class="kr">private</span> <span class="nx">instance</span> <span class="nx">variables</span><span class="p">;</span>  
- <span class="nx">my</span> <span class="o">=</span> <span class="nx">my</span> <span class="o">||</span> <span class="p">{};</span>  
- <span class="nx">that</span> <span class="o">=</span> <span class="nx">a</span> <span class="k">new</span> <span class="nx">object</span><span class="p">;</span>  
- <span class="nx">Add</span> <span class="nx">privileged</span> <span class="nx">methods</span> <span class="nx">to</span> <span class="nx">that</span>  
- <span class="k">return</span> <span class="nx">that</span><span class="p">;</span>  
-<span class="p">}</span>  
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">constructor</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">spec</span><span class="p">,</span> <span class="nx">my</span><span class="p">){</span>  
+</span></span><span class="line"><span class="cl"> <span class="kd">var</span> <span class="nx">that</span><span class="p">,</span> <span class="nx">other</span> <span class="kr">private</span> <span class="nx">instance</span> <span class="nx">variables</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"> <span class="nx">my</span> <span class="o">=</span> <span class="nx">my</span> <span class="o">||</span> <span class="p">{};</span>  
+</span></span><span class="line"><span class="cl"> <span class="nx">that</span> <span class="o">=</span> <span class="nx">a</span> <span class="k">new</span> <span class="nx">object</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"> <span class="nx">Add</span> <span class="nx">privileged</span> <span class="nx">methods</span> <span class="nx">to</span> <span class="nx">that</span>  
+</span></span><span class="line"><span class="cl"> <span class="k">return</span> <span class="nx">that</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>  
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>其中参数<code>spec</code>包含构造新实例的所有信息，而这个参数最好为本章节前提的<code>object specifier</code>，因为这样不用每次传入一个包含所有参数的完整对象。</p>
 <p>参数<code>my</code>是继承链上所有函数构造器共享的私有资源。（？是不是类似于保护类）</p>
 <p>下面继续用这种模式实现我们的示例，下面创建了一个父类对象</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2112,24 +2118,24 @@ if (!doNotTrack) {
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">mammal</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">spec</span><span class="p">){</span>  
- <span class="kd">var</span> <span class="nx">that</span><span class="o">=</span><span class="p">{};</span><span class="c1">//创建新对象  
-</span><span class="c1"></span> <span class="nx">that</span><span class="p">.</span><span class="nx">get_name</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span><span class="c1">//为新对象添加特权方法  
-</span><span class="c1"></span> <span class="k">return</span> <span class="nx">spec</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>  
- <span class="p">}</span>  
- <span class="nx">that</span><span class="p">.</span><span class="nx">says</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>  
- <span class="k">return</span> <span class="nx">spec</span><span class="p">.</span><span class="nx">saying</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>  
- <span class="p">}</span>  
- <span class="k">return</span> <span class="nx">that</span><span class="p">;</span><span class="c1">//返回新对象  
-</span><span class="c1"></span><span class="p">};</span>  
-  
-<span class="kd">var</span> <span class="nx">myMamma</span><span class="o">=</span><span class="nx">mammal</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;mammal&#39;</span><span class="p">});</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">mammal</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">spec</span><span class="p">){</span>  
+</span></span><span class="line"><span class="cl"> <span class="kd">var</span> <span class="nx">that</span><span class="o">=</span><span class="p">{};</span><span class="c1">//创建新对象  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="nx">that</span><span class="p">.</span><span class="nx">get_name</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span><span class="c1">//为新对象添加特权方法  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="k">return</span> <span class="nx">spec</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>  
+</span></span><span class="line"><span class="cl"> <span class="nx">that</span><span class="p">.</span><span class="nx">says</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>  
+</span></span><span class="line"><span class="cl"> <span class="k">return</span> <span class="nx">spec</span><span class="p">.</span><span class="nx">saying</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>  
+</span></span><span class="line"><span class="cl"> <span class="k">return</span> <span class="nx">that</span><span class="p">;</span><span class="c1">//返回新对象  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">myMamma</span><span class="o">=</span><span class="nx">mammal</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;mammal&#39;</span><span class="p">});</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>其子类对象</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2139,15 +2145,15 @@ if (!doNotTrack) {
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">cat</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">spec</span><span class="p">){</span>  
- <span class="nx">spec</span><span class="p">.</span><span class="nx">saying</span><span class="o">=</span><span class="nx">spec</span><span class="p">.</span><span class="nx">saying</span><span class="o">||</span><span class="s1">&#39;&#39;</span><span class="p">;</span>  
- <span class="kd">var</span> <span class="nx">that</span><span class="o">=</span><span class="nx">mammal</span><span class="p">(</span><span class="nx">spec</span><span class="p">);</span><span class="c1">//创建新对象  
-</span><span class="c1"></span> <span class="nx">that</span><span class="p">.</span><span class="nx">get_name</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span><span class="c1">//为新对象添加特权方法  
-</span><span class="c1"></span> <span class="k">return</span> <span class="nx">spec</span><span class="p">.</span><span class="nx">says</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="nx">spec</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>  
- <span class="p">}</span>  
- <span class="k">return</span> <span class="nx">that</span><span class="p">;</span>  
-<span class="p">}</span>  
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">cat</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">spec</span><span class="p">){</span>  
+</span></span><span class="line"><span class="cl"> <span class="nx">spec</span><span class="p">.</span><span class="nx">saying</span><span class="o">=</span><span class="nx">spec</span><span class="p">.</span><span class="nx">saying</span><span class="o">||</span><span class="s1">&#39;&#39;</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"> <span class="kd">var</span> <span class="nx">that</span><span class="o">=</span><span class="nx">mammal</span><span class="p">(</span><span class="nx">spec</span><span class="p">);</span><span class="c1">//创建新对象  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="nx">that</span><span class="p">.</span><span class="nx">get_name</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span><span class="c1">//为新对象添加特权方法  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="k">return</span> <span class="nx">spec</span><span class="p">.</span><span class="nx">says</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="nx">spec</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>  
+</span></span><span class="line"><span class="cl"> <span class="k">return</span> <span class="nx">that</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>  
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>❓ 书中定义的superior方法我不知道用来干嘛的</p>
 <h4 id="httpsmoyahuanggithubiopassagesjse79a84e7bba7e689bfe698afe4b8aae595a5e78ea9e6848fe584bf-understanding-inheritance-in-jsse7bb84e4bbb6efbc9f-组件组件"><a href="https://moyahuang.github.io/passages/JS%E7%9A%84%E7%BB%A7%E6%89%BF%E6%98%AF%E4%B8%AA%E5%95%A5%E7%8E%A9%E6%84%8F%E5%84%BF-Understanding-inheritance-in-JSS/#%E7%BB%84%E4%BB%B6%EF%BC%9F" title="组件？"></a>组件？</h4>
@@ -2164,7 +2170,7 @@ if (!doNotTrack) {
     </article>
     
     
-<script defer src="/js/clipboard.min.c168d3a04c45a631be76437054619a4a3b30107960cb9730be96012fef5762b0.js"></script>
+<script defer src="/js/clipboard.min.1626706afc88d95ebe1173b553ec732c6dc82a576989315fdf5e7779af738a44.js"></script>
 
 <script defer src="/js/helper/prev.min.js"></script>
 
@@ -2359,19 +2365,20 @@ if (!doNotTrack) {
     
     
       
-        <a href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://service.weibo.com/share/share.php?url='+e(d.location.href)+'&title='+e(d.title),x=function(){if(!window.open(r,'weibo','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r+'&r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()" class="donation__item" target="_blank" rel="noreferer" title="Weibo" aria-label="Weibo Share Button" data-type="share">
+        <a href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://service.weibo.com/share/share.php?url='+e(d.location.href)+'&title='+e(d.title),x=function(){if(!window.open(r,'weibo','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r+'&r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()" class="donation__item" target="_blank" rel="noreferrer" title="Weibo" aria-label="Weibo Share Button" data-type="share">
           <svg data-name="weibo" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="35" height="35" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="m23.977 8.171c.103 1.315-.123 2.891-1.006 2.969-1.442.127-.69-1.435-.671-2.375.053-2.725-2.312-4.618-4.629-4.618-.656 0-2.181.438-1.946-.924.106-.6.623-.592 1.14-.66 3.897-.51 6.838 2.125 7.112 5.608z"/><path d="m17.604 11.337c1.675.901 3.687 1.35 3.354 4.024-.614 4.929-11.054 8.24-17.575 4.618-1.788-.994-3.639-2.448-3.354-5.344.246-2.493 1.95-4.424 3.623-6.069 1.596-1.57 3.278-2.798 5.567-3.364 2.484-.614 3.218 1.422 2.549 3.43 1.439-.095 4.488-1.674 5.836-.132.594.68.367 1.897 0 2.837zm-1.811 6.333c.537-.598 1.076-1.51 1.073-2.572-.01-4.395-7.635-5.376-11.806-2.969-4.747 2.74-2.743 7.664 3.086 8.048 3.088.204 6.179-.868 7.647-2.507z"/><path d="m19.952 10.084c-.977.064-.612-.658-.671-1.517-.037-.529-.483-1.14-.872-1.32-.763-.352-1.945.256-1.945-.791 0-.778.686-.697 1.074-.726 3.555-.266 3.775 4.265 2.414 4.354z"/><path d="m12.842 14.768c1.429 4.248-6.017 6.223-7.379 2.573-.911-2.441 1.277-4.383 3.555-4.618 1.945-.201 3.395.775 3.824 2.045zm-3.422.726c.303.516 1 .145.939-.264-.073-.473-.945-.403-.939.264zm-1.207 2.243c1.252-.293 1.42-2.612-.47-2.177-1.587.364-1.28 2.586.47 2.177z"/></svg>
         </a>
       
     
       
-        <a href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='https://www.douban.com/recommend/?url='+e(d.location.href)+'&title='+e(d.title)+'&sel='+e(s)+'&v=1',w=450,h=330,x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width='+w+',height='+h+',left='+(screen.width-w)/2+',top='+(screen.height-h)/2))location.href=r+'&r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()" class="donation__item" target="_blank" rel="noreferer" title="Douban" aria-label="Douban Share Button" data-type="share">
+        <a href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='https://www.douban.com/recommend/?url='+e(d.location.href)+'&title='+e(d.title)+'&sel='+e(s)+'&v=1',w=450,h=330,x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width='+w+',height='+h+',left='+(screen.width-w)/2+',top='+(screen.height-h)/2))location.href=r+'&r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()" class="donation__item" target="_blank" rel="noreferrer" title="Douban" aria-label="Douban Share Button" data-type="share">
           <svg data-name="douban" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35"><path fill="currentColor" d="M 4 4 A 1.0001 1.0001 0 1 0 4 6 L 20 6 A 1.0001 1.0001 0 1 0 20 4 L 4 4 z M 7 8 C 5.9069372 8 5 8.9069372 5 10 L 5 13 C 5 14.093063 5.9069372 15 7 15 L 7.2792969 15 L 8.6113281 19 L 4 19 A 1.0001 1.0001 0 1 0 4 21 L 20 21 A 1.0001 1.0001 0 1 0 20 19 L 15.388672 19 L 16.720703 15 L 17 15 C 18.093063 15 19 14.093063 19 13 L 19 10 C 19 8.9069372 18.093063 8 17 8 L 7 8 z M 7 10 L 17 10 L 17 13 L 7 13 L 7 10 z M 9.3886719 15 L 14.611328 15 L 13.279297 19 L 10.720703 19 L 9.3886719 15 z"/></svg>
         </a>
       
     
   </div>
 </div>
+
 
     
     
@@ -2550,7 +2557,7 @@ if (!doNotTrack) {
 </div>
 
 
-<script defer src="/js/swipe.min.b4b82839155519d9ca67746615a4c86ccbc1061c196fe6d8aa26e4fe22902718.js"></script>
+<script defer src="/js/swipe.min.5b45017db39b94db049dd81e997decf8d1d711d8e3efcb65cde3b58e7e456506.js"></script>
 
 <script defer src="/js/micromodal.min.de01b44b2f383056bbcaf6ee921fd385d79108ec1129afd0eb2f3f5a07e11f45.js"></script>
 
@@ -2958,6 +2965,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <script defer src="/js/helper/fadeinout.min.js"></script>
 
+<script defer src="/js/helper/throttle.min.js"></script>
+
+
 
 
 
@@ -3173,6 +3183,23 @@ document.addEventListener('DOMContentLoaded', function () {
       }) : null;
     }
     
+    
+    
+    
+    
+    var topOffset = 120;
+    var botOffset = 70;
+    var handleWindowResize = function () {
+      if (tocElem) {
+        tocElem.style.maxHeight = (window.innerHeight - topOffset - botOffset) + 'px';
+      }
+    }
+    var throttledWindowResize = throttle(handleWindowResize, 300);
+    throttledWindowResize()
+
+    
+    window.addEventListener('resize', throttledWindowResize);
+    
 
 
 
@@ -3191,7 +3218,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var newElemOuter = document.createElement('span');
       newElemOuter.classList.add('anchor');
       newElemOuter.classList.add('hide');
-      newElemOuter.setAttribute('data-clipboard-text', link);
+      newElemOuter.setAttribute('data-clipboard-text', decodeURI(link));
       newElemOuter.style.position = 'relative';
 
       var newElemInner = document.createElement('span');
@@ -3492,7 +3519,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 
             <p class="caption">
                 
-                    ©2021, All Rights Reserved
+                    ©2022, All Rights Reserved
                 
             </p>
         

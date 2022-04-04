@@ -13,22 +13,20 @@
     <language>en</language>
     <managingEditor>moyahuang@foxmail.com (Moya Huang)</managingEditor>
     <webMaster>moyahuang@foxmail.com (Moya Huang)</webMaster>
-    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <copyright>©2022, All Rights Reserved</copyright>
     <lastBuildDate>Thu, 29 Oct 2020 06:40:51 +0900</lastBuildDate>
     
         <atom:link href="https://moyahuang.github.io/en/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
-    
-    
     
 
       
       <item>
         <title>JavaScript--the good parts</title>
-        <link>https://moyahuang.github.io/en/posts/javascript-the-good-parts/</link>
+        <link>https://moyahuang.github.io/en/posts/javascript--the-good-parts/</link>
         <pubDate>Thu, 29 Oct 2020 06:40:51 +0900</pubDate>
         <author>moyahuang@foxmail.com (Moya Huang)</author>
         <atom:modified>Thu, 29 Oct 2020 06:40:51 +0900</atom:modified>
-        <guid>https://moyahuang.github.io/en/posts/javascript-the-good-parts/</guid>
+        <guid>https://moyahuang.github.io/en/posts/javascript--the-good-parts/</guid>
         <description>Objects what is an object? simple types of JS why are numbers, strings and booleans object-like? how to add a create method to the Object function? 1 2 3 4 5 6 7 if(typeof Object.create !== &amp;#39;function&amp;#39;){ Object.create=function(o){ var F=function(){}; F.prototype=o; return new F(); } } -what is an object literal? Functions what is the difference between a function and an object what is a function literal what is anonymous</description>
         
         <dc:creator>Moya Huang</dc:creator>

@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://moyahuang.github.io/en/showcase/hugo/hugo-theme-zzo/</loc>
     <lastmod>2020-01-19T21:13:42+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/showcase/hugo/hugo-theme-zdoc/</loc>
     <lastmod>2020-01-19T21:13:42+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/about/</loc>
     <lastmod>2020-12-01T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -25,9 +20,7 @@
                 hreflang="en"
                 href="https://moyahuang.github.io/en/about/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/</loc>
     <lastmod>2020-10-29T06:40:51+09:00</lastmod>
     <xhtml:link
@@ -40,9 +33,7 @@
                 hreflang="en"
                 href="https://moyahuang.github.io/en/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/tags/javascript/</loc>
     <lastmod>2020-10-29T06:40:51+09:00</lastmod>
     <xhtml:link
@@ -55,14 +46,10 @@
                 hreflang="en"
                 href="https://moyahuang.github.io/en/tags/javascript/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://moyahuang.github.io/en/posts/javascript-the-good-parts/</loc>
+  </url><url>
+    <loc>https://moyahuang.github.io/en/posts/javascript--the-good-parts/</loc>
     <lastmod>2020-10-29T06:40:51+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/posts/</loc>
     <lastmod>2020-10-29T06:40:51+09:00</lastmod>
     <xhtml:link
@@ -75,9 +62,7 @@
                 hreflang="en"
                 href="https://moyahuang.github.io/en/posts/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/series/</loc>
     <lastmod>2020-10-29T06:40:51+09:00</lastmod>
     <xhtml:link
@@ -90,9 +75,7 @@
                 hreflang="en"
                 href="https://moyahuang.github.io/en/series/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/tags/</loc>
     <lastmod>2020-10-29T06:40:51+09:00</lastmod>
     <xhtml:link
@@ -105,14 +88,10 @@
                 hreflang="en"
                 href="https://moyahuang.github.io/en/tags/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/series/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2020-10-29T06:40:51+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/publication/article/</loc>
     <lastmod>2020-03-05T14:08:48+00:00</lastmod>
     <xhtml:link
@@ -125,14 +104,10 @@
                 hreflang="en"
                 href="https://moyahuang.github.io/en/publication/article/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/publication/book/</loc>
     <lastmod>2020-03-05T14:08:48+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/publication/misc/</loc>
     <lastmod>2020-03-05T14:08:48+00:00</lastmod>
     <xhtml:link
@@ -145,9 +120,7 @@
                 hreflang="en"
                 href="https://moyahuang.github.io/en/publication/misc/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/publication/</loc>
     <lastmod>2020-03-05T14:08:48+00:00</lastmod>
     <xhtml:link
@@ -160,24 +133,16 @@
                 hreflang="en"
                 href="https://moyahuang.github.io/en/publication/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/showcase/hugo/</loc>
     <lastmod>2020-01-19T21:04:11+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/showcase/</loc>
     <lastmod>2020-01-19T15:43:38+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/gallery/cartoon/</loc>
     <lastmod>2019-10-31T10:20:16+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/gallery/</loc>
     <lastmod>2019-10-31T10:20:16+09:00</lastmod>
     <xhtml:link
@@ -190,9 +155,7 @@
                 hreflang="en"
                 href="https://moyahuang.github.io/en/gallery/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/gallery/photo/</loc>
     <lastmod>2019-10-31T10:20:16+09:00</lastmod>
     <xhtml:link
@@ -205,34 +168,22 @@
                 hreflang="en"
                 href="https://moyahuang.github.io/en/gallery/photo/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/presentation/dir/fourth/</loc>
     <lastmod>2019-10-30T20:48:10+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/presentation/</loc>
     <lastmod>2019-10-30T20:48:10+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/presentation/third/</loc>
     <lastmod>2019-10-30T20:46:30+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/presentation/second/</loc>
     <lastmod>2019-10-30T20:45:24+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/presentation/first/</loc>
     <lastmod>2019-10-30T19:45:20+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/archive/</loc>
     <lastmod>2019-10-19T11:44:14+09:00</lastmod>
     <xhtml:link
@@ -245,24 +196,16 @@
                 hreflang="en"
                 href="https://moyahuang.github.io/en/archive/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/publication/article/article_any_folder_name_1/</loc>
     <lastmod>2018-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/publication/book/book_any_folder_name_1/</loc>
     <lastmod>2017-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/publication/misc/misc_any_folder_name_1/</loc>
     <lastmod>2016-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -274,10 +217,7 @@
                 hreflang="en"
                 href="https://moyahuang.github.io/en/categories/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://moyahuang.github.io/en/tags/index/</loc>
   </url>
-  
 </urlset>
