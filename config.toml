@@ -2,4 +2,3 @@ baseURL = "https://moyahuang.github.io/"
 languageCode = "zh-CN"
 title = "Moya's Garden"
 publishDir = "docs"
-theme = 'themes/zzo'
